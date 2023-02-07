@@ -92,6 +92,10 @@
 ## 六、系统核心
 ![avatar](https://weiit.oss-cn-shenzhen.aliyuncs.com/weiit/2020-12-07/1d247d67-a6b4-4c0b-a87c-9f7f318ab499.jpg)
 
+## 七、技术支持（项目属于完全开源、免费开源，旧版本不在持续升级与更新，望理解万岁）
+
+## 八、团队留言：SpringBoot、Springcloud等最新版本因受商业公司约定，无法对外开源，望理解。
+
 
 
  
