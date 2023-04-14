@@ -97,6 +97,8 @@ weiit-saas是完全开源电商SaaS系统，属于weiit开源的社区版，旧�
 ## 八、团队留言：SpringBoot、Springcloud等最新版本因受商业公司约定，无法对外开源，望理解。
 
 
+## 九、联系我们
+![avatar](https://weiit.oss-cn-shenzhen.aliyuncs.com/weiit/2023-01-01/contact_me.png)
 
  
  
