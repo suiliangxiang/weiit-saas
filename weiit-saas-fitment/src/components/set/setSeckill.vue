@@ -58,8 +58,9 @@
 </template>
 
 <script>
-    import {mapState} from 'vuex'
-    export default {
+import {mapState} from 'vuex'
+
+export default {
         computed:{
             ...mapState(['seckill'])
         }
@@ -104,13 +105,13 @@
 .add .setChoice .last{
     margin-left: 0;
     margin-top: 5px;
-} 
+}
 .add .contol_group1{
     margin-top: 0;
 }
 .add .contol_group span{
     float: left;
-    width:69px; 
+    width:69px;
 }
 .demonstration1{
     margin-top: 10px;
@@ -126,7 +127,7 @@
     border: 1px dotted #ddd;
     text-align: center;
     line-height: 53px;
-    
+
 }
 .add_voice .icon{
     font-size: 20px;

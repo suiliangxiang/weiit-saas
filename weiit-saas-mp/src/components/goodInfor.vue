@@ -20,11 +20,12 @@
 </template>
 
 <script>
-    import { Toast } from 'mint-ui';
-    export default {
+import {Toast} from 'mint-ui';
+
+export default {
         data(){
             return{
-                
+
             }
         },
         props:['goodinfor','goodsRootly','state','rangeType'],
@@ -88,7 +89,7 @@
                 float: left;
                 width: 3.4rem;
                 margin-right: 0.4rem;
-                
+
                 h4{
                     font-size:0.28rem;
                     // height: 0.7rem;
@@ -131,7 +132,7 @@
                         margin-top: 0.05rem;
                     }
                 }
-                
+
             }
         }
         .apply{

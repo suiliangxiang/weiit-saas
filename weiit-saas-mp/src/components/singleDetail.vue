@@ -17,9 +17,10 @@
 </template>
 
 <script>
-    // 引入getTime
-    import {getTime} from '../../static/js/getTime'
-    export default {
+// 引入getTime
+import {getTime} from '../../static/js/getTime'
+
+export default {
         data(){
             return {
                 time:''

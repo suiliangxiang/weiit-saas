@@ -195,11 +195,6 @@ public class OrderController extends FrontController {
             //新增weiit_order表
             orderService.insertOrder(formMap);
 
-
-
-
-
-
             //新增weiit_order_item表
             for (E cart : cartList) {
                 FormMap itemPram = new FormMap();

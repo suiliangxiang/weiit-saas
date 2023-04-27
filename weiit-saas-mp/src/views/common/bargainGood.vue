@@ -58,13 +58,14 @@
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios'
-    // 引入qs
-    import qs from 'qs'
-    // 引入 Swipe, SwipeItem, Popup, Toast
-    import { Toast } from 'mint-ui';
-    export default {
+// 引入axios
+import axios from 'axios'
+// 引入qs
+import qs from 'qs'
+// 引入 Swipe, SwipeItem, Popup, Toast
+import {Toast} from 'mint-ui';
+
+export default {
         data(){
             return{
             }
@@ -104,9 +105,9 @@
                 }else{
                     Toast('库存不足，请选择其他商品~')
                 }
-                
-                
-            }   
+
+
+            }
         }
     }
 </script>
@@ -173,7 +174,7 @@
         color: #ec534e;
     }
     .goods_content .good_stock{
-        color: #999; 
+        color: #999;
     }
     /* 帮忙砍价 */
     .goods_list1 ul li,
@@ -264,7 +265,7 @@
         /* autoprefixer: on */
         color: #333;
         font-size: 0.28rem;
-        margin-top: 0.2rem; 
+        margin-top: 0.2rem;
         margin-bottom: 0.1rem;
     }
     .goods_list1 ul li .help{

@@ -19,7 +19,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by 罗鸿强 on 2018/7/7.
+ * Created by johnluo on 2018/7/7.
  */
 @Service
 public class GrouponServiceImpl extends AbstractService implements GrouponService {

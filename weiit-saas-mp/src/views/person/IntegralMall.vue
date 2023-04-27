@@ -29,14 +29,15 @@
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios'
-    // 引入qs
-    import qs from 'qs'
-    // 引入加载组件
-    import loading from '@/components/loading'
-    import noMore from '@/components/noMore';
-    export default {
+// 引入axios
+import axios from 'axios'
+// 引入qs
+import qs from 'qs'
+// 引入加载组件
+import loading from '@/components/loading'
+import noMore from '@/components/noMore';
+
+export default {
         data() {
             return {
                 intergralGoods: [],
@@ -61,12 +62,12 @@
                     console.log(res);
                     if(res.data.code == '0'){
                         let list = res.data.data.list;
-                        
+
                         list.forEach(item => {
                             this.intergralGoods.push(item);
                         })
                         this.hasNextPage = res.data.data.hasNextPage;
-                        
+
                         if(!this.hasNextPage){
                             this.loading = true;
                             this.allLoaded = true
@@ -169,7 +170,7 @@
                             .goods-integral{
                                 float:right;
                                 color:#ff4c6b;
-                                font-size:0.3rem;  
+                                font-size:0.3rem;
                                 font-style: normal;
                             }
                         }

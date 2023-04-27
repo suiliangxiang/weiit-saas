@@ -53,8 +53,9 @@
 </template>
 
 <script>
-    import {mapMutations,mapState} from 'vuex';
-    export default {
+import {mapMutations, mapState} from 'vuex';
+
+export default {
         data() {
             return {
                 isVoice: false,
@@ -81,25 +82,25 @@
             	response[0].create_time = time;
             	console.log(response);
             	this.tableData.push(response[0]);
-            	
-            }, 
+
+            },
             // 上传文件设置
             beforeAvatarUpload(file) {
-            	var testmsg=file.name.substring(file.name.lastIndexOf('.')+1)                 
-                const extension = testmsg === 'ogg'  
-                const extension2 = testmsg === 'mp4' 
-                const extension3 = testmsg === 'webm' 
+            	var testmsg=file.name.substring(file.name.lastIndexOf('.')+1)
+                const extension = testmsg === 'ogg'
+                const extension2 = testmsg === 'mp4'
+                const extension3 = testmsg === 'webm'
 //              var isLt2M = file.size / 1024 / 1024 < 40;
-                if(!extension && !extension2) {  
-                    this.$message({  
-                        message: '上传文件只能是 ogg mp4 webm格式!',  
-                        type: 'warning'  
-                    });  
-                }  
+                if(!extension && !extension2) {
+                    this.$message({
+                        message: '上传文件只能是 ogg mp4 webm格式!',
+                        type: 'warning'
+                    });
+                }
 //              if (!isLt2M) {
 //                  this.$message.error('上传头像图片大小不能超过 40MB!');
 //              }
-                return extension || extension2 || extension3 && isLt2M  
+                return extension || extension2 || extension3 && isLt2M
             },
             // 选中音频
             chooseVoice(index){
@@ -179,7 +180,7 @@
         width: 598px;
         background-color: #fff;
         border-radius:5px;
-        border: 1px solid #ddd; 
+        border: 1px solid #ddd;
         transform: translate(-50%,-50%);
         cursor: default;
         /* z-index: inherit; */
@@ -225,7 +226,7 @@
         line-height: 35px;
         font-size: 12px;
     }
-    
+
     /* 主体右边部分 */
     .right_pic{
         width: 495px;

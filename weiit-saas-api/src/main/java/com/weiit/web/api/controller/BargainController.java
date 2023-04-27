@@ -102,7 +102,7 @@ public class BargainController extends FrontController {
             //可定义一个异常Code类,,,或可跳转返回一个官方认可商店
 //            return toJsonAPI(ApiResponseCode.GROUPIDS_EMPTY);
         } else {
-            //小海 晓东  传参不一样
+            //公众号与小程序传参不一样
             if (formMap.getStr("bargain_ids").contains("[")) {
                 formMap.put("bargain_ids", convertJson(formMap.getStr("bargain_ids"), String[].class));
             } else {

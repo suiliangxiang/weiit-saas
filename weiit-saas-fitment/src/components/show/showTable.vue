@@ -43,47 +43,48 @@
 </template>
 
 <script>
-    // 店招展示
-    import shopSigns from '@/components/show/shopSigns'
-    // 搜索框展示
-    import searchShow from '@/components/show/search' 
-    // 空白展示
-    import auxiliaryBlank from '@/components/show/auxiliaryBlank'
-    // 辅助线展示
-    import auxiliaryLines from '@/components/show/auxiliaryLines'
-    // 导航栏展示
-    import navShow from '@/components/show/nav'
-    // 优惠券展示
-    import couponShow from '@/components/show/coupon'
-    // 商品分组展示
-    import goodSort from '@/components/show/goodSort'
-    // 商品列表展示
-    import goodList from '@/components/show/goodList'
-    // 标题展示
-    import textTitle from '@/components/show/title'
-    // 文本展示
-    import versionShow from '@/components/show/version'
-    // 富文本
-    import richText from '@/components/show/richText'
-    // 广告展示
-    import advertisement from '@/components/show/advertisement'
-    // 语音展示
-    import voiceShow from '@/components/show/voice'
-    // 视频展示
-    import videoShow from '@/components/show/video'
-    // 拼团展示
-    import fightShow from '@/components/show/fight'
-    // 秒杀展示
-    import seckillShow from '@/components/show/seckill'
-    // 公告展示
-    import goodsNotice from '@/components/show/notice'
-    // 客服电话展示
-    import serviceShow from '@/components/show/service'
-    // 图文组合
-    import combination from '@/components/show/combination'
-    // 砍价展示
-    import bargainShow from '@/components/show/bargain'
-    export default {
+// 店招展示
+import shopSigns from '@/components/show/shopSigns'
+// 搜索框展示
+import searchShow from '@/components/show/search'
+// 空白展示
+import auxiliaryBlank from '@/components/show/auxiliaryBlank'
+// 辅助线展示
+import auxiliaryLines from '@/components/show/auxiliaryLines'
+// 导航栏展示
+import navShow from '@/components/show/nav'
+// 优惠券展示
+import couponShow from '@/components/show/coupon'
+// 商品分组展示
+import goodSort from '@/components/show/goodSort'
+// 商品列表展示
+import goodList from '@/components/show/goodList'
+// 标题展示
+import textTitle from '@/components/show/title'
+// 文本展示
+import versionShow from '@/components/show/version'
+// 富文本
+import richText from '@/components/show/richText'
+// 广告展示
+import advertisement from '@/components/show/advertisement'
+// 语音展示
+import voiceShow from '@/components/show/voice'
+// 视频展示
+import videoShow from '@/components/show/video'
+// 拼团展示
+import fightShow from '@/components/show/fight'
+// 秒杀展示
+import seckillShow from '@/components/show/seckill'
+// 公告展示
+import goodsNotice from '@/components/show/notice'
+// 客服电话展示
+import serviceShow from '@/components/show/service'
+// 图文组合
+import combination from '@/components/show/combination'
+// 砍价展示
+import bargainShow from '@/components/show/bargain'
+
+export default {
         props:['keyWords','keyText','tempId','pageParam'],
         data(){
             return{
@@ -125,7 +126,7 @@
 <style scoped>
     .nav_des{
         position: relative;
-        
+
     }
     .icon-guanbi{
         position: absolute;
@@ -146,7 +147,7 @@
         height: 16px;
         border-radius: 50%;
         z-index: 999;
-    }  
+    }
     .del_box{
         position: absolute;
         right: 38px;

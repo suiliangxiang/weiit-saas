@@ -9,7 +9,7 @@
         </div>
         <div class="contol_group fn-clear" v-if="haveTitle == 'yes'">
             <p class="demonstration">
-                <span>标题名：</span> 
+                <span>标题名：</span>
             </p>
             <div class="setChoice">
                 <el-input v-model="fightTitle" placeholder="请输入内容" maxlength="8"></el-input>
@@ -40,7 +40,7 @@
                         </li>
                     </ul>
                     <fight-win :parentComponent="parentComponent" ref="fights" @choice="getSeckill"></fight-win>
-                    
+
                 </div>
             </div>
             <p class="addTips">最多添加30个商品</p>
@@ -102,10 +102,11 @@
 </template>
 
 <script>
-    // 引入拼团商品弹窗
-    import fightWin from '@/components/common/fightWin'
-    import {mapState,mapMutations} from 'vuex';
-    export default {
+// 引入拼团商品弹窗
+import fightWin from '@/components/common/fightWin'
+import {mapMutations, mapState} from 'vuex';
+
+export default {
         props:['pageParam'],
         data() {
             return {
@@ -157,7 +158,7 @@
                 fightTitle:this.fightTitle,
                 haveTitle:this.haveTitle
             }
-            
+
             this.$emit('event', fight);
         },
         methods: {
@@ -181,7 +182,7 @@
                         this.changeState();
                     }
                 }
-                
+
                if(this.groupon_ids.length > 0){
                		this.$ajax({
                         methods:'get',
@@ -238,7 +239,7 @@
                             (err);
                         })
                     }
-	                
+
 	            }
             }
         },
@@ -300,13 +301,13 @@
     .add .setChoice .last{
         margin-left: 0;
         margin-top: 5px;
-    } 
+    }
     .add .contol_group1{
         margin-top: 0;
     }
     .add .contol_group span{
         float: left;
-        width:69px; 
+        width:69px;
     }
     .demonstration1{
         margin-top: 4px;
@@ -324,7 +325,7 @@
         text-align: center;
         line-height: 53px;
         cursor: pointer;
-        
+
     } */
     .add .add_voice .icon{
         font-size: 20px;
@@ -418,7 +419,7 @@
     }
     /* 右侧展示选中图片 */
     .seckill_list{
-        
+
         float: left;
     }
     .seckill_list li{
@@ -450,7 +451,7 @@
         line-height: 78px;
         float: left;
         cursor: pointer;
-        
+
     }
     .icon-guanbi{
         position: absolute;
@@ -464,7 +465,7 @@
         display: none;
     }
     .hasNo{
-        color:#f44; 
+        color:#f44;
     }
     /* 提示语 */
     .reminder{

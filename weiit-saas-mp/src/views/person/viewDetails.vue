@@ -25,17 +25,18 @@
 </template>
 
 <script>
-    // 引入axios 
-    import axios from 'axios'
-    // 引入qs
-    import qs from 'qs'
-    // 引入商品信息介绍
-    import good from '@/components/good'
-    // 引入计算时间
-    import {getTime} from '../../../static/js/getTime'
-    // 引入加载组件
-    import loading from '@/components/loading'
-    export default {
+// 引入axios
+import axios from 'axios'
+// 引入qs
+import qs from 'qs'
+// 引入商品信息介绍
+import good from '@/components/good'
+// 引入计算时间
+import {getTime} from '../../../static/js/getTime'
+// 引入加载组件
+import loading from '@/components/loading'
+
+export default {
         data(){
             return {
                 good:{},
@@ -55,7 +56,7 @@
                         this.good = res.data.data;
                         this.isLoading = false;
                         this.time = getTime(this.good.create_time);
-                    } 
+                    }
                 }).catch((err) => {
                     console.log(err);
                 })
@@ -86,7 +87,7 @@
             },
             // 查看物流
             logistics(){
-                
+
                 this.$router.push({
                     path:'/logistics',
                     name:'logistics',
@@ -94,9 +95,9 @@
                         express_code:this.good.express_code,
                         express_num:this.good.express_num,
                         express_name:localStorage.getItem('isHaveCompany'),
-                        
+
                     }
-                }) 
+                })
             },
             // 补充物流信息
             addLogistics(){
@@ -138,7 +139,7 @@
             line-height: 0.3rem;
             margin-bottom: 0.16rem;
         }
-        
+
         .refunds_time{
             font-size: 0.26rem;
             line-height: 0.3rem;
@@ -149,7 +150,7 @@
         background-color: #fff;
         padding: 0.15rem 0 0.15rem 0.24rem;
     }
-    
+
     .return_reason{
         background-color: #fff;
         padding: 0.2rem;

@@ -23,13 +23,14 @@
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios';
-    // 引入qs
-    import qs from 'qs';
-    // 从mint-ui中引入MessageBox
-    import { MessageBox } from 'mint-ui';
-    export default {
+// 引入axios
+import axios from 'axios';
+// 引入qs
+import qs from 'qs';
+// 从mint-ui中引入MessageBox
+import {MessageBox} from 'mint-ui';
+
+export default {
         data() {
             return {
                 bargain_id: this.$route.params.bargain_id ? this.$route.params.bargain_id : localStorage.getItem('bargain_id'),
@@ -93,7 +94,7 @@
                         }).catch((err) => {
                             console.log(err);
                         })
-                        
+
                     }
                 }).catch((err) => {
                     if (err == 'cancel') {

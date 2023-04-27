@@ -28,16 +28,16 @@
                     <div class="set_sex">
                         <label class="mint-radiolist-label">
                             <span class="mint-radio">
-                                <input type="radio" class="mint-radio-input" value="man" v-model="sexSet"> 
+                                <input type="radio" class="mint-radio-input" value="man" v-model="sexSet">
                                 <span class="mint-radio-core"></span>
-                            </span> 
+                            </span>
                             <span class="mint-radio-label">男</span>
                         </label>
                         <label class="mint-radiolist-label">
                             <span class="mint-radio">
-                                <input type="radio" class="mint-radio-input" value="women" v-model="sexSet"> 
+                                <input type="radio" class="mint-radio-input" value="women" v-model="sexSet">
                                 <span class="mint-radio-core"></span>
-                            </span> 
+                            </span>
                             <span class="mint-radio-label">女</span>
                         </label>
                     </div>
@@ -52,7 +52,7 @@
                         <input type="number" v-model="user_tel" placeholder="请输入手机号码"/>
                         <a href="javascript:;" class="getCode" @click="getCode()">获取验证码</a>
                     </div>
-                    
+
                 </li>
             </ul>
         </div>
@@ -61,17 +61,18 @@
                 <input type="number" placeholder="请输入短信验证码" v-model="inputCode">
                 <a href="javascript:;" @click="ensuerBinding()">确认绑定</a>
             </div>
-            
+
         </div>
     </div>
 </template>
 
 <script>
-    import axios from 'axios'
-    import qs from 'qs';
-    // 从mint-ui中引入radio
-    import {Radio,Toast} from 'mint-ui'
-    export default {
+import axios from 'axios'
+import qs from 'qs';
+// 从mint-ui中引入radio
+import {Toast} from 'mint-ui'
+
+export default {
         data(){
             return{
                 personPic:'',
@@ -113,10 +114,10 @@
                     axios.post('/api/integral/getValidateCode',qs.stringify({
                         mobilePhone:this.user_tel
                     })).then(res => {
-                        
+
                     }).catch(err => {
                         console.log(err);
-                    }) 
+                    })
                     this.isCoding = true;
                 }else{
                     Toast('请输入电话正确格式')
@@ -137,7 +138,7 @@
                         Toast(res.data.message);
                         this.inputCode = '';
                     }
-                    
+
                 }).catch(err => {
                     console.log(err);
                 })
@@ -265,7 +266,7 @@
             width: 100%;
             height: 100%;
             background-color: rgba(255, 255, 255, .8);
-            z-index: 20; 
+            z-index: 20;
             .input-code{
                 position: absolute;
                 left: 50%;

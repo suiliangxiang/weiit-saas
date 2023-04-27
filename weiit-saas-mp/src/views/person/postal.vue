@@ -4,10 +4,10 @@
             <h5>可提现金额(元)</h5>
             <p class="postal_money">
                 <span v-show="money > 0">￥</span>
-                <span class="money_num">{{money}}</span>   
+                <span class="money_num">{{money}}</span>
             </p>
             <p class="postal_mode" @click="choosePostal()">
-                <span class="mode">{{costChoose}}</span> 
+                <span class="mode">{{costChoose}}</span>
                 <i class="icon iconfont icon-xiangxiajiantou"></i>
             </p>
             <form action="">
@@ -43,15 +43,15 @@
 </template>
 
 <script>
-    // 从mint-ui中引入Toast
-    import { Toast } from 'mint-ui';
-    // 引入axios
-    import axios from 'axios';
-    // 引入qs
-    import qs from 'qs';
-    // 从mint-ui中引入Radio,Cell组件
-    import { Radio,Cell } from 'mint-ui';
-    export default {
+// 从mint-ui中引入Toast
+// 从mint-ui中引入Radio,Cell组件
+import {Toast} from 'mint-ui';
+// 引入axios
+import axios from 'axios';
+// 引入qs
+import qs from 'qs';
+
+export default {
         data(){
             return {
                 accountNum:'',
@@ -75,9 +75,9 @@
                     // 提现账号
                     let accoNum = '';
                     if(localStorage.getItem('costChoose') == '支付宝'){
-                        accoNum = this.accountNum; 
+                        accoNum = this.accountNum;
                     }else{
-                        accoNum = '微信账号'; 
+                        accoNum = '微信账号';
                     }
                     // 如果是支付宝账户时候
                     if(localStorage.getItem('costChoose') == '支付宝'){
@@ -85,13 +85,13 @@
                         if((Alipay_num.test(this.accountNum) || tel.test(this.accountNum)) && reg.test(this.postalNum)){
                             // 判断输出金额是否大于可提现金额总数
                             if(parseFloat(this.postalNum) > parseFloat(this.money)){
-                                Toast('您输入金额不得大于总的可提现金额');    
+                                Toast('您输入金额不得大于总的可提现金额');
                             }else{
                                 axios.post('/api/user/myBalanceExtract',qs.stringify({
                                     balance:balance
                                 })).then((res) => {
                                     localStorage.setItem('confirmRooty','postal')
-                                    
+
                                     this.$router.push({
                                         path:'/Progress',
                                         name:'confirm',
@@ -108,20 +108,20 @@
                             Toast('您输入得格式不正确');
                         }
                     }
-                    // 如果是微信账户时候                    
+                    // 如果是微信账户时候
                     if(localStorage.getItem('costChoose') == '微信'){
                         // 输出金额是否为两位小数
                         if(reg.test(this.postalNum)){
                             // 判断提现金额是否大于总金额
                             if(parseFloat(this.postalNum) > parseFloat(this.money)){
-                                Toast('您输入金额不得大于总的可提现金额');    
+                                Toast('您输入金额不得大于总的可提现金额');
                             }else{
                                 axios.post('/api/user/myBalanceExtract',qs.stringify({
                                     cash_money:balance
                                 })).then((res) => {
                                     // 判断是否已经进行过提现操作
                                     localStorage.setItem('confirmRooty','postal')
-                                    
+
                                     this.$router.push({
                                         path:'/Progress',
                                         name:'confirm',
@@ -165,7 +165,7 @@
                         return true
                     }else{
                         return false
-                    } 
+                    }
                 }
             }
         }
@@ -226,11 +226,11 @@
                     font-size: 0.36rem;
                     width: 100%;
                 }
-                
-                input[placeholder], [placeholder], *[placeholder] { 
-                    color:#ddd; 
-                } 
-                
+
+                input[placeholder], [placeholder], *[placeholder] {
+                    color:#ddd;
+                }
+
             }
         }
         .withdrawals_btn{
@@ -271,12 +271,12 @@
                     color:#333;
                     font-size: 0.36rem;
                     font-weight: bold;
-                    font-family:'PingFang-SC-Bold'; 
+                    font-family:'PingFang-SC-Bold';
                     text-align: center;
                 }
                 .choose_btn{
                     display: table;
-                    
+
                     text-align: center;
                     margin:0.32rem auto 0;
                     a{
@@ -310,5 +310,5 @@
             }
         }
     }
-    
+
 </style>

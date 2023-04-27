@@ -19,13 +19,14 @@
 </template>
 
 <script>
-    // 设置富文本
-    import setRich from '@/components/set/setRich'
-    // 设置头部
-    import headModify from '@/components/common/headModify'
-    import List from '../../../static/js/List'
-    import {mapActions} from 'vuex'
-    export default {
+// 设置富文本
+import setRich from '@/components/set/setRich'
+// 设置头部
+import headModify from '@/components/common/headModify'
+import List from '../../../static/js/List'
+import {mapActions} from 'vuex'
+
+export default {
         props:{
             keyText:String,
             tempId:Number,
@@ -73,7 +74,7 @@
                 this.content = this.pageParam.content;
                 this.richColor = this.pageParam.richColor;
             }
-            
+
         },
         mounted(){
             this.saveData();
@@ -99,5 +100,5 @@
     .cap-richtext em, .cap-richtext i {
         font-style: italic;
     }
-    
+
 </style>

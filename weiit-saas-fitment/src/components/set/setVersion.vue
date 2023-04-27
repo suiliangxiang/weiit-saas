@@ -49,8 +49,9 @@
 </template>
 
 <script>
-    import {mapState,mapMutations} from 'vuex';
-    export default {
+import {mapMutations, mapState} from 'vuex';
+
+export default {
     	props:['pageParam'],
         data() {
             return {
@@ -86,7 +87,7 @@
                 this.fontPos = this.pageParam.fontPos;
                 this.fontColor = this.pageParam.fontColor;
                 this.bgColor = this.pageParam.bgColor;
-                this.textarea = this.pageParam.textarea; 
+                this.textarea = this.pageParam.textarea;
             }
         },
         computed:{
@@ -155,13 +156,13 @@
     .add .setChoice .last{
         margin-left: 0;
         margin-top: 5px;
-    } 
+    }
     .add .contol_group1{
         margin-top: 0;
     }
     .add .contol_group span{
         float: left;
-        width:69px; 
+        width:69px;
     }
     .demonstration1{
         margin-top: 10px;

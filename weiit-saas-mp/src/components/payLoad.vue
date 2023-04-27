@@ -6,8 +6,7 @@
 </template>
 
 <script>
-    import { Spinner } from 'mint-ui';
-    export default {
+export default {
         data() {
             return {
             }
@@ -35,7 +34,7 @@
         .loadMore{
             display: table;
             margin: 0 auto;
-            
+
         }
-    } 
+    }
 </style>

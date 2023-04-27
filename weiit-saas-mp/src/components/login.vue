@@ -16,7 +16,7 @@
                     <span class="tel_code fl">{{code}}</span>
                     <button class="resend fl">重新发送</button>
                     <a href="javascript:;" class="not_received fl clearfix">
-                        <span>没收到</span>  
+                        <span>没收到</span>
                         <i class="icon iconfont icon-sanjiaoright"></i>
                     </a>
                 </div>
@@ -44,16 +44,17 @@
             <i class="icon iconfont icon-arrow-left" @click="isShow = true"></i>
             <i class="icon iconfont icon-cha" @click="close()"></i>
         </div>
-        
+
     </div>
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios';
-    // 引入qs
-    import qs from 'qs'
-    export default {
+// 引入axios
+import axios from 'axios';
+// 引入qs
+import qs from 'qs'
+
+export default {
         data(){
             return {
                 isLogin:false,
@@ -107,7 +108,7 @@
                 // childs.forEach((element,index) => {
                 // });
                 // for(var i=0; i<this.$refs.verification.children.length; i++){
-                //     i.addEventListener('touchend', 
+                //     i.addEventListener('touchend',
                 //         () => {
                 //         var next = this.nextSibling;
                 //         if(next.length > 0) {
@@ -116,7 +117,7 @@
                 //         }
                 //     , false);
                 // }
-                
+
             },
             // 获取登陆验证码
             Verification(){
@@ -192,7 +193,7 @@
         },
         mounted(){
         }
-        
+
     }
 </script>
 
@@ -253,7 +254,7 @@
             }
             .choose_login{
                 margin-top:0.4rem;
-                text-align: center; 
+                text-align: center;
                 font-size: 0.22rem;
                 a{
                     color: #333

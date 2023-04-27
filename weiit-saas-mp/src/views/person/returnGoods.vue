@@ -9,7 +9,7 @@
                     <header>退货单号:{{item.refund_num}}</header>
                     <good-infor :goodinfor="item" class="goods_return" :goodsRootly="fatherComponent"></good-infor>
                     <p class="return_tips">
-                        {{returnState(item.state)}} 
+                        {{returnState(item.state)}}
                     </p>
                     <p class="more clearfix">
                         <a href="javascript:;" @click="cancleReturn(item)" class="cancelReturn" v-if="item.state == 0 || item.state == 1">取消退货</a>
@@ -25,20 +25,21 @@
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios'
-    // 引入qs
-    import qs from 'qs'
-    // 从mint-ui中引入MessageBox
-    import { MessageBox } from 'mint-ui';
-    // 引入商品信息
-    import GoodInfor from '@/components/goodInfor'
-    // 引入内容为空时
-    import empty from '@/components/empty'
-    // 引入加载组件
-    import loading from '@/components/loading'
-    import noMore from '@/components/noMore'
-    export default {
+// 引入axios
+import axios from 'axios'
+// 引入qs
+import qs from 'qs'
+// 从mint-ui中引入MessageBox
+import {MessageBox} from 'mint-ui';
+// 引入商品信息
+import GoodInfor from '@/components/goodInfor'
+// 引入内容为空时
+import empty from '@/components/empty'
+// 引入加载组件
+import loading from '@/components/loading'
+import noMore from '@/components/noMore'
+
+export default {
         data(){
             return {
                 returnGoods:[],
@@ -92,7 +93,7 @@
                         let list = res.data.data.list;
                         list.forEach(item => {
                             this.returnGoods.push(item);
-                        }) 
+                        })
                         this.returnGoods.forEach((item) => {
                             item.isHaveCompony = '';
                         })
@@ -106,7 +107,7 @@
                         }
                         this.isLoading = false;
                         this.isPass = true
-                        
+
                     }
                 })
                 .catch((err) => {
@@ -237,7 +238,7 @@
                             right: 1.84rem;
                         }
                     }
-                    
+
                 }
             }
         }

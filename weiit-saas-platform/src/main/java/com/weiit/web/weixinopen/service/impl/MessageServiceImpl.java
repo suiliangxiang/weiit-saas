@@ -23,7 +23,7 @@ import javax.annotation.Resource;
 import java.util.*;
 
 /**
- * Created by 罗鸿强 on 2018/7/23.
+ * Created by johnluo on 2018/7/23.
  */
 @Service
 public class MessageServiceImpl implements MessageService {

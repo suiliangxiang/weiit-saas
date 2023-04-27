@@ -11,16 +11,16 @@
 </template>
 
 <script>
-    // 引入底部导航
-    import NavFooter from '@/components/footer'
-    // 引入展示模板
-    import showTable from '@/views/show/showTable'
-    // 引入加载组件
-    import loading from '@/components/loading'
-    // 引入数据交互工具
-    import axios from 'axios'
-    import qs from 'qs'
-    export default {
+// 引入底部导航
+import NavFooter from '@/components/footer'
+// 引入展示模板
+import showTable from '@/views/show/showTable'
+// 引入加载组件
+import loading from '@/components/loading'
+// 引入数据交互工具
+import axios from 'axios'
+
+export default {
         data(){
             return {
                 categorys:[],
@@ -31,7 +31,7 @@
             NavFooter,
             showTable,
             loading
-            
+
         },
         created(){
             axios.post('/api/page/tehuimai',null)

@@ -32,9 +32,6 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 @RequestMapping(value = "/api/integral")
 public class IntegralController extends FrontController {
-
-
-
     @Autowired
     IntegralService integralService;
 

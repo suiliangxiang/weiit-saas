@@ -8,7 +8,10 @@ import com.weiit.core.entity.E;
 import com.weiit.core.entity.FormMap;
 import com.weiit.resource.common.utils.RedisUtil;
 import com.weiit.resource.common.utils.WeiitUtil;
-import com.weiit.web.api.service.*;
+import com.weiit.web.api.service.IntegralService;
+import com.weiit.web.api.service.PageService;
+import com.weiit.web.api.service.PlatformService;
+import com.weiit.web.api.service.UserService;
 import com.weiit.web.base.FrontController;
 import com.weiit.web.common.ApiResponseCode;
 import com.weiit.web.common.FormTemplateVO;
@@ -64,12 +67,7 @@ public class PlatformController extends FrontController {
     PageService pageService;
 
     @Resource
-    MessageService messageService;
-
-    @Resource
     IntegralService integralService;
-
-
 
     /**
      * 【服务号】
@@ -84,7 +82,7 @@ public class PlatformController extends FrontController {
         logger.info("【服务号】,PlatformController-firewall");
 
         FormMap formMap = getFormMap();
-        //坚持是否传递了url参数
+        //判断是否传递了url参数
         if (StringUtils.isEmpty(formMap.getStr("url"))) {
             return toJsonAPI("", "非法请求", "4000");
         } else {
@@ -120,7 +118,6 @@ public class PlatformController extends FrontController {
 
                 }
             }
-            //今后还可以新增业务判断,比如判断店铺是否已到期，请求url是否合法
         }
     }
 

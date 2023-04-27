@@ -5,6 +5,7 @@ import com.github.binarywang.wxpay.bean.order.WxPayNativeOrderResult;
 import com.github.binarywang.wxpay.bean.request.WxPayUnifiedOrderRequest;
 import com.github.binarywang.wxpay.exception.WxPayException;
 import com.weiit.resource.common.utils.WeiitQrCodeUtil;
+import com.weiit.resource.common.utils.WeiitUtil;
 import com.weiit.web.base.AdminController;
 import com.weiit.web.weixin.util.XMLUtil;
 import com.weiit.web.weixinopen.service.WeixinOpenService;
@@ -23,7 +24,6 @@ import java.util.Map;
 @RequestMapping("/weixinopen/pay")
 public class WeixinPayController extends AdminController{
 
-	public static final String ADMINDOMAIN="http://partner.wstore.me";
     @Resource
     private WeixinOpenService wxOpenService;
     
@@ -42,7 +42,7 @@ public class WeixinPayController extends AdminController{
     	String body="test";
     	String trade_type="NATIVE";
     	String spbill_create_ip="127.0.0.1";
-    	String notifyUrl=ADMINDOMAIN+"/weixinopen/pay/scanPayFinish";
+    	String notifyUrl= WeiitUtil.getPropertiesKey("weiit.platform.url") +"/weixinopen/pay/scanPayFinish";
     	WxPayUnifiedOrderRequest payInfo = WxPayUnifiedOrderRequest.newBuilder()
 				.outTradeNo(out_trade_no+"")
 				.totalFee(total_free)

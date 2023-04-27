@@ -122,22 +122,23 @@
         <div class="modify_box head_modify">
             <head-modify :keyText="keyText"></head-modify>
             <set-sort @event="getData" :pageParam="pageParam"></set-sort>
-        </div> 
+        </div>
     </div>
 </template>
 
 <script>
-    // 设置分组
-    import setSort from '@/components/set/setSort'
-    // 设置头部
-    import headModify from '@/components/common/headModify'
-    // 引入顶部商品组件
-    import good from '@/components/common/good';
-    // 引入左侧商品组件
-    import goods from '@/components/common/goods';
-    import List from '../../../static/js/List'
-    import {mapActions} from 'vuex'
-    export default {
+// 设置分组
+import setSort from '@/components/set/setSort'
+// 设置头部
+import headModify from '@/components/common/headModify'
+// 引入顶部商品组件
+import good from '@/components/common/good';
+// 引入左侧商品组件
+import goods from '@/components/common/goods';
+import List from '../../../static/js/List'
+import {mapActions} from 'vuex'
+
+export default {
         props:{
             keyText:String,
             tempId:Number,
@@ -201,7 +202,7 @@
                     'btnStyle':this.btnStyle,
                     'btnTxt3':this.btnTxt3,
                     'btnTxt4':this.btnTxt4,
-                    
+
                 }
                 return good
             }
@@ -249,14 +250,14 @@
 		            		}else{
 		            			this.leftGoodsList = res.data.data.productInfo;
 		            		}
-		            		
+
                         }).catch(err => {
                             (err);
                         })
                     }
                 	this.getGoods();
                 }
-                
+
                 // 修改数据
                 this.changeData({id:this.tempId,op:good})
             },
@@ -331,14 +332,14 @@
 	            	}).then(res => {
 	            		let goods = res.data.data.productInfo;
 	            		this.goodsList = goods.splice(0, this.showNum);
-	            		
+
 	            	}).catch(err => {
 	            		(err);
 	            	})
             	}else{
             		this.goodsList = [];
             	}
-        		
+
             }
         },
         mounted(){
@@ -354,7 +355,7 @@
     }
     .sort_top .sort_nav ul{
         display: flex;
-        
+
     }
     .sort_top .sort_nav ul li {
         flex: 1;
@@ -443,7 +444,7 @@
         box-sizing: border-box;
         z-index: 5;
     }
-    .modify_box:after, 
+    .modify_box:after,
     .modify_box:before {
         right: 100%;
         top: 20px;

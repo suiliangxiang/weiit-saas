@@ -60,8 +60,9 @@
 </template>
 
 <script>
-    import {mapMutations,mapState} from 'vuex';
-    export default {
+import {mapMutations, mapState} from 'vuex';
+
+export default {
         props:['parentComponent'],
         data() {
             return {
@@ -112,7 +113,7 @@
                 if(this.pictureShow.length > 18){
                     this.pictureShow.splice(18,this.pictureShow.length-18);
                 }
-                
+
                 // this.getPicture()
                 // 0~18 0 19~36 1
             },
@@ -281,7 +282,7 @@
         transform:translate(-50%,-50%);
         border-radius: 6px;
         overflow: hidden;
-        
+
     }
     /* 关闭按钮 */
     .icon-guanbi{
@@ -309,7 +310,7 @@
         color: #fff;
         font-size: 12px;
         background-color:#2897e4;
-        border-radius: 5px; 
+        border-radius: 5px;
     }
     .update_btn .icon{
         font-size: 12px;
@@ -325,7 +326,7 @@
     .inputBtn button{
         float: left;
         border:1px solid #ddd;
-        
+
     }
     .inputBtn input{
         width: 153px;
@@ -369,7 +370,7 @@
         cursor: pointer;
         font-size: 12px;
     }
-    
+
     /* 主体右边部分 */
     .right_pic{
         width: 593px;
@@ -411,9 +412,9 @@
         line-height: 22px;
         padding-left: 5px;
         font-size: 12px;
-        text-overflow:ellipsis; 
-        white-space:nowrap; 
-        overflow:hidden; 
+        text-overflow:ellipsis;
+        white-space:nowrap;
+        overflow:hidden;
     }
     /* 底部分页 */
     .pages{

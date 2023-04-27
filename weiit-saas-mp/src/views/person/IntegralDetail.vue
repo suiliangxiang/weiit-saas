@@ -50,14 +50,14 @@
                         <ul class="clearfix">
                             <li class="attribute_info" v-for="item in attribute_info">
                                 <span class="attribute_name">{{item.attribute_name}}</span>
-                                <span class="attribute_value">{{item.attribute_value}}</span>   
+                                <span class="attribute_value">{{item.attribute_value}}</span>
                             </li>
                         </ul>
                     </div>
                 </van-tab>
             </van-tabs>
-            
-            
+
+
             <!-- 底部信息 -->
             <div class="buy">
                 <a href="javascript:;" class="buy_now" :style="{background:color1,color:'#fff'}" @click="choose = true">立即兑换</a>
@@ -84,7 +84,7 @@
                         <!-- 商品数量选择 -->
                         <div class="buy_num clearfix" :class="{'buy_num1':max_limit == 0}">
                             <h6>购买数量</h6>
-                            
+
                             <div class="goods_number">
                                 <div href="javascript:;" class="reduce" @click="reduce($event)">
                                     <i class="icon iconfont icon-jian1"></i>
@@ -105,30 +105,30 @@
             </mt-popup>
             <text-nav v-show="!isLoading"></text-nav>
         </div>
-        
+
     </div>
 </template>
 
 <script>
-    // 引入 Swipe, SwipeItem, Popup
-    import { Swipe, SwipeItem, Popup, Toast } from 'mint-ui';
-    // 引入axios
-    import axios from 'axios';
-    // 引入qs
-    import qs from 'qs';
-    // 引入加载组件
-    import loading from '@/components/loading'
-    // 引入获取参数函数
-    import {getQueryString} from '../../../static/js/getQueryString';
-    import textNav from '@/components/textNav'
-    export default {
+// 引入 Swipe, SwipeItem, Popup
+import {Toast} from 'mint-ui';
+// 引入axios
+import axios from 'axios';
+// 引入qs
+import qs from 'qs';
+// 引入加载组件
+import loading from '@/components/loading'
+// 引入获取参数函数
+import textNav from '@/components/textNav'
+
+export default {
         data(){
             return {
                 choose:false,
                 counts:0,
                 isLoading:true,
                 product_desc:'',
-                isFlag:true,     
+                isFlag:true,
                 // 限购数量
                 max_limit:0,
                 stock:0,
@@ -159,7 +159,7 @@
             chooseSize(type){
                 this.choose = true;
             },
-            
+
             // 获取商品信息
             getGoods(){
                 axios.post('/api/integral/integralProductDetail', qs.stringify({
@@ -196,14 +196,14 @@
                         }else{
                             this.counts = this.stock;
                         }
-                        
-                        
+
+
                         this.productInfo.spec_info.forEach(item => {
                             item.values.forEach(item => {
                                 item.isChecked=false;
                             })
                         })
-                        
+
                     }
                 }).catch((err) => {
                     console.log(err);
@@ -270,14 +270,14 @@
             // 分享
         //     shareFriend(){
         //         let host = document.location.hostname;
-        //         let protocol = document.location.protocol;  
+        //         let protocol = document.location.protocol;
         //         let user_id = localStorage.getItem('userId');
-                // let currentUrl = `${protocol}//${host}?share_user_id=${user_id}`; 
+                // let currentUrl = `${protocol}//${host}?share_user_id=${user_id}`;
         //         let imgUrl = this.$url + localStorage.getItem('shareGoodImage');
         //         let shareTitle = localStorage.getItem('shareGoodName');
         //         let url = location.href.split('#')[0] + "?product_id=" + localStorage.getItem('product_id') + "&forward=detail";
-                
-                
+
+
         //         wx.ready(function(res) {
         //             wx.onMenuShareAppMessage({
         //                 title: shareTitle,
@@ -293,7 +293,7 @@
         //             });
         //         });
         //     },
-            
+
         },
         created(){
             // validate_id: validate_id,
@@ -350,7 +350,7 @@
         //                 signature: res.data.data.signature,// 必填，签名
         //                 jsApiList: [
         //                             "onMenuShareTimeline",//分享朋友圈接口
-        //                             "onMenuShareAppMessage",//分享给朋友接口  
+        //                             "onMenuShareAppMessage",//分享给朋友接口
         //                             "startRecord",
         //                             "stopRecord",
         //                             "onVoiceRecordEnd",
@@ -385,7 +385,7 @@
                        width: 100%;
                     }
                 }
-                
+
             }
             .goods_txt{
                 width: 7rem;
@@ -394,7 +394,7 @@
                     margin-top: 0.4rem;
                    font-size: 0.32rem;
                    color: #333;
-                   font-weight: bold; 
+                   font-weight: bold;
                 }
                 .cost{
                     margin-top:0.3rem;
@@ -428,7 +428,7 @@
                     }
                     .discount{
                         float: right;
-                        
+
                         p{
                             text-align: right;
                             font-size: 0.26rem;
@@ -440,7 +440,7 @@
                     }
                 }
             }
-            
+
         }
         .choice_rules{
         	line-height: 0.8rem;
@@ -488,7 +488,7 @@
                     height: 1rem;
                     .user{
                         float: left;
-                        
+
                         .user_pic{
                             float: left;
                             width: 0.7rem;
@@ -517,7 +517,7 @@
                         text-align: center;
                         p{
                             &.num{
-                                color: #333; 
+                                color: #333;
                                 font-size: 0.24rem;
                                 font-weight: bold;
                                 span{
@@ -562,7 +562,7 @@
                 font-size: 0.33rem;
                 color: #b9b9b9;
                 margin-left: 0.1rem;
-            }  
+            }
             .icon-youjiantouda{
                 position: absolute;
                 font-size: 0.3rem;
@@ -668,7 +668,7 @@
                     width: 5.5rem;
                     font-size: 0.28rem;
                     h5{
-                        
+
                         color: #333;
                         font-family: 'PingFang-SC-Regular';
                     }
@@ -691,7 +691,7 @@
                 .goods_color{
                     padding:0.3rem 0.2rem;
                     border-bottom: 1px solid #d9d9d9;
-                    
+
                     h6{
                         font-size: 0.28rem;
                         color: #333;
@@ -732,7 +732,7 @@
                         font-family: 'PingFang-SC-Bold';
                         color: #333;
                     }
-                    
+
                     .goods_number{
                         float: right;
                         text-align: center;
@@ -777,7 +777,7 @@
                     padding-left: 0.3rem;
                 }
             }
-            
+
             .ensure_btn{
                 display: block;
                 width: 100%;
@@ -793,7 +793,7 @@
             }
         }
         .goLook{
-           border-radius: 0.1rem; 
+           border-radius: 0.1rem;
         }
         .looking{
             width: 5.83rem;
@@ -851,7 +851,7 @@
                                margin-left: 0.1rem;
                                font-size: 0.24rem;
                                color: #bcbcbc;
-                           } 
+                           }
                            &:last-child{
                                font-size: 0.24rem;
                                color: #000;

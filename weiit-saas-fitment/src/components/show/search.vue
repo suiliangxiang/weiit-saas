@@ -19,19 +19,20 @@
         <div class="modify_box head_modify">
             <head-modify :keyText="keyText"></head-modify>
             <set-search @event="getData" :pageParam="pageParam"></set-search>
-        </div> 
+        </div>
     </div>
-    
+
 </template>
 
 <script>
-    // 设置头部
-    import headModify from '@/components/common/headModify'
-     // 设置搜索框
-    import setSearch from '@/components/set/setSearch'
-    import List from '../../../static/js/List'
-    import {mapActions,mapState} from 'vuex'
-    export default {
+// 设置头部
+import headModify from '@/components/common/headModify'
+// 设置搜索框
+import setSearch from '@/components/set/setSearch'
+import List from '../../../static/js/List'
+import {mapActions, mapState} from 'vuex'
+
+export default {
         props:{
             keyText:String,
             tempId:Number,
@@ -69,7 +70,7 @@
                 this.changeData({id:this.tempId,op:obj})
             },
             // 存储数据
-           
+
             saveData(){
                 let list = new List();
                 list.pageParam.searchStyle = this.searchStyle;
@@ -84,7 +85,7 @@
             initData(){
                this.searchStyle = this.pageParam.searchStyle;
                 this.searchColor_outside = this.pageParam.searchColor_outside;
-                this.searchColor_inside = this.pageParam.searchColor_inside; 
+                this.searchColor_inside = this.pageParam.searchColor_inside;
             }
         },
         computed:{
@@ -117,7 +118,7 @@
         font-size: 16px;
         left: 13px;
         top: 4px;
-    
+
     }
     .search_box .ordinary_search input{
         display: block;
@@ -153,7 +154,7 @@
         padding-left: 35px;
     }
     .search_box1 .top_search input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-        color: #fff; opacity:1; 
+        color: #fff; opacity:1;
     }
 
     .search_box1 .top_search input::-moz-placeholder { /* Mozilla Firefox 19+ */
@@ -192,7 +193,7 @@
         box-sizing: border-box;
         z-index: 5;
     }
-    .modify_box:after, 
+    .modify_box:after,
     .modify_box:before {
         right: 100%;
         top: 20px;

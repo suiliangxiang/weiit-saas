@@ -8,13 +8,10 @@
 </template>
 
 <script>
-import cookie from '../static/js/cookies';
-import axios from 'axios';
-import qs from 'qs';
 export default {
   name: 'App',
   created(){
-    
+
     this.$router.beforeEach((to, from, next) => {
       /* 路由发生变化修改页面title */
       // cookie.set('token', '', -1);

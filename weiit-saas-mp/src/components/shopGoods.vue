@@ -6,7 +6,7 @@
         <div class="goods_mations">
             <label class="mint-checklist-label">
                 <span class="mint-checkbox">
-                    <input type="checkbox" class="mint-checkbox-input" :checked="item.is_default == 0" @click="checked(index)"> 
+                    <input type="checkbox" class="mint-checkbox-input" :checked="item.is_default == 0" @click="checked(index)">
                     <span class="mint-checkbox-core"></span>
                 </span>
             </label>
@@ -16,9 +16,10 @@
 </template>
 
 <script>
-    // 引入good组件
-    import good from 'good' 
-    export default {
+// 引入good组件
+import good from 'good'
+
+export default {
         data(){
             return {
                 facomponent:'shopCart'
@@ -26,7 +27,7 @@
         },
         components:{
             good,
-            
+
         }
     }
 </script>

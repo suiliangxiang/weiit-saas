@@ -1,7 +1,7 @@
 package com.weiit.web.common;
 
 /**
- * Created by 罗鸿强 on 2018/5/15.
+ * Created by johnluo on 2018/5/15.
  * api 常量类
  */
 public class Constants {
@@ -11,18 +11,12 @@ public class Constants {
 //    测试
 //    public static final String SERVER_HOST ="https://api.woyoulian.com/";
 
-
     //线上
     public static final String MP_TEMPLATE_URL = "http://%s.wx.ustore.wang/";
-
-
-
 
     public static final String WEIITSPLIT = "weiitSplit";
     //测试
 //    public static final String MP_TEMPLATE_URL = "http://%s.wx.woyoulian.com/";
-
-
 
     //拼团 order 前缀
     public static final String ORDER_GROUPON ="PT";

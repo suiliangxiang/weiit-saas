@@ -32,19 +32,20 @@
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios';
-    // 引入qs
-    import qs from 'qs';
-    // 引入没有更多组件
-    import noMore from '@/components/noMore';
-    // 从mint-ui中引入MessageBox
-    import { MessageBox,Loadmore } from 'mint-ui';
-    // 引入当内容为空时出现的组件
-    import empty from '@/components/empty';
-    // 引入loading
-    import loading from '@/components/loading';
-    export default {
+// 引入axios
+import axios from 'axios';
+// 引入qs
+import qs from 'qs';
+// 引入没有更多组件
+import noMore from '@/components/noMore';
+// 从mint-ui中引入MessageBox
+import {MessageBox} from 'mint-ui';
+// 引入当内容为空时出现的组件
+import empty from '@/components/empty';
+// 引入loading
+import loading from '@/components/loading';
+
+export default {
         data(){
             return {
                 collections:[],
@@ -59,7 +60,7 @@
         },
         methods:{
             // 删除目前对应的收藏
-            delColletions(index,item){   
+            delColletions(index,item){
                 axios.post('/api/user/myCollectionDelete',qs.stringify({
                         product_id:item.product_id
                     })).then((res) => {
@@ -237,7 +238,7 @@
                                 text-decoration: line-through;
                             }
                         }
-                    } 
+                    }
                 }
                 .icon{
                     position: absolute;

@@ -44,18 +44,19 @@
         <div class="modify_box head_modify">
             <head-modify :keyText="keyText"></head-modify>
             <set-voice @event="getData" :pageParam="pageParam"></set-voice>
-        </div> 
+        </div>
     </div>
 </template>
 
 <script>
-    // 设置店招  
-    import setVoice from '@/components/set/setVoice'
-    // 设置头部
-    import headModify from '@/components/common/headModify'
-    import List from '../../../static/js/List'
-    import {mapActions} from 'vuex'
-    export default {
+// 设置店招
+import setVoice from '@/components/set/setVoice'
+// 设置头部
+import headModify from '@/components/common/headModify'
+import List from '../../../static/js/List'
+import {mapActions} from 'vuex'
+
+export default {
         props:{
             keyText:String,
             tempId:Number,
@@ -172,7 +173,7 @@
     }
     .simple{
         width: 100%;
-        
+
     }
     .music_player{
         position: relative;
@@ -255,7 +256,7 @@
         box-sizing: border-box;
         z-index: 5;
     }
-    .modify_box:after, 
+    .modify_box:after,
     .modify_box:before {
         right: 100%;
         top: 20px;

@@ -10,6 +10,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import ajax from './api/ajax'
 
 Vue.prototype.$ajax = ajax;
+Vue.prototype.$APIURL = "http://saas.merchant.wei-it.com";
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false

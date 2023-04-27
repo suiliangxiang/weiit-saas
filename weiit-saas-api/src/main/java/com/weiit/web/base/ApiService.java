@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 
 
 /**
- * Created by 罗鸿强 on 2018/9/19.
+ * Created by johnluo on 2018/9/19.
  */
 public abstract class ApiService extends AbstractService implements BaseService {
     public final Logger logger = LoggerFactory.getLogger(this.getClass());

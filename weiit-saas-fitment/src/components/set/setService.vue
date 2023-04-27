@@ -17,8 +17,9 @@
 </template>
 
 <script>
-    import {mapState,mapMutations} from 'vuex';
-    export default {
+import {mapMutations, mapState} from 'vuex';
+
+export default {
         props:['pageParam'],
         data() {
             return {
@@ -45,7 +46,7 @@
         },
         watch:{
             custom_tel:function(curVal,oldVal){
-                
+
                 if(curVal){
                     this.noState();
                 }else{

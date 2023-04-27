@@ -14,6 +14,7 @@
 		<module>weiit-saas-merchant</module>
 		<module>weiit-saas-platform</module>
 		<module>weiit-saas-api</module>
+		<module>weiit-frame</module>
 	</modules>
 	
 	

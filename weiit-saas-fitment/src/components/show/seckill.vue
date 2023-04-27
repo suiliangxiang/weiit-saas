@@ -18,9 +18,10 @@
 </template>
 
 <script>
-    // 引入秒杀商品
-    import seckillGood from '@/components/common/seckillGood'
-    export default {
+// 引入秒杀商品
+import seckillGood from '@/components/common/seckillGood'
+
+export default {
         data(){
             return {
                 goodStyle:'list'

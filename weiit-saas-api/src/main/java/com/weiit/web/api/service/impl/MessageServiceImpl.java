@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by 罗鸿强 on 2018/7/23.
+ * Created by johnluo on 2018/7/23.
  */
 @Service
 public class MessageServiceImpl implements MessageService {

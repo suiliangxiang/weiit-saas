@@ -27,8 +27,9 @@
 </template>
 
 <script>
-    import {mapState,mapMutations} from 'vuex';
-    export default {
+import {mapMutations, mapState} from 'vuex';
+
+export default {
     	props:['pageParam'],
         data() {
             return {
@@ -48,7 +49,7 @@
         },
         computed:{
             ...mapState(['isMust'])
-            
+
         },
         updated(){
             var notices = {
@@ -116,7 +117,7 @@
         float: left;
     }
     .hasNo{
-        color:#f44; 
+        color:#f44;
     }
     /* 提示语 */
     .reminder{

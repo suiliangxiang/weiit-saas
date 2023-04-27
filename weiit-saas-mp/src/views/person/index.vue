@@ -143,30 +143,29 @@
                     </ul>
                 </div>
             </div>
-            
+
             <!-- <loging></loging> -->
-            
+
         </div>
         <!-- 登陆窗 -->
         <!-- <login ref="login"></login> -->
-        
+
         <nav-footer :parents="'person'"></nav-footer>
-        
+
     </div>
 </template>
 
 <script>
-    // 从mint-ui引入MessageBox组件
-    import { MessageBox,Toast } from 'mint-ui';
-    import NavFooter from '@/components/footer'
-    // 引入axios
-    import axios from 'axios'
-    // 引入qs
-    import qs from 'qs'
-    // 引入加载组件
-    import loading from '@/components/loading'
-    import loging from '@/components/loging'
-    // 引入登陆窗组件
+// 从mint-ui引入MessageBox组件
+import {Toast} from 'mint-ui';
+import NavFooter from '@/components/footer'
+// 引入axios
+import axios from 'axios'
+// 引入qs
+// 引入加载组件
+import loading from '@/components/loading'
+import loging from '@/components/loging'
+// 引入登陆窗组件
     // import Login from '@/components/login'
     export default {
         data(){
@@ -441,7 +440,7 @@
         .login_person{
             position: relative;
             width:90%;
-            border-radius: 0.22rem ; 
+            border-radius: 0.22rem ;
             margin: 0 auto;
             background-color: #fff;
             .login_person_header{
@@ -498,7 +497,7 @@
                         a{
                             display: block;
                             text-align: center;
-                            
+
                             span{
                                 display: block;
                                 font-size:0.28rem;
@@ -546,7 +545,7 @@
                             text-align: center;
                         }
                     }
-                    
+
                 }
             }
         }

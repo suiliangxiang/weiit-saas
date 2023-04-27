@@ -33,11 +33,12 @@
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios';
-    // 引入qs
-    import qs from 'qs';
-    export default {
+// 引入axios
+import axios from 'axios';
+// 引入qs
+import qs from 'qs';
+
+export default {
         data(){
             return {
                 express_code:this.$route.params.express_code ? this.$route.params.express_code : localStorage.getItem('express_code'),
@@ -172,10 +173,10 @@
                                 color: #d3d3d3;
                             }
                         }
-                        
+
                     }
                     .des_txt{
-                        width: 4.8rem; 
+                        width: 4.8rem;
                         float: left;
                         font-size: 0.26rem;
                     }
@@ -190,7 +191,7 @@
                     }
                 }
             }
-            
+
         }
     }
 </style>

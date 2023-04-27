@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 
 /**
- * Created by 罗鸿强 on 2018/7/7.
+ * Created by johnluo on 2018/7/7.
  */
 @Service
 public class MerchantServiceImpl extends AbstractService implements MerchantService {

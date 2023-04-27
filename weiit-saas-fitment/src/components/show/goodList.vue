@@ -564,18 +564,19 @@
         <div class="modify_box head_modify">
             <head-modify :keyText="keyText"></head-modify>
             <set-list @event="getData" :pageParam="pageParam"></set-list>
-        </div> 
+        </div>
     </div>
 </template>
 
 <script>
-    // 设置列表
-    import setList from '@/components/set/setList'
-    // 设置头部
-    import headModify from '@/components/common/headModify'
-    import List from '../../../static/js/List'
-    import {mapActions} from 'vuex'
-    export default {
+// 设置列表
+import setList from '@/components/set/setList'
+// 设置头部
+import headModify from '@/components/common/headModify'
+import List from '../../../static/js/List'
+import {mapActions} from 'vuex'
+
+export default {
         props:{
             keyText:String,
             tempId:Number,
@@ -668,7 +669,7 @@
                             (err);
                         })
                     }
-	                
+
             	}else if(list.addFun == 'automatic'){
                     this.$ajax({
                         methods:'get',
@@ -701,11 +702,11 @@
                 list.pageParam.goodPrice = this.goodPrice;
                 list.pageParam.listStyle = this.listStyle;
                 list.pageParam.productIds = this.productIds;
-                
+
                 list.id =this.tempId;
                 list.name = this.keyText;
                 list.type = this.keyWords;
-                
+
                 this.addData(list);
             },
             // 检测格式
@@ -838,7 +839,7 @@
         font-size: 16px;
         color: #333;
         margin-bottom: 6px;
-    }   
+    }
     .detailed_list .good_txt span,
     .zigzag_list .good_txt span,
     .small_list .good_txt span,
@@ -861,11 +862,11 @@
     .small_list li{
         width: 142px;
     }
-    .zigzag_list li.small .good_txt h5, 
+    .zigzag_list li.small .good_txt h5,
     .small_list li .good_txt h5{
-        text-overflow:ellipsis; 
-        white-space:nowrap; 
-        overflow:hidden; 
+        text-overflow:ellipsis;
+        white-space:nowrap;
+        overflow:hidden;
     }
     .small_list li:nth-child(event){
         margin-right: 0;
@@ -875,7 +876,7 @@
     .small_list .good_txt h5,
     .small_list .good_txt span{
         font-size: 14px;
-        
+
     }
     /* 一行三个 */
     .more_list{
@@ -919,9 +920,9 @@
         width: 175px
     }
     .detailed_list .good_txt h5{
-        text-overflow:ellipsis; 
-        white-space:nowrap; 
-        overflow:hidden; 
+        text-overflow:ellipsis;
+        white-space:nowrap;
+        overflow:hidden;
         font-size: 16px;
         color: #333;
         margin-bottom: 10px;
@@ -994,7 +995,7 @@
         box-sizing: border-box;
         z-index: 100;
     }
-    .modify_box:after, 
+    .modify_box:after,
     .modify_box:before {
         right: 100%;
         top: 20px;

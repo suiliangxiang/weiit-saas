@@ -11,10 +11,11 @@
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios';
-    import qs from 'qs'; 
-    export default {
+// 引入axios
+import axios from 'axios';
+import qs from 'qs';
+
+export default {
         props:['count','componentFather','cartId'],
         data(){
             return{
@@ -38,7 +39,7 @@
                         }))
                     }
                 }
-                
+
                 e.stopPropagation();
             },
             // 减少商品数量
@@ -50,7 +51,7 @@
                     this.num--;
                     if(this.componentFather == 'shop'){
                         let cart_id = this.cartId;
-                        let count = this.num; 
+                        let count = this.num;
                         axios.post('/api/product/addUserCartCount',qs.stringify({
                             cart_id:cart_id,
                             count:count
@@ -58,7 +59,7 @@
                     }
                 }
             }
-        } 
+        }
     }
 </script>
 

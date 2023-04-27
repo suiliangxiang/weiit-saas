@@ -38,10 +38,11 @@
 </template>
 
 <script>
-    import {mapMutations} from 'vuex';
-    // 引入图片选择组件
-    import picWin from '@/components/common/picWin'
-    export default {
+import {mapMutations} from 'vuex';
+// 引入图片选择组件
+import picWin from '@/components/common/picWin'
+
+export default {
         props:['pageParam'],
         data() {
             return {

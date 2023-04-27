@@ -9,18 +9,19 @@
         <div class="modify_box head_modify">
             <head-modify :keyText="keyText"></head-modify>
             <set-service @event="getData" :pageParam="pageParam"></set-service>
-        </div> 
+        </div>
     </div>
 </template>
 
 <script>
-    // 设置头部 
-    import headModify from '@/components/common/headModify'
-    // 设置客服
-    import setService from '@/components/set/setService'
-    import List from '../../../static/js/List'
-    import {mapActions} from 'vuex'
-    export default {
+// 设置头部
+import headModify from '@/components/common/headModify'
+// 设置客服
+import setService from '@/components/set/setService'
+import List from '../../../static/js/List'
+import {mapActions} from 'vuex'
+
+export default {
         props:{
             keyText:String,
             tempId:Number,
@@ -67,7 +68,7 @@
             // 初始化数据
             initData(){
                 this.custom_txt = this.pageParam.custom_txt;
-                this.custom_tel = this.pageParam.custom_tel; 
+                this.custom_tel = this.pageParam.custom_tel;
             }
         },
         mounted(){
@@ -79,7 +80,7 @@
 
 <style scoped>
     .service{
-      padding: 5px 10px;  
+      padding: 5px 10px;
       background-color: #fff;
       cursor: pointer;
     }
@@ -119,7 +120,7 @@
         box-sizing: border-box;
         z-index: 5;
     }
-    .modify_box:after, 
+    .modify_box:after,
     .modify_box:before {
         right: 100%;
         top: 20px;

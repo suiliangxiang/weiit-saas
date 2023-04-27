@@ -60,8 +60,9 @@
 </template>
 
 <script>
-    import {mapMutations,mapState} from 'vuex';
-    export default {
+import {mapMutations, mapState} from 'vuex';
+
+export default {
         data() {
             return {
                 isVoice: false,
@@ -92,7 +93,7 @@
                         this.tableData.push(item);
                     }
                 })
-            }, 
+            },
             // 上传失败
             handleAvatarError(err, file, fileList) {
             },
@@ -115,7 +116,7 @@
             // 选中音频
             chooseVoice(index){
                 this.iNum = index;
-                
+
             },
             // 播放选中音频
             playing(e,item){
@@ -182,8 +183,8 @@
                 return url;
             }
         }
-        
-        
+
+
     }
 </script>
 
@@ -206,7 +207,7 @@
         width: 598px;
         background-color: #fff;
         border-radius:5px;
-        border: 1px solid #ddd; 
+        border: 1px solid #ddd;
         transform: translate(-50%,-50%);
         cursor: default;
     }
@@ -251,7 +252,7 @@
         line-height: 35px;
         font-size: 12px;
     }
-    
+
     /* 主体右边部分 */
     .right_pic{
         width: 495px;

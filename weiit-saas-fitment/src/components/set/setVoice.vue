@@ -20,7 +20,7 @@
                     <span class="addVoice" @click="addVoice">重新选择</span>
                 </div>
                 <span class="addVoice" @click="addVoice" v-if="!voiceData">选择音频</span>
-                
+
             </div>
             <p v-if="isMust" class="reminder">必须选择一个音频文件</p>
             <div class="contol_group fn-clear">
@@ -72,12 +72,13 @@
 </template>
 
 <script>
-    import {mapState,mapMutations} from 'vuex';
-    // 引入图片选择组件
-    import picWin from '@/components/common/picWin'
-    // 引入语音上传组件
-    import voiceWin from '@/components/common/voiceWin'
-    export default {
+import {mapMutations, mapState} from 'vuex';
+// 引入图片选择组件
+import picWin from '@/components/common/picWin'
+// 引入语音上传组件
+import voiceWin from '@/components/common/voiceWin'
+
+export default {
         props:['pageParam'],
         data() {
             return {
@@ -144,7 +145,7 @@
                     this.isPlay = false;
                     this.playTxt = '暂停';
                 }
-                
+
             },
             // 试播音频
             playing(){
@@ -215,7 +216,7 @@
     }
     .add .contol_group span{
         float: left;
-        width:69px; 
+        width:69px;
     }
     .add .contol_group1 span.voice_tips{
         margin-top: 6px;

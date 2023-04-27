@@ -212,7 +212,7 @@ public class LoginImplController extends AdminController{
     	String body="充值金额:"+pay_price+"元,赠送金额:"+give_price+"元.";
     	String trade_type="NATIVE";
     	String spbill_create_ip="127.0.0.1";
-    	String notifyUrl="http://partner.wstore.me/center/manager/balanceRechargeFinish";
+    	String notifyUrl=WeiitUtil.getPropertiesKey("weiit.platform.url")+"/center/manager/balanceRechargeFinish";
     	WxPayUnifiedOrderRequest payInfo = WxPayUnifiedOrderRequest.newBuilder()
 				.outTradeNo(out_trade_no+"")
 				.totalFee(pay_price*100)

@@ -6,7 +6,7 @@ import com.weiit.task.core.handler.annotation.TaskHandler;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by 罗鸿强 on 2018/8/9.
+ * Created by johnluo on 2018/8/9.
  */
 @TaskHandler("autoPublishMiniProgram")
 @Component

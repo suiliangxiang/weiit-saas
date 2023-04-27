@@ -14,13 +14,12 @@
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios'
-    // 引入qs
-    import qs from 'qs'
-    // 从mint-ui中引入popup
-    import { Popup } from 'mint-ui';
-    export default {
+// 引入axios
+import axios from 'axios'
+// 引入qs
+import qs from 'qs'
+// 从mint-ui中引入popup
+export default {
         data(){
             return {
                 newTel:'',
@@ -58,7 +57,7 @@
                                 path:'/Personal'
                             })
                         }else{
-                            
+
                         }
                     }).catch((err) => {
                         console.log(err)
@@ -87,7 +86,7 @@
                 .new_tel{
                     float: left;
                     width: 70%;
-                    
+
                 }
                 .get_code{
                     width: calc(30% - 0.3rem);
@@ -111,7 +110,7 @@
             width:6.91rem;
             height:0.89rem;
             background:rgba(255,220,75,1);
-            border-radius: 0.19rem ; 
+            border-radius: 0.19rem ;
             color: #333;
             font-size: 0.32rem;
             margin: 0.4rem auto 0;

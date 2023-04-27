@@ -11,7 +11,7 @@
             <input type="number" placeholder="请填写快递/物流单号" v-model="logisticsCode">
         </p>
         <!-- 底部按钮 -->
-        <button class="ensure" @click="ensure()">确定</button> 
+        <button class="ensure" @click="ensure()">确定</button>
         <!-- 快递公司弹出框 -->
         <mt-popup v-model="company" position="bottom" class="state_win">
             <header>快递公司</header>
@@ -20,9 +20,9 @@
                     <li :key="index" @click="choose(item, index)" v-for="(item,index) in companys">
                         <label class="mint-radiolist-label">
                             <span class="mint-radio">
-                                <input type="radio" class="mint-radio-input" :value="item.express_company" v-model="logisticsCompany"> 
+                                <input type="radio" class="mint-radio-input" :value="item.express_company" v-model="logisticsCompany">
                                 <span class="mint-radio-core"></span>
-                            </span> 
+                            </span>
                             <div class="mint-radio-label">
                                 <h6>{{item.express_company}}</h6>
                             </div>
@@ -30,18 +30,19 @@
                     </li>
                 </ul>
             </div>
-        </mt-popup>  
+        </mt-popup>
     </div>
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios';
-    // 引入qs
-    import qs from 'qs';
-    // 从mint-ui中调用Popup
-    import { Popup,Toast } from 'mint-ui';
-    export default {
+// 引入axios
+import axios from 'axios';
+// 引入qs
+import qs from 'qs';
+// 从mint-ui中调用Popup
+import {Toast} from 'mint-ui';
+
+export default {
         data(){
             return {
                 logisticsCode:'',
@@ -54,7 +55,7 @@
         methods:{
             // 确认选择
             ensure(){
-                
+
                 if(this.expressTemplateId != ''){
                     if(this.logisticsCompany){
                         if(this.logisticsCode.length > 8 && this.logisticsCode.length < 14){
@@ -66,7 +67,7 @@
                 }else{
                     Toast('请选择快递公司')
                 }
-                
+
             },
             // 获取快递公司
             getCompany(){
@@ -83,7 +84,7 @@
             // 选择
             choose(item, index){
                 this.company = false;
-                this.expressTemplateId = item.express_template_id;             
+                this.expressTemplateId = item.express_template_id;
             },
             // 确认物流信息
             Logistics(){
@@ -124,7 +125,7 @@
             }
             p{
                 float: right;
-               
+
                 i{
                     display: inline-block;
                     margin-left: 0.15rem;
@@ -191,7 +192,7 @@
                             }
                         }
                     }
-                    
+
                 }
             }
         }

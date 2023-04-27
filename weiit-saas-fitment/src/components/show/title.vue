@@ -4,12 +4,12 @@
             <h6 v-if="inputTitle == ''" :style="{textAlign:style}" :class="{'active':titleStyle == 'style2'}">
                 <span class="line" v-if="titleStyle == 'style2'"></span>
                 <span class="txt">点击编辑『标题』</span>
-                <span class="line" v-if="titleStyle == 'style2'"></span>                
+                <span class="line" v-if="titleStyle == 'style2'"></span>
             </h6>
             <h6 v-else :style="{textAlign:style}" :class="{'active':titleStyle == 'style2'}">
                 <span class="line" v-if="titleStyle == 'style2'"></span>
                 <span class="txt">{{inputTitle}}</span>
-                <span class="line" v-if="titleStyle == 'style2'"></span> 
+                <span class="line" v-if="titleStyle == 'style2'"></span>
             </h6>
             <span class="more" v-if="more == 'isHave'">更多></span>
         </div>
@@ -22,13 +22,14 @@
 </template>
 
 <script>
-    // 设置标题
-    import setTitle from '@/components/set/setTitle'
-    // 设置头部
-    import headModify from '@/components/common/headModify'
-    import List from '../../../static/js/List'
-    import {mapActions} from 'vuex'
-    export default {
+// 设置标题
+import setTitle from '@/components/set/setTitle'
+// 设置头部
+import headModify from '@/components/common/headModify'
+import List from '../../../static/js/List'
+import {mapActions} from 'vuex'
+
+export default {
         props:{
             keyText:String,
             tempId:Number,
@@ -146,7 +147,7 @@
         box-sizing: border-box;
         z-index: 5;
     }
-    .modify_box:after, 
+    .modify_box:after,
     .modify_box:before {
         right: 100%;
         top: 20px;

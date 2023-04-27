@@ -31,7 +31,7 @@ padding-left:0px;
 	<div class="login_bg">
 		<!--头部logo部分-->
 		<div class="logo">
-			<a href="http://www.wstore.me"><img src="${pageContext.request.contextPath}/resource/images/login_logo.png" alt="" /></a>
+			<a href="http://www.wei-it.com"><img src="${pageContext.request.contextPath}/resource/images/login_logo.png" alt="" /></a>
 		</div>
 		<!--右侧登陆框-->
 		<div class="login_box">
@@ -70,20 +70,20 @@ padding-left:0px;
 			<span class="img">
 			<img src="${pageContext.request.contextPath}/resource/images/qq.png" alt="">
 			<div class="con-qrcode">
-				<img src="${pageContext.request.contextPath}/resource/images/qq_qrcode.png" alt="">
+				<img src="${pageContext.request.contextPath}/resource/images/qq_qrcode3.jpg" alt="">
 				<p>扫码联系我们</p> 
 			</div> 
 			</span>&nbsp;或
 			<span class="img">
 				<img src="${pageContext.request.contextPath}/resource/images/wechat.png" alt=""> 
 			<div class="con-qrcode">
-				<img src="${pageContext.request.contextPath}/resource/images/wx_qrcode.png" alt=""> 
+				<img src="${pageContext.request.contextPath}/resource/images/wx_qrcode3.jpg" alt="">
 				<p>扫码联系我们</p> 
 			</div>
 			</span>&nbsp;加入客服服务群
 		</div>
 		<div class="banquan">
-			<p>© 2015 - 2018 wstore.me 深圳微邦互联科技有限公司 版权所有 ICP证：
+			<p>© 2015 - 2023 wei-it.com 深圳微邦互联科技有限公司 版权所有 ICP证：
 			<a href="http://www.miitbeian.gov.cn" target="_blank">
 				粤ICP备14012549号
 			</a> 

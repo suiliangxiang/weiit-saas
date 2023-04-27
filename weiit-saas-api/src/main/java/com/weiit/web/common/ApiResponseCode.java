@@ -1,7 +1,7 @@
 package com.weiit.web.common;
 
 /**
- * Created by 罗鸿强 on 2018/5/7.
+ * Created by johnluo on 2018/5/7.
  */
 public enum ApiResponseCode {
     SUCCESS("0","SUCCESS"),

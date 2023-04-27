@@ -5,11 +5,12 @@
 </template>
 
 <script>
-    //引入axios 
-    import axios from 'axios'
-    // 引入qs
-    import qs from 'qs'
-    export default {
+//引入axios
+import axios from 'axios'
+// 引入qs
+import qs from 'qs'
+
+export default {
         beforeRouteEnter:(to,from,next)=>{
             var u = navigator.userAgent;
             //ios终端
@@ -39,7 +40,7 @@
                         signature: res.data.data.signature,// 必填，签名
                         jsApiList: [
                                     "onMenuShareTimeline",//分享朋友圈接口
-                                    "onMenuShareAppMessage",//分享给朋友接口  
+                                    "onMenuShareAppMessage",//分享给朋友接口
                                     "chooseWXPay"
                         ] // 必填，需要使用的JS接口列表
                     });

@@ -1,15 +1,15 @@
 <template>
     <div class="coupon_box">
-        <div class="nav">  
+        <div class="nav">
             <mt-navbar v-model="active">
                 <mt-tab-item id="all">全部</mt-tab-item>
                 <mt-tab-item id="used">已使用</mt-tab-item>
                 <mt-tab-item id="overstayed">已过期</mt-tab-item>
             </mt-navbar>
-        </div> 
-        <div class="page-tab-container">  
-            <mt-tab-container class="page-tabbar-tab-container" v-model="active">  
-                <mt-tab-container-item id="all" class="tab_item">  
+        </div>
+        <div class="page-tab-container">
+            <mt-tab-container class="page-tabbar-tab-container" v-model="active">
+                <mt-tab-container-item id="all" class="tab_item">
                      <!-- 全部优惠券 -->
                      <div class="coupon_all">
                         <mt-loadmore :bottom-method="loadBottom" :bottomDropText="bottomText" :bottom-all-loaded="allLoaded" :auto-fill="false" ref="loadmore">
@@ -19,17 +19,17 @@
                                 </li>
                             </ul>
                             <no-more :types="allCoupon" v-if="allLoaded && allCoupon.length > 0"></no-more>
-                            
+
                         </mt-loadmore>
-                        
+
                      </div>
                      <loading v-show="isLoading"></loading>
                      <div class="empty" v-if="allCoupon.length == 0 && !isLoading">
                          <empty :fatherComponent="'coupon'"></empty>
                      </div>
-                     
-                </mt-tab-container-item>  
-                <mt-tab-container-item id="used" class="tab_item"> 
+
+                </mt-tab-container-item>
+                <mt-tab-container-item id="used" class="tab_item">
                      <!-- 已使用优惠券 -->
                      <div class="coupon_all">
                          <ul class="coupon_list">
@@ -42,8 +42,8 @@
                             没有已使用的优惠券~
                         </div>
                      </div>
-                </mt-tab-container-item>  
-                <mt-tab-container-item id="overstayed" class="tab_item">  
+                </mt-tab-container-item>
+                <mt-tab-container-item id="overstayed" class="tab_item">
                     <!-- 已过期优惠券 -->
                     <div class="coupon_all">
                         <ul class="coupon_list">
@@ -56,30 +56,30 @@
                             没有已过期的优惠券~
                         </div>
                     </div>
-                </mt-tab-container-item>  
-            </mt-tab-container>  
-        </div> 
-        <div class="foot_nav" v-show="!isLoading"> 
-        </div> 
+                </mt-tab-container-item>
+            </mt-tab-container>
+        </div>
+        <div class="foot_nav" v-show="!isLoading">
+        </div>
     </div>
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios'
-    // 引入qs
-    import qs from 'qs'
-    // 引入mint-ui中TabContainer,TabContainerItem,Navbar作为选项卡切换
-    import { TabContainer, TabContainerItem, Navbar, Loadmore } from 'mint-ui';
-    // 引入每一条优惠券组件
-    import usage from '@/components/usage'
-    // 引入没有更多了组件
-    import noMore from '@/components/noMore'
-    // 引入当内容为空时组件
-    import empty from '@/components/empty'
-    // 引入加载组件
-    import loading from '@/components/loading'
-    export default {
+// 引入axios
+import axios from 'axios'
+// 引入qs
+import qs from 'qs'
+// 引入mint-ui中TabContainer,TabContainerItem,Navbar作为选项卡切换
+// 引入每一条优惠券组件
+import usage from '@/components/usage'
+// 引入没有更多了组件
+import noMore from '@/components/noMore'
+// 引入当内容为空时组件
+import empty from '@/components/empty'
+// 引入加载组件
+import loading from '@/components/loading'
+
+export default {
         data(){
             return {
                 active:'all',
@@ -192,7 +192,7 @@
                     .coupon_list{
                         li{
                             margin-top: 0.2rem;
-                            border-radius:  0.1rem; 
+                            border-radius:  0.1rem;
                             overflow: hidden;
                         }
                     }

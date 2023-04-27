@@ -1,25 +1,25 @@
 <template>
     <div class="order">
-        <div class="nav">  
+        <div class="nav">
             <mt-navbar v-model="active">
                 <mt-tab-item id="all">
                     <div @click="getAll()" class="tabNav">
-                        <a href="javascript:;">全部</a> 
+                        <a href="javascript:;">全部</a>
                     </div>
                 </mt-tab-item>
                 <mt-tab-item id="obligation">
                     <div @click="getObligation()" class="tabNav">
-                        <a href="javascript:;">待付款</a> 
+                        <a href="javascript:;">待付款</a>
                     </div>
                 </mt-tab-item>
                 <mt-tab-item id="delivery">
                     <div @click="getDelivery()" class="tabNav">
-                        <a href="javascript:;">待发货</a> 
+                        <a href="javascript:;">待发货</a>
                     </div>
                 </mt-tab-item>
                 <mt-tab-item id="received">
                     <div @click="getReceived()" class="tabNav">
-                        <a href="javascript:;">待收货</a> 
+                        <a href="javascript:;">待收货</a>
                     </div>
                 </mt-tab-item>
                 <!-- <mt-tab-item id="all" @click="getAll()">全部</mt-tab-item>
@@ -27,11 +27,11 @@
                 <mt-tab-item id="delivery" @click="getDelivery()">待发货</mt-tab-item>
                 <mt-tab-item id="received" @click="getReceived()">待收货</mt-tab-item> -->
             </mt-navbar>
-        </div>  
-        <div class="page-tab-container">  
-            <mt-tab-container class="page-tabbar-tab-container" v-model="active">  
-                <mt-tab-container-item id="all">  
-                    <!-- cell组件 -->  
+        </div>
+        <div class="page-tab-container">
+            <mt-tab-container class="page-tabbar-tab-container" v-model="active">
+                <mt-tab-container-item id="all">
+                    <!-- cell组件 -->
                     <!-- 全部订单 -->
                     <div class="goodList">
                         <div class="goodListMenu">
@@ -71,11 +71,11 @@
                             <pay-load v-show="isPay"></pay-load>
                             <loading v-show="isLoading1"></loading>
                         </div>
-                    </div> 
+                    </div>
                     <empty v-if="!isLoading1 && allOrderGoods.length == 0" :fatherComponent="fatherComponent"></empty>
-                </mt-tab-container-item>  
-                <mt-tab-container-item id="obligation">  
-                    <!-- cell组件 --> 
+                </mt-tab-container-item>
+                <mt-tab-container-item id="obligation">
+                    <!-- cell组件 -->
                     <!-- 待付款 -->
                     <div class="goodList" v-if="obligationOrderGoods.length > 0">
                         <div class="goodListMenu">
@@ -114,11 +114,11 @@
                             <no-more v-if="allLoaded2 && obligationOrderGoods.length > 0"></no-more>
                             <pay-load v-show="isPay"></pay-load>
                         </div>
-                    </div> 
+                    </div>
                     <empty v-if="!isLoading2 && obligationOrderGoods.length == 0" :fatherComponent="fatherComponent"></empty>
-                </mt-tab-container-item>  
-                <mt-tab-container-item id="delivery">  
-                    <!-- cell组件 -->  
+                </mt-tab-container-item>
+                <mt-tab-container-item id="delivery">
+                    <!-- cell组件 -->
                     <!-- 待发货 -->
                     <div class="goodList" v-if="deliveryOrderGoods.length > 0">
                         <div class="goodListMenu">
@@ -153,11 +153,11 @@
                             <loading v-show="isLoading3"></loading>
                             <no-more v-if="allLoaded3 && deliveryOrderGoods.length > 0"></no-more>
                         </div>
-                    </div> 
+                    </div>
                     <empty v-if="!isLoading3 && deliveryOrderGoods.length == 0" :fatherComponent="fatherComponent"></empty>
-                </mt-tab-container-item>  
-                <mt-tab-container-item id="received">  
-                    <!-- cell组件 -->  
+                </mt-tab-container-item>
+                <mt-tab-container-item id="received">
+                    <!-- cell组件 -->
                     <!-- 待收货 -->
                     <div class="goodList" v-if="receivedOrderGoods.length > 0">
                         <div class="goodListMenu">
@@ -192,22 +192,22 @@
                             <loading v-show="isLoading4"></loading>
                             <no-more v-if="allLoaded4 && receivedOrderGoods.length > 0"></no-more>
                         </div>
-                    </div> 
+                    </div>
                     <empty v-if="!isLoading4 && receivedOrderGoods.length == 0" :fatherComponent="fatherComponent"></empty>
-                </mt-tab-container-item>  
-            </mt-tab-container>  
+                </mt-tab-container-item>
+            </mt-tab-container>
         </div>
-        
-        <!-- 选择支付方式 --> 
+
+        <!-- 选择支付方式 -->
         <mt-popup v-model="payment" position="bottom">
             <div class="payment">
                 <ul>
                     <li>
                         <label class="mint-radiolist-label">
                             <span class="mint-radio">
-                                <input type="radio" class="mint-radio-input" value="wx" v-model="payment_type"> 
+                                <input type="radio" class="mint-radio-input" value="wx" v-model="payment_type">
                                 <span class="mint-radio-core"></span>
-                            </span> 
+                            </span>
                         </label>
                         <div class="cost_pic">
                             <img src="static/images/wx.png" alt="">
@@ -220,9 +220,9 @@
                     <li v-if="balancePayAble">
                         <label class="mint-radiolist-label">
                             <span class="mint-radio">
-                                <input type="radio" class="mint-radio-input" value="balance" v-model="payment_type"> 
+                                <input type="radio" class="mint-radio-input" value="balance" v-model="payment_type">
                                 <span class="mint-radio-core"></span>
-                            </span> 
+                            </span>
                         </label>
                         <div class="cost_pic">
                             <img src="static/images/balance.png" alt="">
@@ -238,26 +238,27 @@
                 </ul>
             </div>
         </mt-popup>
-        <div class="overlayer" v-if="isPay" @touchmove.prevent></div>  
+        <div class="overlayer" v-if="isPay" @touchmove.prevent></div>
     </div>
 </template>
 
 <script>
-    //引入axios 
-    import axios from 'axios'
-    // 引入qs
-    import qs from 'qs'
-    // 从mint-ui中引入TabContainer, TabContainerItem,Navbar
-    import { Navbar, TabItem, MessageBox, Toast, loadmore } from 'mint-ui';
-    // 引入商品信息
-    import GoodInfor from '@/components/goodInfor'
-    // 引入当内容为空时
-    import empty from '@/components/empty'
-    // 引入加载组件
-    import loading from '@/components/loading'
-    import payLoad from '@/components/payLoad'
-    import noMore from '@/components/noMore'
-    export default {
+//引入axios
+import axios from 'axios'
+// 引入qs
+import qs from 'qs'
+// 从mint-ui中引入TabContainer, TabContainerItem,Navbar
+import {MessageBox, Toast} from 'mint-ui';
+// 引入商品信息
+import GoodInfor from '@/components/goodInfor'
+// 引入当内容为空时
+import empty from '@/components/empty'
+// 引入加载组件
+import loading from '@/components/loading'
+import payLoad from '@/components/payLoad'
+import noMore from '@/components/noMore'
+
+export default {
         data(){
             return {
                 active:localStorage.getItem('orderStyle') ? localStorage.getItem('orderStyle') : 'all',
@@ -336,7 +337,7 @@
                 axios.post('/api/order/orderList',qs.stringify({
                     page:this.pageNo1,
                 })).then((res) => {
-                    if(res.data.code == '0'){  
+                    if(res.data.code == '0'){
                         let list = res.data.data.list;
                         console.log(list);
                         list.forEach(item => {
@@ -475,7 +476,7 @@
                         }
                     })
                 }
-                
+
             },
             // 计算商品总数
             computeCount(arr){
@@ -526,7 +527,7 @@
                         console.log('123');
                     }
                 });
-                
+
             },
             // 查看物流详情
             lookLogistics(elm){
@@ -655,7 +656,7 @@
                                     this.isFlag = true;
                                     this.isPay = false;
                                 })
-                                
+
                             }
                         }).catch((err) => {
                             if (err == 'cancel') {
@@ -727,7 +728,7 @@
                         signature: res.data.data.signature,// 必填，签名
                         jsApiList: [
                                     "onMenuShareTimeline",//分享朋友圈接口
-                                    "onMenuShareAppMessage",//分享给朋友接口  
+                                    "onMenuShareAppMessage",//分享给朋友接口
                                     "chooseWXPay"
                         ] // 必填，需要使用的JS接口列表
                     });
@@ -740,7 +741,7 @@
 </script>
 
 <style scoped lang="scss">
-    
+
     .mint-cell{
         margin-top: 0.2rem;
     }
@@ -850,7 +851,7 @@
             }
         }
     }
-    
+
     .nav{
         position: fixed;
         left: 0;
@@ -886,7 +887,7 @@
                     padding:0;
                     .mint-radio-core{
                         display: block;
-                        
+
                     }
                 }
                 .cost_pic{
@@ -918,7 +919,7 @@
                     height: 0.74rem;
                     line-height: 0.74rem;
                     background-color: #fde84d;
-                    color: #333; 
+                    color: #333;
                     font-size: 0.32rem;
                     text-align: center;
                     border-radius: 0.1rem;

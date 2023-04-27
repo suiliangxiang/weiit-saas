@@ -20,11 +20,12 @@
 </template>
 
 <script>
-    //引入axios 
-    import axios from 'axios';
-    // 引入qs
-    import qs from 'qs'
-    export default {
+//引入axios
+import axios from 'axios';
+// 引入qs
+import qs from 'qs'
+
+export default {
         props:['coupons'],
         data(){
             return {

@@ -26,12 +26,12 @@
 </template>
 
 <script>
-    // 引入顶部商品组件
-    import good from '@/views/common/good';
-    import axios from 'axios';
-    import qs from 'qs';
-    import loading from '@/components/loading'
-    export default {
+// 引入顶部商品组件
+import axios from 'axios';
+import qs from 'qs';
+import loading from '@/components/loading'
+
+export default {
         data() {
             return {
                 productGroup: [],
@@ -67,7 +67,7 @@
             }
         },
         mounted(){
-            
+
             let groupIds = this.$route.params.target_id;
             if(groupIds){
                 localStorage.setItem('groupIds',groupIds);
@@ -76,7 +76,7 @@
         },
         components:{
             loading
-            
+
         }
     }
 </script>

@@ -53,7 +53,7 @@
                     <div class="search">
                         <i class="icon iconfont icon-sousuo1"></i>
                         <input type="text" v-model="searchTxt">
-                        <i class="icon iconfont icon-guanbi" v-show="searchTxt != ''" @click="searchTxt=''"></i>                        
+                        <i class="icon iconfont icon-guanbi" v-show="searchTxt != ''" @click="searchTxt=''"></i>
                     </div>
                 </div> -->
                 <div class="tabs">
@@ -111,10 +111,11 @@
 </template>
 
 <script>
-    // 引入时间计算
-    import {getTime} from '../../../static/js/getTime.js'
-    import {mapState,mapMutations} from 'vuex'
-    export default {
+// 引入时间计算
+import {getTime} from '../../../static/js/getTime.js'
+import {mapMutations, mapState} from 'vuex'
+
+export default {
          props:['pageParam'],
         data() {
             return {
@@ -140,7 +141,7 @@
                 this.getAllCoupons();
                 this.$refs.multipleTable.clearSelection();
                 this.isOk=true;
-                
+
             },
             // 跳转页数
             handleSelectionChange(val) {
@@ -148,7 +149,7 @@
             },
             // 确认选择
             choicePic(){
-            	
+
                 this.isOk = false;
                 let _this = this;
                 this.multipleSelection.forEach((item) => {
@@ -176,7 +177,7 @@
                 }else{
                     this.changeState();
                 }
-				
+
             },
             // 计算当前页面展示数据
             handleCurrentChange(val) {
@@ -243,7 +244,7 @@
                     }
                     this.$emit('event', coupon);
                 }
-                
+
             },
             // 传递数据
             setData(){
@@ -347,13 +348,13 @@
     .add .setChoice .last{
         margin-left: 0;
         margin-top: 5px;
-    } 
+    }
     .add .contol_group{
         margin-top: 0;
     }
     .add .contol_group span{
         float: left;
-        width:69px; 
+        width:69px;
     }
     .demonstration1{
         margin-top: 10px;
@@ -374,7 +375,7 @@
         border: 1px dotted #ddd;
         text-align: center;
         line-height: 53px;
-        
+
     }
     .add .add_voice .icon{
         font-size: 20px;
@@ -449,7 +450,7 @@
         padding:0 27px;
         font-size: 12px;
         color: #333;
-        border: 1px solid #bbb; 
+        border: 1px solid #bbb;
         min-width: 80px;
     }
     .search .icon{

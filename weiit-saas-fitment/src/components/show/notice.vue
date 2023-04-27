@@ -11,18 +11,19 @@
         <div class="modify_box head_modify">
             <head-modify :keyText="keyText"></head-modify>
             <set-notice @event="getData" :pageParam="pageParam"></set-notice>
-        </div>  
+        </div>
     </div>
 </template>
 
 <script>
-    // 设置公告
-    import setNotice from '@/components/set/setNotice'
-    // 设置头部
-    import headModify from '@/components/common/headModify'
-    import List from '../../../static/js/List'
-    import {mapActions} from 'vuex'
-    export default {
+// 设置公告
+import setNotice from '@/components/set/setNotice'
+// 设置头部
+import headModify from '@/components/common/headModify'
+import List from '../../../static/js/List'
+import {mapActions} from 'vuex'
+
+export default {
         props:{
             keyText:String,
             tempId:Number,
@@ -126,7 +127,7 @@
         box-sizing: border-box;
         z-index: 5;
     }
-    .modify_box:after, 
+    .modify_box:after,
     .modify_box:before {
         right: 100%;
         top: 20px;

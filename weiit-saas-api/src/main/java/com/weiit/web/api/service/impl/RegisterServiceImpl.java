@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 
 /**
- * Created by 罗鸿强 on 2018/8/15.
+ * Created by johnluo on 2018/8/15.
  */
 @Service
 public class RegisterServiceImpl extends AbstractService implements RegisterService {

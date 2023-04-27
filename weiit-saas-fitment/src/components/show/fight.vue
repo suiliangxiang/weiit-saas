@@ -4,7 +4,7 @@
         	<div class="fight-title" v-if="haveTitle == 'yes'">
         		<div class="title-text fn-clear">
         			<span class="line"></span>
-	                <span class="title">{{fightTitle}}</span> 
+	                <span class="title">{{fightTitle}}</span>
 	                <span class="line"></span>
         		</div>
         		<a class="more" href="javascript:;">更多 ></a>
@@ -38,15 +38,16 @@
 </template>
 
 <script>
-    // 设置拼团
-    import setFight from '@/components/set/setFight'
-    // 设置头部
-    import headModify from '@/components/common/headModify'
-    //引用拼团商品组件 
-    import fightGood from '@/components/common/fightGood'
-    import List from '../../../static/js/List'
-    import {mapActions} from 'vuex'
-    export default {
+// 设置拼团
+import setFight from '@/components/set/setFight'
+// 设置头部
+import headModify from '@/components/common/headModify'
+//引用拼团商品组件
+import fightGood from '@/components/common/fightGood'
+import List from '../../../static/js/List'
+import {mapActions} from 'vuex'
+
+export default {
         props:{
             keyText:String,
             tempId:Number,
@@ -170,7 +171,7 @@
                         (err);
                     })
                 }
-                
+
                 // 修改数据
                 this.changeData({id:this.tempId,op:fight});
             },
@@ -226,7 +227,7 @@
                             (err);
                         })
                     }
-	                
+
 	            }else if(this.pageParam.addFun == 'automatic'){
                     this.$ajax({
                         methods:'get',
@@ -332,7 +333,7 @@
         box-sizing: border-box;
         z-index: 5;
     }
-    .modify_box:after, 
+    .modify_box:after,
     .modify_box:before {
         right: 100%;
         top: 20px;

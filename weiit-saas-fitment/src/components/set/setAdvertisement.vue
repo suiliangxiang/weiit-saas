@@ -57,7 +57,7 @@
                 </div>
             </div>
         </div>
-        
+
         <p v-if="isMust && navList.length === 0" class="reminder">请选择商品</p>
         <div class="nav_list">
             <div class="add fn-clear" v-for="(item, index) in navList">
@@ -137,7 +137,7 @@
                                 layout="total, prev, pager, next, jumper"
                                 :total="total">
                             </el-pagination>
-                        </div> 
+                        </div>
                     </div>
                     <div class="choice_box choice_box1" v-if="isWinName === 'OuterChain'">
                         <div class="head fn-clear head1">
@@ -154,17 +154,18 @@
                         </div>
                     </div>
                 </div>
-            </div>                                                      
+            </div>
         </div>
         <pic-win :parentComponent="'advertisement'" ref="picWin" @choose="getChoose"></pic-win>
     </div>
 </template>
 
 <script>
-    // 引入组件
-    import picWin from '@/components/common/picWin'
-    import {mapState,mapMutations} from 'vuex';
-    export default {
+// 引入组件
+import picWin from '@/components/common/picWin'
+import {mapMutations, mapState} from 'vuex';
+
+export default {
         props:['pageParam'],
         data(){
             return{
@@ -200,7 +201,7 @@
                 OuterLink:'',
                 total:0,
                 haveBlock:'no'
-                
+
             }
         },
         methods:{
@@ -345,7 +346,7 @@
                     }).catch(err => {
                         (err);
                     })
-            	}else if(type == "detail"){ 
+            	}else if(type == "detail"){
                     this.$ajax({
                         methods:'get',
                         url:'/center/product/productListForPage',
@@ -361,7 +362,7 @@
                     }).catch(err => {
                         (err);
                     })
-            	}	
+            	}
             },
             // 初始化数据
             initData(){
@@ -385,7 +386,7 @@
                 // if(this.OuterLink == ''){
                 //     this.OuterLink = '';
                 // }
-                
+
                  if(this.linkType == 'new'){
                     this.navList[this.icount].navShow = '';
 				    this.navList[this.icount].branchLine = '';
@@ -408,7 +409,7 @@
 			        });
                 }
             }
-            
+
         },
         mounted(){
             this.initData()
@@ -494,7 +495,7 @@
         padding: 0 8px;
         width: 84px;
         line-height: 67px;
-        
+
     }
     .temp_pic img{
         width: 100%;
@@ -502,7 +503,7 @@
     }
     .temp_box p{
         font-size:12px;
-        color: #000; 
+        color: #000;
     }
     /* 添加图片按钮 */
     .addPic a{
@@ -533,7 +534,7 @@
     .add .setChoice .last{
         margin-left: 0;
         margin-top: 5px;
-    } 
+    }
 
     .add .contol_group{
         margin-top: 10px;
@@ -542,7 +543,7 @@
     }
     .add .contol_group span{
         float: left;
-        width:69px; 
+        width:69px;
     }
     .add_pic{
         position: relative;
@@ -774,7 +775,7 @@
     	margin-top: 2px;
     }
     .add .contol_group .el-dropdown span.hasNo{
-        color:#f44;  
+        color:#f44;
     }
     .el-dropdown-menu{
     	height: 200px;

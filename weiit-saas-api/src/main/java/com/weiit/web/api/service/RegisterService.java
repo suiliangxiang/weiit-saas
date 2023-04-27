@@ -4,7 +4,7 @@ import com.weiit.core.entity.E;
 import com.weiit.core.entity.FormMap;
 
 /**
- * Created by 罗鸿强 on 2018/8/15.
+ * Created by johnluo on 2018/8/15.
  */
 public interface RegisterService {
 

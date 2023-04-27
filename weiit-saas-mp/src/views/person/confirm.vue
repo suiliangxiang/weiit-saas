@@ -13,10 +13,10 @@
                         <div class="left_icon" v-else>
                             <span class="dot dot_yes dot1"></span>
                             <span class="dot dot_yes dot1"></span>
-                            <i class="icon iconfont icon-zhifuchenggong"></i>      
-                        </div>  
+                            <i class="icon iconfont icon-zhifuchenggong"></i>
+                        </div>
                         <div class="line line1"></div>
-                        <div class="line line2"></div>         
+                        <div class="line line2"></div>
                     </div>
                     <div class="postal_txt">
                         <div>
@@ -51,9 +51,10 @@
 </template>
 
 <script>
-    // 引入axios 
-    import axios from 'axios'
-    export default {
+// 引入axios
+import axios from 'axios'
+
+export default {
         data(){
             return {
                 // 提现金额
@@ -79,12 +80,12 @@
                             name:'wallet',
                         })
                     }
-                    
+
                 })
                 .catch((err) => {
                     console.log(err);
                 })
-                
+
             }
         },
         mounted(){
@@ -192,16 +193,16 @@
                                }
                             }
                              p{
-                                    font-size: 0.28rem; 
+                                    font-size: 0.28rem;
                                 }
                             margin: 0.7rem 0 0.84rem;
                         }
                     }
                 }
-                
+
             }
             .confirm_con{
-              padding:0.2rem;  
+              padding:0.2rem;
               .confirm_c{
                   margin-bottom: 0.3rem;
                   overflow: hidden;

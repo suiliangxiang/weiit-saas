@@ -16,10 +16,10 @@
 </template>
 
 <script>
-    // 引入富文本模板
-    import { VueEditor } from 'vue2-editor'
-    import axios from 'axios'
-    export default {
+// 引入富文本模板
+import {VueEditor} from 'vue2-editor'
+
+export default {
         props:['pageParam'],
         data() {
             return {
@@ -45,7 +45,8 @@
 		        // NOTE: Your key could be different such as:
 		        // formData.append('file', file)
 		 		// let urlFile = 'http://merchant.woyoulian.com';
-		 		let urlFile = 'http://merchant.wstore.me';
+		 		// let urlFile = 'http://merchant.wstore.me';
+		 		let urlFile = '/diy';
 		        var formData = new FormData();
 		        formData.append('fileDate', file);
 				var that = this;

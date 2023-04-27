@@ -1,7 +1,7 @@
 package com.weiit.web.common;
 
 /**
- * Created by 罗鸿强 on 2018/5/15.
+ * Created by johnluo on 2018/5/15.
  * api 常量类
  */
 public class Constants {

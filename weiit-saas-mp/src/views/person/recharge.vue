@@ -14,12 +14,13 @@
 </template>
 
 <script>
-    // 引入UI组件
-    import { Field,Toast } from 'mint-ui';
-    import axios from 'axios'
-    import qs from 'qs'
-    import payLoad from '@/components/payLoad'
-    export default {
+// 引入UI组件
+import {Toast} from 'mint-ui';
+import axios from 'axios'
+import qs from 'qs'
+import payLoad from '@/components/payLoad'
+
+export default {
         data() {
             return {
                 price: '',
@@ -93,9 +94,9 @@
                     timestamp: res.data.data.timeStamp, // 必填，生成签名的时间戳
                     nonceStr: res.data.data.nonceStr, // 必填，生成签名的随机串
                     signature: res.data.data.signature,// 必填，签名
-                    jsApiList: [ 
+                    jsApiList: [
                                 "onMenuShareTimeline",//分享朋友圈接口
-                                "onMenuShareAppMessage",//分享给朋友接口    
+                                "onMenuShareAppMessage",//分享给朋友接口
                                 "chooseWXPay"
                     ] // 必填，需要使用的JS接口列表
                 });

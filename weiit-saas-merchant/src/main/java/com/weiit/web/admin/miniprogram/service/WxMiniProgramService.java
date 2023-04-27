@@ -7,7 +7,7 @@ import com.weiit.core.service.BaseService;
 import java.util.List;
 
 /**
- * Created by 罗鸿强 on 2018/7/19.
+ * Created by johnluo on 2018/7/19.
  */
 public interface WxMiniProgramService extends BaseService {
 

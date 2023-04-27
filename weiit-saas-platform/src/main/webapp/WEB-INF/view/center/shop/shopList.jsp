@@ -26,7 +26,7 @@
 							<span class="text-semibold">
 							1、蜗店的渠道商合作伙伴，拥有自行开通商户的权利，开通商户后，才可以登录蜗店系统。<br><br>
 							</span>
-							<span class="text-semibold">2、商户开通成功后，渠道商可以看到自己开通过的商户列表，商户可以使用其账户登录商户系统:</span><a href="http://www.wstore.me">www.wstore.me</a><br><br>
+							<span class="text-semibold">2、商户开通成功后，渠道商可以看到自己开通过的商户列表，商户可以使用其账户登录商户系统:</span><a href="http://www.wei-it.com">www.wei-it.com</a><br><br>
 							<span class="text-warning">3、渠道商开通商户，会从渠道账户扣除余额，开通后，可以在右上方点击账户头像-->收支明细查看，不支持退款.</span>
 							  
 						</div>

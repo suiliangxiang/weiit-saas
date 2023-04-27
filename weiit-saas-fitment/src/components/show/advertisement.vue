@@ -10,10 +10,10 @@
                     <span></span>
                 </div>
             </div>
-            
+
             <div class="advertisement_box" v-if=" temp == 'temp2'">
-                <div class="sort sort2">图片</div> 
-                <div class="sort sort2">图片</div> 
+                <div class="sort sort2">图片</div>
+                <div class="sort sort2">图片</div>
             </div>
             <div class="advertisement_box fn-clear advertisement_box1" v-if=" temp == 'temp3'">
                 <div class="sort_box sorts">
@@ -65,7 +65,7 @@
                 <div class="sort sort2" v-for="item in navList">
                     <div class="sort sort2" v-if="item.img == ''">图片</div>
                     <img :src="item.img" alt="" v-else draggable="false">
-                </div> 
+                </div>
             </div>
             <div class="advertisement_box fn-clear" v-if=" temp == 'temp3'">
                 <div class="sort_box sorts">
@@ -129,13 +129,14 @@
 </template>
 
 <script>
-    // 设置广告  
-    import setAdvertisement from '@/components/set/setAdvertisement'
-    // 设置头部
-    import headModify from '@/components/common/headModify'
-    import List from '../../../static/js/List'
-    import {mapActions} from 'vuex'
-    export default {
+// 设置广告
+import setAdvertisement from '@/components/set/setAdvertisement'
+// 设置头部
+import headModify from '@/components/common/headModify'
+import List from '../../../static/js/List'
+import {mapActions} from 'vuex'
+
+export default {
         props:{
             keyText:String,
             tempId:Number,
@@ -153,10 +154,10 @@
                     }
                 },
             },
-            
+
         },
         data(){
-            return {    
+            return {
                 temp:'temp1',
                 navList:[],
                 navBigList:[],
@@ -185,7 +186,7 @@
                 this.changeData({id:this.tempId,op:this.obj});
             },
             getAdver(data){
-                
+
                 this.navList = data.navList;
                 this.navBigList = data.navList.slice(0,1);
                 this.navSmallList = data.navList.slice(1,3);
@@ -197,7 +198,7 @@
                 this.computedHeight();
                 this.obj.imgHeight = this.imgHeight;
                 this.obj.imgWidth = this.imgWidth;
-                
+
                 this.changeData({id:this.tempId,op:this.obj});
             },
             // 存储数据

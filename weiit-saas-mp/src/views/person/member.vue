@@ -13,15 +13,15 @@
 </template>
 
 <script>
-    // 引入better-scroll组件
-    import BScroll from 'better-scroll'
-    // 引入会员卡 
-    import card from '@/components/card'
-    // 引入没有更多了
-    import noMore from '@/components/noMore'
-    // 引入加载组件
-    import loading from '@/components/loading'
-    export default {
+// 引入better-scroll组件
+// 引入会员卡
+import card from '@/components/card'
+// 引入没有更多了
+import noMore from '@/components/noMore'
+// 引入加载组件
+import loading from '@/components/loading'
+
+export default {
         data(){
             return{
                 cardnum:1,

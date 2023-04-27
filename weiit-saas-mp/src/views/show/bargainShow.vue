@@ -16,15 +16,16 @@
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios'
-    // 引入qs
-    import qs from 'qs'
-    // 砍价头部
-    import bargainHead from '@/views/common/bargainHead'
-    // 砍价商品
-    import bargainGood from '@/views/common/bargainGood'
-    export default {
+// 引入axios
+import axios from 'axios'
+// 引入qs
+import qs from 'qs'
+// 砍价头部
+import bargainHead from '@/views/common/bargainHead'
+// 砍价商品
+import bargainGood from '@/views/common/bargainGood'
+
+export default {
         props:['pageParam'],
         data(){
             return {

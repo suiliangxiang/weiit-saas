@@ -49,7 +49,7 @@
 					</div>
 					 <div class="m-t-20">
 						版权企业:
-						 <a href="">深圳微邦互联科技有限公司</a>
+						 <a href="https://wei-it.com/">深圳微邦互联科技有限公司</a>
 					</div> 
 				</form>
 			</div>

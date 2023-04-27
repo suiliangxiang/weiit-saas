@@ -5,13 +5,14 @@
 </template>
 
 <script>
-    import {getQueryString} from '../../static/js/getQueryString';
-    import cookie from '../../static/js/cookies';
-    import axios from 'axios';
-    import qs from 'qs';
-    export default {
+import {getQueryString} from '../../static/js/getQueryString';
+import cookie from '../../static/js/cookies';
+import axios from 'axios';
+import qs from 'qs';
+
+export default {
         data(){
-            return {  
+            return {
             }
         },
         mounted(){
@@ -45,15 +46,15 @@
                         }
                     }).catch(err => {
                         console.log(err)
-                    }) 
+                    })
                 }
             }).catch((err) => {
                 console.log(err)
             })
-            
+
         },
         methods: {
-            
+
 
             // 获取个人信息
             getUser(code,appid){
@@ -63,7 +64,7 @@
                     code:code,
                     appid:appid,
                     share_user_id:share_user_id
-                })).then((res) => {  
+                })).then((res) => {
                     if(res.data.code == '0'){
                         let token = res.data.data.token;
                         cookie.set('token',token + '');

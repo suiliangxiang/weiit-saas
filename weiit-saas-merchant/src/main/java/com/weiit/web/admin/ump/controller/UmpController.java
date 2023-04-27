@@ -10,6 +10,7 @@ import com.weiit.core.entity.FormMap;
 import com.weiit.core.view.UIview;
 import com.weiit.resource.common.utils.RedisUtil;
 import com.weiit.resource.common.utils.WeiitQrCodeUtil;
+import com.weiit.resource.common.utils.WeiitUtil;
 import com.weiit.web.admin.login.service.LoginService;
 import com.weiit.web.admin.publics.service.ParameterService;
 import com.weiit.web.admin.ump.service.BargainService;
@@ -256,7 +257,7 @@ public class UmpController extends AdminController {
 	    	String body="开通“"+serviceInfo.getStr("service_name")+"”服务,服务费用:"+pay_price+"元.";
 	    	String trade_type="NATIVE";
 	    	String spbill_create_ip="127.0.0.1";
-	    	String notifyUrl="http://merchant.wstore.me/center/ump/servicePayFinish";
+	    	String notifyUrl= WeiitUtil.getPropertiesKey("weiit.merchant.url")+ "/center/ump/servicePayFinish";
 	    	WxPayUnifiedOrderRequest payInfo = WxPayUnifiedOrderRequest.newBuilder()
 					.outTradeNo(out_trade_no+"")
 					.totalFee((int)(pay_price*100))

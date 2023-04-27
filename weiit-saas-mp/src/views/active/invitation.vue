@@ -29,7 +29,7 @@
                 <div class="fight_detail" v-if="surplus.length > 0">
                     <!-- <div class="fight_state"></div> -->
                     <p class="invite_txt">还差<span>{{surplus.length}}</span>人，赶快邀请好友拼单吧</p>
-                    
+
                     <a href="javascript:;" class="invite_btn" v-if="isOriginator" @click="isShare = true">邀请好友拼单 <span>{{countdDown()}}{{time}}</span>后到期</a>
                     <a href="javascript:;" class="invite_btn" v-else @click="partakeActive">参与活动</a>
                 </div>
@@ -201,20 +201,20 @@
 </template>
 
 <script>
-    // 引入交互数据工具
-    import axios from 'axios'
-    import qs from 'qs'
-    // 引入倒计时
-    import {downTime} from '../../../static/js/downTime';
-    // 引入获取参数函数
-    import {getQueryString} from '../../../static/js/getQueryString';
-    // 引入加载组件
-    import loading from '@/components/loading'
-    import payLoad from '@/components/payLoad'
-    import textNav from '@/components/textNav'
-    // 引入 Toast
-    import { Toast } from 'mint-ui';
-    export default {
+// 引入交互数据工具
+import axios from 'axios'
+import qs from 'qs'
+// 引入倒计时
+import {downTime} from '../../../static/js/downTime';
+// 引入获取参数函数
+import {getQueryString} from '../../../static/js/getQueryString';
+// 引入加载组件
+import loading from '@/components/loading'
+import textNav from '@/components/textNav'
+// 引入 Toast
+import {Toast} from 'mint-ui';
+
+export default {
         data() {
             return {
                 share: true,
@@ -306,7 +306,7 @@
                 let host = document.location.hostname;
                 let protocol = document.location.protocol;
                 let user_id = localStorage.getItem('user_id');
-                let currentUrl = `${protocol}//${host}`; 
+                let currentUrl = `${protocol}//${host}`;
                 let url = currentUrl + "/invitation?g_order_id=" + g_order_id + "&share_user_id=" + share_user_id + "&groupon_id=" + localStorage.getItem('groupon_id') +  "&product_id=" + localStorage.getItem('product_id') + "&forward=invitation&share_user_id=" + user_id;
                 let title = localStorage.getItem('shareInvalutionName');
                 let imgUrl = this.$url + localStorage.getItem('shareInvalutionImage');
@@ -369,7 +369,7 @@
                     this.num = totalCount;
                     Toast('你添加的数量超过商品上限,请不要再添加了');
                 }
-                
+
                 e.stopPropagation();
             },
             // 减少商品数量
@@ -398,7 +398,7 @@
                 this.$router.push({
                     path:'/fightShop',
                     name:'fightShop'
-                }) 
+                })
             },
             // 获取商品信息
             getGoodSize(){
@@ -420,7 +420,7 @@
                 })
             },
             //将其他的规则设置为未选中状态
-            doChooseSize (row){ 
+            doChooseSize (row){
                 // 获取当前行对象
                 let obj = this.product_info.spec_info[row];
                 // 遍历设置同行中所有数据字段isChecked为false
@@ -436,7 +436,7 @@
                 var list =  this.product_info.spec_info[row].values;
                 // 改变对应列中isChecked值
                 list[col].isChecked = true;
-                // 设置数字值 
+                // 设置数字值
                 this.$set( list, col, list[col] );
                 // 首先判断规则选择是否完整
                 let flag = this.checkSize();
@@ -461,12 +461,12 @@
                 }
             },
             // 检测规则是否全部检测
-            checkSize(){ 
+            checkSize(){
                 //如果返回true。那么说明都选中
                 let flag = true;
                 for(let i of this.product_info.spec_info){
                     let item = i;
-                    
+
                     let arr = item.values;
                     let index = arr.findIndex((ele) => {
                         return ele.isChecked
@@ -476,7 +476,7 @@
                         break;
                     }
                 }
-                    
+
                 return flag;
             },
             // 查询库存
@@ -544,7 +544,7 @@
             }else{
                 this.getInvitation(this.g_order_id);
             }
-            
+
         },
         beforeRouteEnter:(to,from,next)=>{
             var u = navigator.userAgent;
@@ -570,7 +570,7 @@
                         signature: res.data.data.signature,// 必填，签名
                         jsApiList: [
                                     "onMenuShareTimeline",//分享朋友圈接口
-                                    "onMenuShareAppMessage",//分享给朋友接口  
+                                    "onMenuShareAppMessage",//分享给朋友接口
                                     "chooseWXPay"
                         ] // 必填，需要使用的JS接口列表
                     });
@@ -708,7 +708,7 @@
                     float: left;
                     font-size: 0.3rem;
                     color: #333;
-                    
+
                 }
                 p{
                     float: right;
@@ -787,7 +787,7 @@
                     &:nth-child(even){
                         margin-right: 0;
                     }
-                    float: left; 
+                    float: left;
                     .goods_pic{
                         width: 2.4rem;
                         height: 2.4rem;
@@ -937,7 +937,7 @@
                 .goods_color{
                     padding:0.3rem 0.2rem;
                     border-bottom: 1px solid #d9d9d9;
-                    
+
                     h6{
                         font-size: 0.28rem;
                         color: #333;
@@ -1053,7 +1053,7 @@
                 background-color: #fff;
                 border-radius: 0.2rem;
                 padding: 0.45rem 0.3rem;
-                
+
                 h5{
                     font-size: 0.32rem;
                     text-align: center;

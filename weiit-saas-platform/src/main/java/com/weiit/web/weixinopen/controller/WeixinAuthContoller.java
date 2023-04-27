@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.util.Locale;
 
 /**
- * Created by 罗鸿强 on 2018/7/16.
+ * Created by johnluo on 2018/7/16.
  */
 @Controller
 @RequestMapping(value = "/")

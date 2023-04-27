@@ -55,21 +55,22 @@
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios'
-    // 引入qs
-    import qs from 'qs'
-    // 从mint-ui中引入Popup,Picker组件
-    import { Popup,Picker,Switch,Toast } from 'mint-ui';
-    // 导入省市区数据
-    import myaddress from '../../../static/json/address.json'
-    export default {
+// 引入axios
+import axios from 'axios'
+// 引入qs
+import qs from 'qs'
+// 从mint-ui中引入Popup,Picker组件
+import {Picker, Toast} from 'mint-ui';
+// 导入省市区数据
+import myaddress from '../../../static/json/address.json'
+
+export default {
         name: 'index',
         data() {
             return {
                 myAddressSlots: [{
                     flex: 1,
-                    defaultIndex: 1,    
+                    defaultIndex: 1,
                     values: myaddress,  //省份数组
                     className: 'slot1',
                     textAlign: 'center'
@@ -131,7 +132,7 @@
             onMyAddressChange(picker, values) {
                 if(values[0]){
                     picker.setSlotValues(1,values[0].child); // Object.keys()会返回一个数组，当前省的数组
-                    picker.setSlotValues(2,values[1].child); 
+                    picker.setSlotValues(2,values[1].child);
                     this.province = values[0].region_name;
                     this.city = values[1].region_name;
                     this.county = values[2].region_name;
@@ -143,7 +144,7 @@
             },
             // 判断是否每个条件都填写完毕
             enough(){
-                
+
                 if(this.myAddressProvince && this.username && this.addressDetail && this.phone){
                     return true
                 }
@@ -286,7 +287,7 @@
                         }
                     })
                 }else if(this.addressRootly == 'address'){
-                    this.$router.push({ 
+                    this.$router.push({
                         path:'/address',
                         name:'address'
                     })
@@ -321,12 +322,12 @@
             'mt-picker': Picker
         },
         mounted(){
-            
+
             // this.myAddressSlots[0].child[0].defaultIndex = 2;
             // this.myAddressProvince = '湖北省';
             // this.myAddressCity = '武汉市';
             // this.myAddresscounty = '洪山区';
-            
+
             let address = this.$route.params.address;
             // 判断是否是从编辑页面跳转过来
             if(address){
@@ -343,7 +344,7 @@
                         this.myAddressSlots[0].defaultIndex = index;
                     }
                 })
-                // 
+                //
                 if(addressItem.is_default == '-1'){
                     this.defaultly = false;
                 }else{
@@ -399,13 +400,13 @@
                                 span{
                                     display: inline-block;
                                 }
-                                
+
                             }
                         }
-                        
+
                         .addressCity{
                             float: left;
-                            
+
                         }
                         label{
                             float: left;
@@ -440,7 +441,7 @@
                 border:none 0;
                 margin-top: 0.5rem;
                 &.active{
-                    background-color:#FFDC4B; 
+                    background-color:#FFDC4B;
                     color: #333;
                 }
                 &.current{

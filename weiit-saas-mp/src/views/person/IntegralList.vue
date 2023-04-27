@@ -28,16 +28,16 @@
         </ul>
         <pay-load v-show="isPay"></pay-load>
         <loading v-show="isLoading"></loading>
-        <!-- 选择支付方式 --> 
+        <!-- 选择支付方式 -->
         <mt-popup v-model="payment" position="bottom">
             <div class="payment">
                 <ul>
                     <li>
                         <label class="mint-radiolist-label">
                             <span class="mint-radio">
-                                <input type="radio" class="mint-radio-input" value="wx" v-model="payment_type"> 
+                                <input type="radio" class="mint-radio-input" value="wx" v-model="payment_type">
                                 <span class="mint-radio-core"></span>
-                            </span> 
+                            </span>
                         </label>
                         <div class="cost_pic">
                             <img src="static/images/wx.png" alt="">
@@ -50,9 +50,9 @@
                     <li v-if="balancePayAble">
                         <label class="mint-radiolist-label">
                             <span class="mint-radio">
-                                <input type="radio" class="mint-radio-input" value="balance" v-model="payment_type"> 
+                                <input type="radio" class="mint-radio-input" value="balance" v-model="payment_type">
                                 <span class="mint-radio-core"></span>
-                            </span> 
+                            </span>
                         </label>
                         <div class="cost_pic">
                             <img src="static/images/balance.png" alt="">
@@ -66,22 +66,23 @@
                         <a href="javascript:;" @click="ensurePayment()" :style="{background:color1,color:'#fff'}">确定</a>
                     </li>
                 </ul>
-                
+
             </div>
         </mt-popup>
-        <div class="overlayer" v-if="isPay" @touchmove.prevent></div>  
+        <div class="overlayer" v-if="isPay" @touchmove.prevent></div>
     </div>
 </template>
 
 <script>
-    // 引入 Swipe, SwipeItem, Popup
-    import { Popup, Toast } from 'mint-ui';
-    import axios from 'axios';
-    import qs from 'qs';
-     // 引入加载组件
-    import loading from '@/components/loading'
-    import payLoad from '@/components/payLoad'
-    export default {
+// 引入 Swipe, SwipeItem, Popup
+import {Toast} from 'mint-ui';
+import axios from 'axios';
+import qs from 'qs';
+// 引入加载组件
+import loading from '@/components/loading'
+import payLoad from '@/components/payLoad'
+
+export default {
         data() {
             return {
                 IntegralList: [],
@@ -196,7 +197,7 @@
                                     this.isFlag = true;
                                     this.isPay = false;
                                 })
-                                
+
                             }
                         }).catch((err) => {
                             if (err == 'cancel') {
@@ -255,7 +256,7 @@
                     line-height: 0.5rem;
                     .order{
                         float: left;
-                        
+
                     }
                     .state{
                         float: right;
@@ -291,7 +292,7 @@
                         }
                         .goods-pays{
                             margin-top: 0.2rem;
-                            
+
                             span{
                                 font-size: 0.3rem;
                                 float: left;
@@ -342,7 +343,7 @@
                         padding:0;
                         .mint-radio-core{
                             display: block;
-                            
+
                         }
                     }
                     .cost_pic{
@@ -374,7 +375,7 @@
                         height: 0.74rem;
                         line-height: 0.74rem;
                         background-color: #fde84d;
-                        color: #333; 
+                        color: #333;
                         font-size: 0.32rem;
                         text-align: center;
                         border-radius: 0.1rem;

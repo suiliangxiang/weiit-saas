@@ -16,22 +16,23 @@
         <div class="modify_box head_modify">
             <head-modify :keyText="keyText"></head-modify>
             <set-bargain @event="getData" :pageParam="pageParam"></set-bargain>
-        </div> 
+        </div>
     </div>
 </template>
 
 <script>
-    // 设置店招  
-    import setBargain from '@/components/set/setBargain'
-    // 设置头部
-    import headModify from '@/components/common/headModify'
-    // 砍价头部
-    import bargainHead from '@/components/common/bargainHead'
-    // 砍价商品
-    import bargainGood from '@/components/common/bargainGood'
-    import List from '../../../static/js/List'
-    import {mapActions} from 'vuex'
-    export default {
+// 设置店招
+import setBargain from '@/components/set/setBargain'
+// 设置头部
+import headModify from '@/components/common/headModify'
+// 砍价头部
+import bargainHead from '@/components/common/bargainHead'
+// 砍价商品
+import bargainGood from '@/components/common/bargainGood'
+import List from '../../../static/js/List'
+import {mapActions} from 'vuex'
+
+export default {
         props:{
             keyText:String,
             tempId:Number,
@@ -54,7 +55,7 @@
                     }
                 }
             },
-            
+
         },
         data(){
             return {
@@ -134,7 +135,7 @@
                 list.pageParam.addFun = this.addFun;
                 list.pageParam.moreBtn = this.moreBtn;
                 list.pageParam.titleTxt = this.titleTxt;
-                list.pageParam.countDown = this.countDown; 
+                list.pageParam.countDown = this.countDown;
                 list.pageParam.stock = this.stock;
                 list.pageParam.btnStyle = this.btnStyle;
                 list.pageParam.bargainBtn = this.bargainBtn;

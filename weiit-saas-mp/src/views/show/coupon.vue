@@ -30,12 +30,13 @@
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios'
-    import qs from 'qs'
-    // 从mint-ui中调用Popup,MessageBox
-    import {Toast} from 'mint-ui';
-    export default {
+// 引入axios
+import axios from 'axios'
+import qs from 'qs'
+// 从mint-ui中调用Popup,MessageBox
+import {Toast} from 'mint-ui';
+
+export default {
         props:['pageParam'],
         data(){
             return {
@@ -102,16 +103,16 @@
                             console.log(err)
                         })
                     }
-                    
+
                 }
-                
+
             }
         },
         mounted(){
             this.original();
-            
+
             // this.$nextTick(() => {
-                
+
             // })
             // this.scroll = new BScroll(this.$refs.picWrapper,{
             //     scrollX:true,

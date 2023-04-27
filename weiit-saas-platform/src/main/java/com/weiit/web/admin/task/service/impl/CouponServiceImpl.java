@@ -12,7 +12,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * Created by 罗鸿强 on 2018/7/9.
+ * Created by johnluo on 2018/7/9.
  */
 @Service
 public class CouponServiceImpl extends AbstractService implements CouponService{

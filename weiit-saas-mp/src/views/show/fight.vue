@@ -4,7 +4,7 @@
             <div class="fight-title" v-if="haveTitle == 'yes'">
         		<div class="title-text fn-clear">
         			<span class="line"></span>
-	                <span class="title">{{fightTitle}}</span> 
+	                <span class="title">{{fightTitle}}</span>
 	                <span class="line"></span>
         		</div>
         		<a href="javascript:;" class="look_more" @click="toFightPage()">更多 ></a>
@@ -12,7 +12,7 @@
             <div class="fight-title" v-if="haveTitle == 'yes'">
         		<div class="title-text fn-clear">
         			<span class="line"></span>
-	                <span class="title">{{fightTitle}}</span> 
+	                <span class="title">{{fightTitle}}</span>
 	                <!-- <span class="title" v-if="fightTitle == ''">组图拼团</span>  -->
 	                <span class="line"></span>
         		</div>
@@ -28,13 +28,14 @@
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios'
-    // 引入qs
-    import qs from 'qs'
-     //引用拼团商品组件 
-    import fightGood from '@/views/common/fightGood'
-    export default {
+// 引入axios
+import axios from 'axios'
+// 引入qs
+import qs from 'qs'
+//引用拼团商品组件
+import fightGood from '@/views/common/fightGood'
+
+export default {
         props:['pageParam'],
         data() {
             return {
@@ -84,7 +85,7 @@
         methods:{
             // 初始化数据
             original(){
-                
+
                 this.addFun = this.pageParam.addFun;
                 this.showNum = this.pageParam.showNum;
                 this.lookAllBtn = this.pageParam.lookAllBtn;
@@ -109,7 +110,7 @@
                         })).then((res) => {
                             if(res.data.code == '0'){
                                 this.fightGoods = res.data.data;
-                                
+
                             }
                         }).catch((err) => {
                             console.log(err);
@@ -127,7 +128,7 @@
                         console.log(err);
                     })
                 }
-                
+
             },
             // 跳转拼团页面
             toFightPage(){
@@ -166,7 +167,7 @@
 <style scoped>
     .fight{
         background-color: #f8f8f8;
-        
+
     }
     .fight .fight-title{
     	position: relative;

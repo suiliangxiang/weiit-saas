@@ -18,9 +18,9 @@
                             <div class="default">
                                 <label class="mint-checklist-label">
                                     <span class="mint-checkbox">
-                                        <input type="checkbox" class="mint-checkbox-input" :checked="item.is_default == 0" @click="checked(index)"> 
+                                        <input type="checkbox" class="mint-checkbox-input" :checked="item.is_default == 0" @click="checked(index)">
                                         <span class="mint-checkbox-core"></span>
-                                    </span> 
+                                    </span>
                                     <span class="mint-checkbox-label">默认选择</span>
                                 </label>
                             </div>
@@ -54,9 +54,9 @@
                                 <div class="default">
                                     <label class="mint-checklist-label">
                                         <span class="mint-checkbox">
-                                            <input type="checkbox" class="mint-checkbox-input" :checked="item.is_default == 0" @click="checked(index)"> 
+                                            <input type="checkbox" class="mint-checkbox-input" :checked="item.is_default == 0" @click="checked(index)">
                                             <span class="mint-checkbox-core"></span>
-                                        </span> 
+                                        </span>
                                         <span class="mint-checkbox-label">默认选择</span>
                                     </label>
                                 </div>
@@ -77,21 +77,22 @@
             </mt-loadmore>
             <loading v-show="isLoading"></loading> -->
         </div>
-        
+
         <a href="javascript:;" class="add_address" @click="toAddSite()" :style="{background:color1,color:'#fff'}">新增收获地址</a>
     </div>
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios';
-    // 引入qs
-    import qs from 'qs'
-    //从mint-ui中引入Checklist,MessageBox组件 
-    import { Checklist,MessageBox,Loadmore } from 'mint-ui';
-    // 引入加载组件
-    import loading from '@/components/loading'
-    export default {
+// 引入axios
+import axios from 'axios';
+// 引入qs
+import qs from 'qs'
+//从mint-ui中引入Checklist,MessageBox组件
+import {MessageBox} from 'mint-ui';
+// 引入加载组件
+import loading from '@/components/loading'
+
+export default {
         data(){
             return {
                 value:[1],
@@ -111,7 +112,7 @@
         methods:{
             // 新增地址，rootly跳转来源
             toAddSite(){
-                
+
                 this.$router.push({
                     path:'/addSite',
                     name:'addSite'
@@ -123,7 +124,7 @@
                 this.$router.push({
                     path:'/addSite',
                     name:'addSite',
-                    params: {  
+                    params: {
                         address: item
                     }
                 })
@@ -336,11 +337,11 @@
                                 margin-top: -0.05rem;
                             }
                         }
-                        
+
                     }
                 }
             }
         }
-        
+
     }
 </style>

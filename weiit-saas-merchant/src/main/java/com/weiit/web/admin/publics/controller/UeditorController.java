@@ -23,7 +23,7 @@ import java.io.*;
 import java.util.Map;
 
 /**
- * Created by 罗鸿强 on 2018/6/5.
+ * Created by johnluo on 2018/6/5.
  */
 @RequestMapping(value = "ueditor")
 @Controller

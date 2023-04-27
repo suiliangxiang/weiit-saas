@@ -213,8 +213,6 @@ public class ActivityServiceImpl extends AbstractService implements ActivityServ
 			formMap.put("state",-2);
 		}
 		activityMapper.couponGet(formMap);
-
-		//todo 扣除优惠券数量
 	}
 
 	@Override

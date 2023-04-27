@@ -29,8 +29,9 @@
 </template>
 
 <script>
-    import {getQueryString} from '../../../static/js/getQueryString';
-    export default {
+import {getQueryString} from '../../../static/js/getQueryString';
+
+export default {
         data(){
             return {
                 pageName:'',

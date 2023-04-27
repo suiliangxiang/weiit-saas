@@ -34,9 +34,10 @@
 </template>
 
 <script>
-    //引入会员卡组件 
-    import card from '@/components/card';
-    export default {
+//引入会员卡组件
+import card from '@/components/card';
+
+export default {
         data(){
             return {
                 cardnum:1
@@ -51,7 +52,7 @@
                    paht:'/',
                    name:'home'
                })
-           } 
+           }
         }
     }
 </script>
@@ -60,7 +61,7 @@
     .details{
         .card_box{
             padding: 0.2rem 0.4rem;
-        }        
+        }
         .rights{
             background-color: #fff;
             padding:0 0.4rem;

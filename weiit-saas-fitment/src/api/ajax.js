@@ -2,9 +2,9 @@ import axios from 'axios';
 import qs from 'qs';
 import {getQueryString} from '../../static/js/getQueryString';
 
-// let url = 'http://merchant.woyoulian.com'; 
-let url = 'http://merchant.wstore.me';
-
+// let url = 'http://merchant.woyoulian.com';
+// let url = 'http://merchant.wstore.me';
+let url = 'http://saas.merchant.wei-it.com';
 
 // 创建实例默认设置
 var instance = axios.create({

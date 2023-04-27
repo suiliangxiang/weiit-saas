@@ -20,7 +20,6 @@ import java.util.List;
 import java.util.Map;
 
 
-
 /**
  * 活动
  *
@@ -38,8 +37,7 @@ public class ActivityController extends FrontController {
 
     /**
      * 优惠券列表
-     *
-     * */
+     */
     @ResponseBody
     @RequestMapping(value = "/couponList", method = RequestMethod.POST)
     public String couponList() throws Exception {
@@ -50,22 +48,23 @@ public class ActivityController extends FrontController {
         return toJsonAPI(couponList);
 
     }
+
     /**
      * 购物车页面  优惠券列表分可用不可用状态
-     *
+     * <p>
      * cart_ids
-     * */
+     */
     @ResponseBody
     @RequestMapping(value = "/getUserCouponListForCart", method = RequestMethod.POST)
     public String getUserCouponListForCart() throws Exception {
         logger.info("【购物车页面  优惠券列表分可用不可用状态】ActivityController-getUserCouponListForCart");
         FormMap formMap = getFormMap();
-        if (formMap.get("user_id")!=null){
+        if (formMap.get("user_id") != null) {
             List<E> couponList = activityService.getUserCouponListForCart(formMap);
-            Map result= new HashMap();
-            result.put("coupons",couponList);
+            Map result = new HashMap();
+            result.put("coupons", couponList);
             return toJsonAPI(result);
-        }else {
+        } else {
             return toJsonAPI(ApiResponseCode.TOKEN_INVALID);
         }
 
@@ -89,16 +88,16 @@ public class ActivityController extends FrontController {
             if (coupon.getInt("number") > 0) {
                 //优惠券是否限制领取， -1不限制。
                 //未使用状态
-                formMap.set("state",0);
+                formMap.set("state", 0);
                 if (coupon.getInt("max_limit") == 0) {
                     activityService.couponGet(formMap);
-                    return toJsonAPI("","领取成功","0");
+                    return toJsonAPI("", "领取成功", "0");
                 } else {//优惠券限制领取
                     E ReceiveNum = activityService.userCouponReceiveNum(formMap);
                     //优惠券领取的张数和限制的张数比较是否可以领取
                     if (ReceiveNum.getInt("count") < coupon.getInt("max_limit")) {
                         activityService.couponGet(formMap);
-                        return toJsonAPI("","领取成功","0");
+                        return toJsonAPI("", "领取成功", "0");
                     } else {
                         return toJsonAPI("", "您已领取" + coupon.getInt("max_limit") + "张优惠券，快去使用吧！！！", "4000");
                     }
@@ -124,12 +123,12 @@ public class ActivityController extends FrontController {
     public String couponListByIds() {
         logger.info("ActivityController-couponListByIds，微页面  优惠券展示");
         FormMap formMap = getFormMap();
-        if (StringUtils.isEmpty(formMap.getStr("coupon_ids"))&& formMap.getInt("couponGetType")==1) {
+        if (StringUtils.isEmpty(formMap.getStr("coupon_ids")) && formMap.getInt("couponGetType") == 1) {
             //自动获取
-            if (formMap.get("showNum")==null || formMap.getStr("showNum").equals("")){
-                PageHelper.startPage(1,4);
-            }else {
-                PageHelper.startPage(1,formMap.getInt("showNum")==0?4:formMap.getInt("showNum"));
+            if (formMap.get("showNum") == null || formMap.getStr("showNum").equals("")) {
+                PageHelper.startPage(1, 4);
+            } else {
+                PageHelper.startPage(1, formMap.getInt("showNum") == 0 ? 4 : formMap.getInt("showNum"));
             }
         } else {
             if (formMap.getStr("coupon_ids").contains("[")) {
@@ -142,9 +141,5 @@ public class ActivityController extends FrontController {
 
         return toJsonAPI(list);
     }
-
-
-
-
 
 }

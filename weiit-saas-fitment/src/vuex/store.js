@@ -10,7 +10,8 @@ export default new Vuex.Store({
         isSortable:false,  //是否拖动标识
         isZIndex:false,
         // routerSrc:'http://merchant.woyoulian.com',   //路径
-        routerSrc:'http://merchant.wstore.me'   //路径
+        // routerSrc:'http://merchant.wstore.me'   //路径
+        routerSrc:'/'   //路径
     },
     mutations:{
         // 添加数据
@@ -68,5 +69,5 @@ export default new Vuex.Store({
     }
 
 
-}) 
- 
+})
+

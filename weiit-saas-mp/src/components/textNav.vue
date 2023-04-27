@@ -7,15 +7,13 @@
         </ul>
         <p>
             <span class="logo"></span>
-            <span class="text">蜗店提供技术支持</span> 
+            <span class="text">蜗店提供技术支持</span>
         </p>
     </div>
 </template>
 
 <script>
-    import axios from 'axios'
-    import qs from 'qs';
-    export default {
+export default {
         data(){
             return {
                 navMenu:JSON.parse(localStorage.getItem('bottomMenuList'))
@@ -41,7 +39,7 @@
                         query:{
                             target_id:item.target_id
                         }
-                    }); 
+                    });
                 }
             }
         }
@@ -85,7 +83,7 @@
             color: #999;
             span{
                 float: left;
-                
+
                 &.logo{
                     width: 0.3rem;
                     height: 0.28rem;

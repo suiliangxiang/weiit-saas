@@ -47,14 +47,15 @@
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios'
-    import qs from 'qs'
-    // 引入顶部商品组件
-    import good from '@/views/common/good';
-    // 引入左侧商品组件
-    import goods from '@/views/common/goods';
-    export default {
+// 引入axios
+import axios from 'axios'
+import qs from 'qs'
+// 引入顶部商品组件
+import good from '@/views/common/good';
+// 引入左侧商品组件
+import goods from '@/views/common/goods';
+
+export default {
         props:{
             pageParam:{
                 type:Object,
@@ -183,7 +184,7 @@
                 //   } else {
                 //     _this.scrollTop = total
                 //   }
-                // } 
+                // }
             }
         },
         computed:{
@@ -206,7 +207,7 @@
         },
         mounted(){
             this.origain();
-           
+
         }
     }
 </script>

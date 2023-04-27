@@ -7,7 +7,7 @@ import com.weiit.core.mapper.BaseMapper;
 import java.util.List;
 
 /**
- * Created by 罗鸿强 on 2018/7/19.
+ * Created by johnluo on 2018/7/19.
  */
 public interface WxMiniProgramMapper extends BaseMapper {
 

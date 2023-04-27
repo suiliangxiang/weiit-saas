@@ -159,16 +159,17 @@
                     </ul>
                 </div>
             </div>
-            
-        </div> 
+
+        </div>
     </div>
 </template>
 
 <script>
-    // 引入axios,qs
-    import axios from 'axios';
-    import qs from 'qs';
-    export default {
+// 引入axios,qs
+import axios from 'axios';
+import qs from 'qs';
+
+export default {
         props:{
             pageParam:{
                 type:Object,
@@ -251,7 +252,7 @@
                         console.log(err);
                     })
                 }
-                
+
             },
             lookDetail(item){
                 localStorage.setItem('shareGoodImage', item.product_img);
@@ -267,7 +268,7 @@
             }
         },
         mounted(){
-            this.original(); 
+            this.original();
         },
         updated(){
             if(this.listStyle == 'scroll'){
@@ -275,9 +276,9 @@
                 let picWidth = 2.25;
                 let margin = 0.25;
                 let width = (picWidth + margin) * length - margin;
-                this.$refs.scrollBox.style.width = width + 'rem';  
+                this.$refs.scrollBox.style.width = width + 'rem';
             }
-            
+
         }
     }
 </script>
@@ -342,7 +343,7 @@
          text-overflow:ellipsis;
        white-space:nowrap;
        overflow:hidden;
-    }   
+    }
     .detailed_list .good_txt span,
     .zigzag_list .good_txt span,
     .small_list .good_txt span,
@@ -389,7 +390,7 @@
     .small_list .good_txt h5,
     .small_list .good_txt span{
         font-size: 0.28rem;
-        
+
     }
     /* 一行三个 */
     .more_list{
@@ -415,7 +416,7 @@
     .small_list .good_txt span{
         font-size: 0.24rem;
     }
-    /* .more_list .good_txt span, 
+    /* .more_list .good_txt span,
     .small_list .good_txt span,
     .small .good_txt span{
         position: absolute;

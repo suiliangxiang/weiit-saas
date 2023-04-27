@@ -15,9 +15,10 @@
 </template>
 
 <script>
-    // 引入底部解释
-    import explain from '@/components/explain'
-    export default {
+// 引入底部解释
+import explain from '@/components/explain'
+
+export default {
         data(){
             return {
                 item:'wallet',
@@ -25,7 +26,7 @@
             }
         },
         components:{
-            explain   
+            explain
         },
         methods:{
             // 跳转到提现页面
@@ -65,7 +66,7 @@
             width: 1.62rem;
             height: 1.68rem;
             background-image: url('../../../static/images/wallet.svg');
-            background-size: 100% 100%; 
+            background-size: 100% 100%;
             margin-bottom: 0.28rem;
         }
         .my_balance{

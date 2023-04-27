@@ -9,7 +9,7 @@
         </div>
         <div class="contol_group fn-clear" v-if="haveTitle == 'yes'">
             <p class="demonstration">
-                <span>标题名：</span> 
+                <span>标题名：</span>
             </p>
             <div class="setChoice">
                 <el-input v-model="titleTxt" placeholder="请输入内容" maxlength="8"></el-input>
@@ -70,15 +70,16 @@
                 <el-checkbox v-model="saleAll">隐藏已售罄拼团商品</el-checkbox>
             </div>
         </div>-->
-        
+
     </div>
 </template>
 
 <script>
-    // 引入砍价商品弹窗
-    import fightWin from '@/components/common/fightWin'
-    import {mapState,mapMutations} from 'vuex';
-    export default {
+// 引入砍价商品弹窗
+import fightWin from '@/components/common/fightWin'
+import {mapMutations, mapState} from 'vuex';
+
+export default {
         props:['pageParam'],
         data() {
             return {
@@ -191,15 +192,15 @@
                             (err);
                         })
                     }
-                    
-                }  
+
+                }
             }
         },
         computed:{
             ...mapState(['isMust'])
         },
         mounted(){
-           this.initData() 
+           this.initData()
         },
         watch:{
             addFun:function(curVal, oldVal){
@@ -251,13 +252,13 @@
     .add .setChoice .last{
         margin-left: 0;
         margin-top: 5px;
-    } 
+    }
     .add .contol_group1{
         margin-top: 0;
     }
     .add .contol_group span{
         float: left;
-        width:69px; 
+        width:69px;
     }
     .demonstration1{
         margin-top: 4px;
@@ -281,9 +282,9 @@
         text-align: center;
         line-height: 53px;
         cursor: pointer;
-        
+
     } */
-    
+
     .setChoice1{
         margin-left: 79px;
     }
@@ -335,7 +336,7 @@
         line-height: 78px;
         float: left;
         cursor: pointer;
-        
+
     }
     .icon-guanbi{
         position: absolute;
@@ -349,7 +350,7 @@
         display: none;
     }
     .hasNo{
-        color:#f44; 
+        color:#f44;
     }
     /* 提示语 */
     .reminder{

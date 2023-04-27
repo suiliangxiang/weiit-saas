@@ -8,13 +8,14 @@
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios'
-    // 引入qs
-    import qs from 'qs'
-    // 从mint-ui中引入MessageBox组件
-    import { MessageBox,Toast } from 'mint-ui';
-    export default {
+// 引入axios
+import axios from 'axios'
+// 引入qs
+import qs from 'qs'
+// 从mint-ui中引入MessageBox组件
+import {MessageBox, Toast} from 'mint-ui';
+
+export default {
         data(){
             return {
                 feedMsg:''
@@ -39,13 +40,13 @@
                                 })
                                 // console.log(123);
                         });
-                        
+
                         this.feedMsg = '';
                     })
                     .catch((err) => {
                         console.log(err);
                     })
-                    
+
                 }else{
                     Toast('请写上您宝贵的意见~')
                 }
@@ -61,7 +62,7 @@
     .feedback_win{
         width: 100%;
         padding: 0.2rem;
-        background-color:#fff; 
+        background-color:#fff;
         .feedback{
             width: calc(100% - 0.6rem);
             height: 3.2rem;
@@ -92,5 +93,5 @@
         }
     }
 }
-    
+
 </style>

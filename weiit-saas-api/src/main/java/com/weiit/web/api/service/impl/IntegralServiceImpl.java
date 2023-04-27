@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by 罗鸿强 on 2018/9/19.
+ * Created by johnluo on 2018/9/19.
  */
 @Service
 public class IntegralServiceImpl extends ApiService implements IntegralService{

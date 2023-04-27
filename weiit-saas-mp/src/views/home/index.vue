@@ -9,29 +9,29 @@
             </ul>
             <text-nav></text-nav>
             <nav-footer :parents="'home'"></nav-footer>
-        </div>           
+        </div>
     </div>
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios' 
-    // 引入qs
-    import qs from 'qs'
-    //引入列表标题组件
-    import navTitle from '@/components/title' 
-    // 引入单个商品列表
-    import goodSimple from '@/components/goodSimple'
-    // 引入 Swipe, SwipeItem
-    import { Swipe, SwipeItem } from 'mint-ui';
-    // 引入搜索框
-    import searchBox from '@/components/searchBox'
-    // 引入展示模板
-    import showTable from '@/views/show/showTable'
-    import NavFooter from '@/components/footer'
-    import textNav from '@/components/textNav'
-    import loading from '@/components/loading'
-    export default {
+// 引入axios
+import axios from 'axios'
+// 引入qs
+import qs from 'qs'
+//引入列表标题组件
+import navTitle from '@/components/title'
+// 引入单个商品列表
+import goodSimple from '@/components/goodSimple'
+// 引入 Swipe, SwipeItem
+// 引入搜索框
+import searchBox from '@/components/searchBox'
+// 引入展示模板
+import showTable from '@/views/show/showTable'
+import NavFooter from '@/components/footer'
+import textNav from '@/components/textNav'
+import loading from '@/components/loading'
+
+export default {
         data(){
            return {
                msg:'this is home',
@@ -105,9 +105,9 @@
             // 分享给好友
             share(){
                 let host = document.location.hostname;
-                let protocol = document.location.protocol;  
+                let protocol = document.location.protocol;
                 let user_id = localStorage.getItem('user_id');
-                let currentUrl = `${protocol}//${host}`; 
+                let currentUrl = `${protocol}//${host}`;
                 let title = localStorage.getItem('shop_name');
                 let imgUrl = this.$url + localStorage.getItem('shop_logo');
                 let url = currentUrl + '?share_user_id=' + user_id;
@@ -128,12 +128,12 @@
                 });
             }
         },
-        
+
         created(){
             this.getData();
             this.share();
             document.title = localStorage.getItem('shop_name') || '';
-            
+
         },
 
         watch: {
@@ -151,7 +151,7 @@
             //     location.assign(to.fullPath)
             // } else {
             //     next()
-            // }      
+            // }
              axios.post('/weixin/JSSDKWxConfig',qs.stringify({
                     currentUrl:location.href.split('#')[0],
                     appid:localStorage.getItem('appid')
@@ -164,7 +164,7 @@
                         signature: res.data.data.signature,// 必填，签名
                         jsApiList: [
                                     "onMenuShareTimeline",//分享朋友圈接口
-                                    "onMenuShareAppMessage",//分享给朋友接口  
+                                    "onMenuShareAppMessage",//分享给朋友接口
                                     "chooseWXPay"
                         ] // 必填，需要使用的JS接口列表
                     });

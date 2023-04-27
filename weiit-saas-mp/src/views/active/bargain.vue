@@ -17,7 +17,7 @@
                 </li>
                 <li>
                     <i class="icon iconfont icon-yaoqinghaoyou"></i>
-                    <span>邀请好友砍价</span> 
+                    <span>邀请好友砍价</span>
                 </li>
                 <li>
                     <i class="icon iconfont icon-songhuo"></i>
@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
         <!-- 商品列表展示 -->
         <div class="bargain_list" v-if="fightGood == 'my'">
@@ -149,21 +149,22 @@
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios'
-    // 引入qs
-    import qs from 'qs'
-    // 从mint-ui中引入popup,MessageBox
-    import { Popup,MessageBox,Loadmore,Toast, InfiniteScroll } from 'mint-ui';
-    // 引入活动规则弹窗
-    import rules from '@/components/rules';
-    // 引入加载组件
-    import loading from '@/components/loading';
-    import payLoad from '@/components/payLoad';
-    import Swiper from 'swiper';
-    import 'swiper/dist/css/swiper.min.css';
-    import noMore from '@/components/noMore';
-    export default {
+// 引入axios
+import axios from 'axios'
+// 引入qs
+import qs from 'qs'
+// 从mint-ui中引入popup,MessageBox
+import {MessageBox, Toast} from 'mint-ui';
+// 引入活动规则弹窗
+import rules from '@/components/rules';
+// 引入加载组件
+import loading from '@/components/loading';
+import payLoad from '@/components/payLoad';
+import Swiper from 'swiper';
+import 'swiper/dist/css/swiper.min.css';
+import noMore from '@/components/noMore';
+
+export default {
         data(){
             return {
                 // 弹出框状态
@@ -189,13 +190,13 @@
                 color1:localStorage.getItem('bg1'),
                 color2:localStorage.getItem('bg2'),
                 isLoading:true,
-                isLoading3:true, 
+                isLoading3:true,
                 loading:true,
                 loading3:true
             }
         },
         methods:{
-            
+
             // 确认砍价收货地址
             ensureAddress(item){
                 let hmls = `<p style="text-align:center;width:3rem;margin:0 auto;line-height:0.28rem;color:#666;font-size:0.28rem;margin-top:0.1rem">${item.province + item.city + item.district + item.address_detail}</p>`;
@@ -226,7 +227,7 @@
                         }).catch((err) => {
                             console.log(err);
                         })
-                        
+
                     }
                 }).catch((err) => {
                     if (err == 'cancel') {
@@ -354,7 +355,7 @@
                 }else{
                     Toast('库存不足，请选择其他商品')
                 }
-                
+
             },
             // 商品列表继续砍价
             keepPrice(){
@@ -374,7 +375,7 @@
                 }).catch((err) => {
                     console.log(err);
                 })
-                
+
             },
             // 我的砍价列表继续砍价
             keepBargain(item){
@@ -387,9 +388,9 @@
                     }
                 })
             },
-            
-            
-            
+
+
+
             // 查看规则
             lookRules(){
                 this.$refs.rules.show();
@@ -420,12 +421,12 @@
                                 simulateTouch : false,
                                 noSwiping : true,
                                 noSwipingClass : 'swiper-slide',
-                                observer:true,//修改swiper自己或子元素时，自动初始化swiper 
-                                observeParents:false,//修改swiper的父元素时，自动初始化swiper 
-                                onSlideChangeEnd: function(swiper){ 
-                                　　　swiper.update();  
+                                observer:true,//修改swiper自己或子元素时，自动初始化swiper
+                                observeParents:false,//修改swiper的父元素时，自动初始化swiper
+                                onSlideChangeEnd: function(swiper){
+                                　　　swiper.update();
                                 　　　mySwiper.startAutoplay();
-                                　　  mySwiper.reLoop();  
+                                　　  mySwiper.reLoop();
                                 }
                             })
                         }
@@ -449,7 +450,7 @@
             this.getBargainMessage()
             this.getBargainGood();
             this.getMyBargainList();
-            
+
         },
         components:{
             rules,
@@ -513,7 +514,7 @@
                         &.icon-songhuo{
                             font-size: 1.21rem;
                         }
-                    } 
+                    }
                     span{
                         display: block;
                         color: #333;
@@ -873,7 +874,7 @@
                         padding:0;
                         .mint-radio-core{
                             display: block;
-                            
+
                         }
                     }
                     .cost_pic{
@@ -905,7 +906,7 @@
                         height: 0.74rem;
                         line-height: 0.74rem;
                         background-color: #fde84d;
-                        color: #333; 
+                        color: #333;
                         font-size: 0.32rem;
                         text-align: center;
                         border-radius: 0.1rem;

@@ -1,6 +1,6 @@
 <template>
     <div class="payments">
-        <div class="nav">  
+        <div class="nav">
             <mt-navbar v-model="active">
                 <mt-tab-item id="all">全部</mt-tab-item>
                 <mt-tab-item id="used">已支出</mt-tab-item>
@@ -9,10 +9,10 @@
         </div>
         <loading v-show="isLoading"></loading>
         <div v-show="!isLoading">
-            <div class="page-tab-container">  
-                <mt-tab-container class="page-tabbar-tab-container" v-model="active">  
+            <div class="page-tab-container">
+                <mt-tab-container class="page-tabbar-tab-container" v-model="active">
                     <!-- 全部收入支出 -->
-                    <mt-tab-container-item id="all" > 
+                    <mt-tab-container-item id="all" >
                         <div v-if="payList.length > 0" class="pay_list">
                             <ul v-infinite-scroll="loadMore"
                                 infinite-scroll-disabled="loading"
@@ -22,53 +22,53 @@
                                 </li>
                             </ul>
                             <loading v-show="isLoading"></loading>
-                        </div> 
+                        </div>
                         <explain :item="top" v-else></explain>
-                    </mt-tab-container-item> 
+                    </mt-tab-container-item>
                     <!-- 全部收入  -->
-                    <mt-tab-container-item id="used"> 
+                    <mt-tab-container-item id="used">
                         <div v-if="payList.length > 0" class="pay_list">
                             <ul>
                                 <li v-for="item in incomes">
                                     <single-detail :singleScore="item" :top="top"></single-detail>
                                 </li>
                             </ul>
-                        </div> 
+                        </div>
                         <explain :item="top" v-else></explain>
-                    </mt-tab-container-item>  
+                    </mt-tab-container-item>
                     <!-- 全部支出 -->
-                    <mt-tab-container-item id="overstayed">  
+                    <mt-tab-container-item id="overstayed">
                         <div v-if="payList.length > 0" class="pay_list">
                             <ul>
                                 <li v-for="item in pays">
                                     <single-detail :singleScore="item" :top="top"></single-detail>
                                 </li>
                             </ul>
-                        </div> 
+                        </div>
                         <explain :item="top" v-else></explain>
-                    </mt-tab-container-item>  
-                </mt-tab-container>  
-            </div> 
-        </div>   
+                    </mt-tab-container-item>
+                </mt-tab-container>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
-    //引入axios
-    import axios from 'axios';
-    // 引入qs
-    import qs from 'qs' 
-    // 引入时间转换js
-    // import {getTime} from '../../../static/js/getTime'
-    // 从mint-ui中引用TabContainer, TabContainerItem,Navbar
-    import { TabContainer, TabContainerItem, Navbar, Loadmore } from 'mint-ui';
-    // 引入一条消费详情
-    import singleDetail from '@/components/singleDetail'
-    // 引入底部解释
-    import explain from '@/components/explain'
-    // 引入加载组件
-    import loading from '@/components/loading'
-    export default {
+//引入axios
+import axios from 'axios';
+// 引入qs
+import qs from 'qs'
+// 引入时间转换js
+// import {getTime} from '../../../static/js/getTime'
+// 从mint-ui中引用TabContainer, TabContainerItem,Navbar
+// 引入一条消费详情
+import singleDetail from '@/components/singleDetail'
+// 引入底部解释
+import explain from '@/components/explain'
+// 引入加载组件
+import loading from '@/components/loading'
+
+export default {
         data(){
             return {
                 active:'all',
@@ -125,7 +125,7 @@
                 this.isPass = false;
                 this.getWallet();
             }
-            
+
         },
         created(){
             this.getWallet();

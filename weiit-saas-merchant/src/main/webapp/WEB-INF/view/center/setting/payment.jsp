@@ -118,7 +118,7 @@
 																			<div class="form-group">
 																				<label class="control-label col-md-2 text-right"></label>
 																				<div class="col-md-4">
-																					注意：微信支付目录已设置为 “www.wstore.me”
+																					注意：微信支付目录已设置为 “www.wei-it.com”
 																				</div>
 																			</div>
 																			<div class="text-center">
@@ -210,7 +210,7 @@
 																			<div class="form-group">
 																				<label class="control-label col-md-2 text-right"></label>
 																				<div class="col-md-4">
-																					注意：微信支付目录已设置为 “www.wstore.me”
+																					注意：微信支付目录已设置为 “www.wei-it.com”
 																				</div>
 																			</div>
 																			<div class="text-center">

@@ -4,7 +4,7 @@ import com.weiit.core.service.BaseService;
  
 
 /**
- * Created by 罗鸿强 on 2018/7/7.
+ * Created by johnluo on 2018/7/7.
  */
 public interface UserCouponService  extends BaseService{
  

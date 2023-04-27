@@ -12,7 +12,6 @@ import com.weiit.web.admin.shopdesign.service.PageService;
 import com.weiit.web.admin.user.service.UserCardService;
 import com.weiit.web.admin.util.DesUtil;
 import com.weiit.web.base.AdminController;
-import com.weiit.web.common.Constants;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -69,7 +68,7 @@ public class DesignController extends AdminController {
         this.getSession().setAttribute("templateId",templateId);
         this.getSession().setAttribute("style",style);
         this.getSession().setAttribute("token", DesUtil.encrypt(formMap.getStr("shop_id")));
-        this.getSession().setAttribute("fitDomain", Constants.FIT_DOMAIN);
+        this.getSession().setAttribute("fitDomain", WeiitUtil.getPropertiesKey("weiit.diy.url"));
         return result;
     }
 

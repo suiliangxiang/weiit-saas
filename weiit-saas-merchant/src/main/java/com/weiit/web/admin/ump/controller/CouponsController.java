@@ -13,7 +13,6 @@ import com.weiit.web.admin.ump.service.CouponService;
 import com.weiit.web.admin.util.DateUtil;
 import com.weiit.web.admin.util.DesUtil;
 import com.weiit.web.base.AdminController;
-import com.weiit.web.common.Constants;
 import com.weiit.web.weixinopen.service.WeixinOpenService;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
@@ -215,12 +214,12 @@ public class CouponsController extends AdminController {
 			//获取公众号优惠券地址  和 链接
 			formMap.put("item_name","COUPONSMPQRCODE");
 			E paramInfo = parameterService.selectShopParamByName(formMap);
-			this.getSession().setAttribute("couponMpQrCodeUrl",String.format(Constants.COUPON_QR_CODE,publicInfo.getStr("authorizer_app_id")));
+			this.getSession().setAttribute("couponMpQrCodeUrl",String.format(WeiitUtil.getPropertiesKey("weiit.coupon.qrcode.url"),publicInfo.getStr("authorizer_app_id")));
 			if (paramInfo!=null){
 				this.getSession().setAttribute("couponMpQrcode",paramInfo.getStr("item_value"));
 			}else {
 				WeiitQrCodeUtil qrCodeUtil = new WeiitQrCodeUtil();
-				String qrCodePath = qrCodeUtil.createQRCodeAndUploadQcloud(String.format(Constants.COUPON_QR_CODE,publicInfo.getStr("authorizer_app_id")));
+				String qrCodePath = qrCodeUtil.createQRCodeAndUploadQcloud(String.format(WeiitUtil.getPropertiesKey("weiit.coupon.qrcode.url"),publicInfo.getStr("authorizer_app_id")));
 				//入库
 				FormMap insertParam = new FormMap();
 				insertParam.put("item_code","COUPONQRCODE");

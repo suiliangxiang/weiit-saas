@@ -1,25 +1,26 @@
 <template>
     <div class="showBox">
         <div class="auxiliary_blank blankShow" :style="{height:value + 'px'}">
-        
+
         </div>
         <!-- 设置白块 -->
         <div class="modify_box head_modify">
             <head-modify :keyText="keyText"></head-modify>
             <set-blank @event="getData" :pageParam="pageParam"></set-blank>
-        </div> 
+        </div>
     </div>
-    
+
 </template>
 
 <script>
-    // 设置空白块
-    import setBlank from '@/components/set/setBlank'
-    // 设置头部
-    import headModify from '@/components/common/headModify'
-    import List from '../../../static/js/List'
-    import {mapActions} from 'vuex'
-    export default {
+// 设置空白块
+import setBlank from '@/components/set/setBlank'
+// 设置头部
+import headModify from '@/components/common/headModify'
+import List from '../../../static/js/List'
+import {mapActions} from 'vuex'
+
+export default {
         props:{
             keyText:String,
             tempId:Number,
@@ -91,7 +92,7 @@
         box-sizing: border-box;
         z-index: 5;
     }
-    .modify_box:after, 
+    .modify_box:after,
     .modify_box:before {
         right: 100%;
         top: 20px;

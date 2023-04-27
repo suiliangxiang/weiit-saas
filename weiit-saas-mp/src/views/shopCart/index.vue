@@ -8,12 +8,12 @@
         <div class="shopCart" v-else>
             <div class="shop_goods">
                 <!-- 购物车物品列表信息 -->
-                <ul>   
+                <ul>
                     <li :key="index" v-for="(item, index) in cart_info" @click="lookDetail(item)">
                         <div class="goods_information clearfix">
                             <label data-v-0f273760="" class="mint-radiolist-label" @click="stopLook($event)">
                                 <span data-v-0f273760="" class="mint-radio">
-                                    <input data-v-0f273760="" type="checkbox" class="mint-radio-input" :value="item" v-model="choices"> 
+                                    <input data-v-0f273760="" type="checkbox" class="mint-radio-input" :value="item" v-model="choices">
                                     <span data-v-0f273760="" class="mint-radio-core">
                                         <i class="icon iconfont icon-dui"></i>
                                     </span>
@@ -65,7 +65,7 @@
                 <div class="shipping_txt" v-if="chooseCoupon() != ''">
                     <label data-v-0f273760="" class="mint-radiolist-label">
                         <span data-v-0f273760="" class="mint-radio">
-                            <input data-v-0f273760="" type="checkbox" class="mint-radio-input" checked disabled> 
+                            <input data-v-0f273760="" type="checkbox" class="mint-radio-input" checked disabled>
                             <span data-v-0f273760="" class="mint-radio-core">
                                 <i data-v-0f273760="" class="icon iconfont icon-dui"></i>
                             </span>
@@ -109,9 +109,9 @@
                         <li @click="setBuyType('wx')">
                             <label class="mint-radiolist-label">
                                 <span class="mint-radio">
-                                    <input type="radio" class="mint-radio-input" value="wx" v-model="setCost"> 
+                                    <input type="radio" class="mint-radio-input" value="wx" v-model="setCost">
                                     <span class="mint-radio-core"></span>
-                                </span> 
+                                </span>
                             </label>
                             <div class="cost_pic">
                                 <img src="static/images/wx.png" alt="">
@@ -125,9 +125,9 @@
                         <li @click="setBuyType('ye')">
                             <label class="mint-radiolist-label">
                                 <span class="mint-radio">
-                                    <input type="radio" class="mint-radio-input" value="ye" v-model="setCost"> 
+                                    <input type="radio" class="mint-radio-input" value="ye" v-model="setCost">
                                     <span class="mint-radio-core"></span>
-                                </span> 
+                                </span>
                             </label>
                             <div class="cost_pic">
                                 <img src="static/images/balance.png" alt="">
@@ -211,9 +211,9 @@
                         <li @click="mode = false">
                             <label class="mint-radiolist-label">
                                 <span class="mint-radio">
-                                    <input type="radio" class="mint-radio-input" value="送货上门" v-model="shippingMode"> 
+                                    <input type="radio" class="mint-radio-input" value="送货上门" v-model="shippingMode">
                                     <span class="mint-radio-core"></span>
-                                </span> 
+                                </span>
                                 <div class="mint-radio-label">
                                     <h6>送货上门</h6>
                                 </div>
@@ -222,9 +222,9 @@
                         <li @click="mode = false">
                             <label class="mint-radiolist-label">
                                 <span class="mint-radio">
-                                    <input type="radio" class="mint-radio-input" value="货到付款" v-model="shippingMode"> 
+                                    <input type="radio" class="mint-radio-input" value="货到付款" v-model="shippingMode">
                                     <span class="mint-radio-core"></span>
-                                </span> 
+                                </span>
                                 <div class="mint-radio-label">
                                     <h6>货到付款</h6>
                                 </div>
@@ -233,9 +233,9 @@
                         <li @click="mode = false">
                             <label class="mint-radiolist-label">
                                 <span class="mint-radio">
-                                    <input type="radio" class="mint-radio-input" value="上门自提" v-model="shippingMode"> 
+                                    <input type="radio" class="mint-radio-input" value="上门自提" v-model="shippingMode">
                                     <span class="mint-radio-core"></span>
-                                </span> 
+                                </span>
                                 <div class="mint-radio-label">
                                     <h6>上门自提</h6>
                                 </div>
@@ -253,9 +253,9 @@
                                     <usage :coupon="item" :couponRootly="couponRootly"></usage>
                                     <label class="mint-radiolist-label">
                                         <span class="mint-radio">
-                                            <input type="radio" class="mint-radio-input" :value="index" v-model="couponCount"> 
+                                            <input type="radio" class="mint-radio-input" :value="index" v-model="couponCount">
                                             <span class="mint-radio-core"></span>
-                                        </span> 
+                                        </span>
                                     </label>
                                 </li>
                             </ul>
@@ -271,38 +271,38 @@
                     <div class="coupon_tips" v-else @click="closeBox()">
                         暂无可用优惠券
                     </div>
-                </mt-popup> 
+                </mt-popup>
                 <pay-load  v-show="isPay"></pay-load>
             </div>
-        </div> 
+        </div>
         <div class="overlayer" v-if="isPay" @touchmove.prevent></div>
-        
+
         <!-- <div v-show="isPay" class="isPay">
             <img src="static/images/weiit.gif" alt="">
         </div> -->
-        
+
         <!-- <nav-footer :parents="'shopCar'"></nav-footer> -->
     </div>
 </template>
 
 <script>
-    // 引入底部导航组件
-    import NavFooter from '@/components/footer'
-    // 引入数量计算组件
-    import calculations from '@/components/calculations'
-    // 从mint-ui中调用Popup,MessageBox
-    import { Popup,MessageBox,Toast } from 'mint-ui';
-    // 引入每一条优惠券组件
-    import usage from '@/components/usage';
-    // 引入axios
-    import axios from 'axios';
-    // 引入qs
-    import qs from 'qs';
-    // 引入加载组件
-    import loading from '@/components/loading'
-    import payLoad from '@/components/payLoad'
-    import {getQueryString} from '../../../static/js/getQueryString'
-    export default {
+// 引入底部导航组件
+import NavFooter from '@/components/footer'
+// 引入数量计算组件
+import calculations from '@/components/calculations'
+// 从mint-ui中调用Popup,MessageBox
+import {MessageBox, Toast} from 'mint-ui';
+// 引入每一条优惠券组件
+import usage from '@/components/usage';
+// 引入axios
+import axios from 'axios';
+// 引入qs
+import qs from 'qs';
+// 引入加载组件
+import loading from '@/components/loading'
+import payLoad from '@/components/payLoad'
+
+export default {
         data(){
             return {
                 setCost:'wx',    //支付方式
@@ -358,14 +358,14 @@
                     if(res.data.code == "0"){
                         // 获取到的数据
                         this.shopCart = res.data.data;
-                        
+
                         this.allcoupons = this.shopCart.coupons;
                         // 优惠券总数据
                         this.allcoupons.forEach(item => {
                             if(item.is_useable){
                                 // 可用优惠卷列表
                                 this.ableCoupon.push(item);
-                                
+
                             }else{
                                 // 不可用优惠卷列表
                                 this.disableCoupon.push(item)
@@ -421,7 +421,7 @@
                                 this.$router.push({
                                     path:'/addSite',
                                     name:'addSite'
-                                })  
+                                })
                             }
                             localStorage.setItem('addressRootly','shop')
                         }
@@ -499,7 +499,7 @@
                             if(item.is_useable){
                                 // 可用优惠卷列表
                                 this.ableCoupon.push(item);
-                                
+
                             }else{
                                 // 不可用优惠卷列表
                                 this.disableCoupon.push(item)
@@ -515,12 +515,12 @@
                                     }
                                 }
                             }
-                            
+
                         })
                         this.ableCoupon.forEach((item,index) => {
                             item.value = index;
                         })
-                        
+
                     }
                 }).catch((err) => {
                     console.log(err);
@@ -537,7 +537,7 @@
                 }else{
                     address_id = ''
                 }
-                
+
 
                 // 支付方式
                 let payment_type = this.paymentType();
@@ -547,7 +547,7 @@
 
                 // 配送方式
                 let express_type = this.expressType();
-                
+
 
                 // 快递费用
                 let express_money = this.express_money;
@@ -592,10 +592,10 @@
                                                     buy_type:'微信'
                                                 }
                                             })
-                                        },  
+                                        },
                                         cancel: function (res) {
                                             _this.isFlag = true;
-                                            _this.isPay = false; 
+                                            _this.isPay = false;
                                             _this.$router.push({
                                                 path:'/Order',
                                                 name:'Order',
@@ -603,9 +603,9 @@
                                                     selected:'obligation'
                                                 }
                                             })
-                                        }  
-                                    });  
-                                    
+                                        }
+                                    });
+
                                 }).catch((err) => {
                                     _this.isFlag = true;
                                     _this.isPay = false;
@@ -658,11 +658,11 @@
                                                 this.isPay = false;
                                                 this.isFlag = true;
                                             }
-                                            
+
                                         }).catch((err) => {
 
                                         })
-                                        
+
                                     }
                                 }).catch((err) => {
                                     if (err == 'cancel') {
@@ -672,7 +672,7 @@
                                 });
                             }else{
                                 Toast('暂不支持余额支付，请选择其他支付方式');
-                            } 
+                            }
                         }
                     }else{
                         Toast('亲，请选择你的收货地址~');
@@ -691,7 +691,7 @@
                     }
                 })
             },
-           
+
             stopLook(e){
                 e.stopPropagation();
             },
@@ -707,7 +707,7 @@
                         break;
                     case '上门自提':
                         express_type = '2';
-                        break;    
+                        break;
                 }
                 return express_type;
             },
@@ -715,10 +715,10 @@
             paymentType(){
                 let payment_type;
                 switch(this.setCost){
-                    case 'wx': 
+                    case 'wx':
                         payment_type = '0';
                         break;
-                    case 'ye': 
+                    case 'ye':
                         payment_type = '1';
                         break;
                 }
@@ -744,7 +744,7 @@
                    ids.push(item.cart_id);
                 })
                 let cart_ids = ids.join(',');
-                
+
                 return cart_ids;
             },
             // 总花费
@@ -764,7 +764,7 @@
                         pay_price += item.count * item.sale_price;
                     })
                     this.totalPrice = pay_price.toFixed(2);
-                    
+
                     if(this.rangeType == '1'){
                         if(this.totalPrice > 0 && this.discounts > 0){
                             if(this.approach == '1'){
@@ -803,7 +803,7 @@
                 }else{
                     this.goodsPrice();
                 }
-                
+
             },
             // 购物车为空时，去逛逛
             goLook(){
@@ -854,7 +854,7 @@
                 }else{
                     item.count--;
                     let cart_id = item.cart_id;
-                    let count = item.count; 
+                    let count = item.count;
                     axios.post('/api/product/addUserCartCount',qs.stringify({
                         cart_id:cart_id,
                         count:count
@@ -976,16 +976,16 @@
                 currentUrl:location.href.split('#')[0],
                 appid:localStorage.getItem('appid')
             })).then((res) => {
-                
+
                 wx.config({
                     debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
                     appId: res.data.data.appId, // 必填，公众号的唯一标识
                     timestamp: res.data.data.timeStamp, // 必填，生成签名的时间戳
                     nonceStr: res.data.data.nonceStr, // 必填，生成签名的随机串
                     signature: res.data.data.signature,// 必填，签名
-                    jsApiList: [ 
+                    jsApiList: [
                                 "onMenuShareTimeline",//分享朋友圈接口
-                                "onMenuShareAppMessage",//分享给朋友接口    
+                                "onMenuShareAppMessage",//分享给朋友接口
                                 "chooseWXPay"
                     ] // 必填，需要使用的JS接口列表
                 });
@@ -1022,7 +1022,7 @@
                     this.totalPrice = 0;
                     this.couponNum = -1;
                     this.couponPrice = 0;
-                }  
+                }
             }
         },
         activated:function(){
@@ -1073,7 +1073,7 @@
         text-align: center;
         i{
             font-size: 2rem;
-            color:#ddd; 
+            color:#ddd;
         }
         p{
             text-align: center;
@@ -1102,7 +1102,7 @@
             // max-height:7.25rem;
             // overflow-y: scroll;
             ul{
-                li{ 
+                li{
                     border-bottom: 1px solid #f1f1f1;
                     header{
                         line-height: 0.56rem;
@@ -1140,7 +1140,7 @@
                             .mint-radio-input:checked + .mint-radio-core{
                                 background-color: #fafafa;
                                 border:1px solid #EC534E;
-                                
+
                                 &::after{
                                     background-color: #EC534E;
                                     width: 100%;
@@ -1295,10 +1295,10 @@
                            font-size: 0.36rem;
                            color: #666;
                            display: inline-block;
-                           margin-left: 0.2rem; 
+                           margin-left: 0.2rem;
                         }
                     }
-                    
+
                 }
             }
         }
@@ -1314,7 +1314,7 @@
                         transform: translateY(-50%);
                         color: #666;
                         font-size: 0.36rem;
-                       
+
                     }
                     .recipients{
                         float: left;
@@ -1351,7 +1351,7 @@
                         padding:0;
                         .mint-radio-core{
                             display: block;
-                           
+
                         }
                     }
                     .cost_pic{
@@ -1514,7 +1514,7 @@
                 .mint-radio-input:checked + .mint-radio-core{
                     background-color: #fafafa;
                     border:1px solid #EC534E;
-                    
+
                     &::after{
                         background-color: #EC534E;
                         width: 100%;
@@ -1531,7 +1531,7 @@
                 line-height: 0.88rem;
                 color: #333;
             }
-           
+
         }
         .shipping_data{
             background-color: #fff;
@@ -1541,10 +1541,10 @@
                 li{
                     padding: 0.2rem 0.25rem 0.2rem 0.3rem;
                     border-bottom: 2px solid #f5f5f5;
-                    overflow: hidden; 
+                    overflow: hidden;
                     &:last-child{
                         border:none;
-                    } 
+                    }
                     span{
                         float:right;
                         font-size: 0.28rem;
@@ -1554,7 +1554,7 @@
                     }
                 }
             }
-           
+
         }
         .state_win{
             min-height: 5rem;
@@ -1648,7 +1648,7 @@
                             }
                         }
                     }
-                    
+
                 }
             }
         }
@@ -1658,7 +1658,7 @@
             height: 0.88rem;
             margin-top: -0.18rem;
         }
-        
+
     }
     .overlayer{
         position:fixed;

@@ -12,9 +12,10 @@
 </template>
 
 <script>
-	import axios from 'axios'
-	import qs from 'qs'
-    export default {
+import axios from 'axios'
+import qs from 'qs'
+
+export default {
         props:['parents'],
         data(){
             return {
@@ -35,14 +36,14 @@
                                 page_id:item.nav_value
                             }
                         })
-                        
+
                     }else{
                         this.$router.push({
                             path:'/',
                             name:'home'
                         })
                     }
-                    
+
                 }else{
                 	if(item.nav_url == 'Order'){
                 		localStorage.setItem('orderStyle','all')
@@ -53,7 +54,7 @@
                         params:{
                             target_id:item.nav_value
                         }
-                    }); 
+                    });
                 }
             },
             //获取导航信息

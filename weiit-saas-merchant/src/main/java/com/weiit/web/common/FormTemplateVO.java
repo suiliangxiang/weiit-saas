@@ -1,7 +1,7 @@
 package com.weiit.web.common;
 
 /**
- * Created by 罗鸿强 on 2018/7/23.
+ * Created by johnluo on 2018/7/23.
  *
  * 小程序模板消息用
  */

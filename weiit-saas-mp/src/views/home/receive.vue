@@ -9,13 +9,13 @@
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios';
-    // 引入qs
-    import qs from 'qs';
-    //引入singleCoupon组件，每个优惠券情况
-    import singleCoupon from '@/components/singleCoupon'
-    export default {
+// 引入axios
+import axios from 'axios';
+// 引入qs
+//引入singleCoupon组件，每个优惠券情况
+import singleCoupon from '@/components/singleCoupon'
+
+export default {
         data(){
             return {
                 couponList:[]
@@ -34,7 +34,7 @@
                             // this.couponList.forEach((item,index) => {
                             //     if(item.coupon_price.lenth.indexOf('-')){
                             //         this.couponList[index].coupon_price = item.coupon_price
-                            //     } 
+                            //     }
                             // })
                         }
                     })

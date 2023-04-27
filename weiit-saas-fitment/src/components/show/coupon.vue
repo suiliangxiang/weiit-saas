@@ -14,7 +14,7 @@
                     </div>
                     <div class="cap-coupon__item cap-coupon__item--disabled"><div class="cap-coupon__price"><span></span><span class="couponPrice">8.8</span><span> 折</span></div><div class="cap-coupon__desc"><!----><div>满299.90元可用</div></div><!----><div class="cap-coupon__disabled-text-wrap"><div class="cap-coupon__disabled-text">已领取</div></div></div>
                     <div class="cap-coupon__item cap-coupon__item--disabled"><div class="cap-coupon__price"><span></span><span class="couponPrice">8.8</span><span> 折</span></div><div class="cap-coupon__desc"><!----><div>无门槛使用</div></div><!----><div class="cap-coupon__disabled-text-wrap"><div class="cap-coupon__disabled-text">已领取</div></div></div>
-                </div>  
+                </div>
             </div>
             <div class="coupon_box" v-else>
                 <div class="couponList">
@@ -46,13 +46,14 @@
 </template>
 
 <script>
-    // 设置优惠券
-    import setCoupon from '@/components/set/setCoupon'
-    // 设置头部
-    import headModify from '@/components/common/headModify'
-    import List from '../../../static/js/List'
-    import {mapActions} from 'vuex'
-    export default {
+// 设置优惠券
+import setCoupon from '@/components/set/setCoupon'
+// 设置头部
+import headModify from '@/components/common/headModify'
+import List from '../../../static/js/List'
+import {mapActions} from 'vuex'
+
+export default {
         props:{
             keyText:String,
             tempId:Number,
@@ -112,7 +113,7 @@
                         url:'/center/ump/coupons/couponListByIds',
                         params:{
                             couponGetType:1,
-                            
+
                         }
                     }).then(res => {
                     	let showNum = parseInt(this.showNum);
@@ -259,7 +260,7 @@
         margin-top: 4px;
         text-align: center;
     }
-    
+
     .cap-coupon__item:not(:last-child) {
         margin-right: 10px;
     }

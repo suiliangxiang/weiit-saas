@@ -51,9 +51,9 @@
                     <li @click="setBuyType('wx')">
                         <label class="mint-radiolist-label">
                             <span class="mint-radio">
-                                <input type="radio" class="mint-radio-input" value="wx" v-model="setCost"> 
+                                <input type="radio" class="mint-radio-input" value="wx" v-model="setCost">
                                 <span class="mint-radio-core"></span>
-                            </span> 
+                            </span>
                         </label>
                         <div class="cost_pic">
                             <img src="static/images/wx.png" alt="">
@@ -66,9 +66,9 @@
                     <li @click="setBuyType('balance')" v-if="balancePayAble">
                         <label class="mint-radiolist-label">
                             <span class="mint-radio">
-                                <input type="radio" class="mint-radio-input" value="balance" v-model="setCost"> 
+                                <input type="radio" class="mint-radio-input" value="balance" v-model="setCost">
                                 <span class="mint-radio-core"></span>
-                            </span> 
+                            </span>
                         </label>
                         <div class="cost_pic">
                             <img src="static/images/balance.png" alt="">
@@ -123,20 +123,21 @@
 </template>
 
 <script>
-    // 引入底部导航组件
-    import NavFooter from '@/components/footer'
-    // 引入数量计算组件
-    import calculations from '@/components/calculations'
-    // 从mint-ui中调用Popup,MessageBox
-    import { Popup,MessageBox,Toast } from 'mint-ui';
-    // 引入axios
-    import axios from 'axios';
-    // 引入qs
-    import qs from 'qs';
-    // 引入加载组件
-    import loading from '@/components/loading'
-    import payLoad from '@/components/payLoad'
-    export default {
+// 引入底部导航组件
+import NavFooter from '@/components/footer'
+// 引入数量计算组件
+import calculations from '@/components/calculations'
+// 从mint-ui中调用Popup,MessageBox
+import {MessageBox, Toast} from 'mint-ui';
+// 引入axios
+import axios from 'axios';
+// 引入qs
+import qs from 'qs';
+// 引入加载组件
+import loading from '@/components/loading'
+import payLoad from '@/components/payLoad'
+
+export default {
         data(){
             return {
                 setCost:'wx',
@@ -196,7 +197,7 @@
                                 this.$router.push({
                                     path:'/addSite',
                                     name:'addSite'
-                                })  
+                                })
                             }
                             localStorage.setItem('addressRootly','IntegralCar')
                         }
@@ -227,7 +228,7 @@
                 let address_id = this.address_id;
                 // 拼团数量
                 let count = this.goodsNumber;
-                // 计算总价   
+                // 计算总价
                 let pay_price = this.integralInfo.integral_price * this.goodsNumber;
                 // 参与拼团的ids
                 let item_id = localStorage.getItem('item_id');
@@ -282,7 +283,7 @@
                                     _this.isFlag = true;
                                     _this.isPay = false;
                                 }
-                                
+
                             }).catch((err) => {
                                 console.log(err);
                                 _this.isFlag = true;
@@ -329,7 +330,7 @@
                                             this.isFlag = true;
                                             this.isPay = false;
                                         }
-                                        
+
                                     }).catch((err) => {
 
                                     })
@@ -346,7 +347,7 @@
                 }else{
                     Toast('请选择收货地址！');
                 }
-                
+
             },
             stopLook(e){
                 e.stopPropagation();
@@ -356,7 +357,7 @@
                 axios.post('/api/user/myAddressList',null)
                     .then((res) => {
                         if(res.data.code == '0'){
-                            
+
                             let address = res.data.data.list;
                             this.isLoading = false
                             address.forEach((item) => {
@@ -393,7 +394,7 @@
             },
             // 减少商品数量
             reduce(e){
-                
+
                 if(this.goodsNumber <= 1){
                     this.goodsNumber = 1;
                 }else{
@@ -446,7 +447,7 @@
                     next()
                 }
             }
-            
+
             axios.post('/weixin/JSSDKWxConfig',qs.stringify({
                     currentUrl:location.href.split('#')[0],
                     appid:localStorage.getItem('appid')
@@ -459,7 +460,7 @@
                         signature: res.data.data.signature,// 必填，签名
                         jsApiList: [
                                     "onMenuShareTimeline",//分享朋友圈接口
-                                    "onMenuShareAppMessage",//分享给朋友接口  
+                                    "onMenuShareAppMessage",//分享给朋友接口
                                     "startRecord",
                                     "stopRecord",
                                     "onVoiceRecordEnd",
@@ -475,7 +476,7 @@
         activated:function(){
             this.isPay = false;
             if(this.$route.params.toFightshop == 'address' || this.$route.params.toFightshop == 'addSide'){
-                this.recipients = JSON.parse(localStorage.getItem('fightRecipients')); 
+                this.recipients = JSON.parse(localStorage.getItem('fightRecipients'));
                 this.address_id = localStorage.getItem('address_id');
             }else{
                 this.getAddress();
@@ -535,7 +536,7 @@
         .shop_goods{
             margin-bottom: 2px;
             ul{
-                li{ 
+                li{
                     header{
                         line-height: 0.56rem;
                         background-color: #fff;
@@ -573,7 +574,7 @@
                             .mint-radio-input:checked + .mint-radio-core{
                                 background-color: #fafafa;
                                 border:1px solid #EC534E;
-                                
+
                                 &::after{
                                     background-color: #EC534E;
                                     width: 100%;
@@ -697,7 +698,7 @@
                            font-size: 0.3rem;
                            color: #666;
                            display: inline-block;
-                           margin-left: 0.2rem; 
+                           margin-left: 0.2rem;
                         }
                     }
                     .sale_message{
@@ -730,7 +731,7 @@
                         transform: translateY(-50%);
                         color: #666;
                         font-size: 0.3rem;
-                       
+
                     }
                     .recipients{
                         float: left;
@@ -764,7 +765,7 @@
                         padding:0;
                         .mint-radio-core{
                             display: block;
-                           
+
                         }
                     }
                     .cost_pic{
@@ -895,7 +896,7 @@
                 font-size: 0.32rem;
                 i{
                    font-size: 0.3rem;
-                   color: #666; 
+                   color: #666;
                    display: inline-block;
                    margin-left: 0.2rem;
                 }
@@ -922,7 +923,7 @@
                 .mint-radio-input:checked + .mint-radio-core{
                     background-color: #fafafa;
                     border:1px solid #EC534E;
-                    
+
                     &::after{
                         background-color: #EC534E;
                         width: 100%;
@@ -939,7 +940,7 @@
                 line-height: 0.88rem;
                 color: #333;
             }
-           
+
         }
         .state_win{
             min-height: 5rem;
@@ -1027,7 +1028,7 @@
                             }
                         }
                     }
-                    
+
                 }
             }
         }

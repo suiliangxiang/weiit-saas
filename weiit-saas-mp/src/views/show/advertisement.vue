@@ -2,7 +2,7 @@
     <div class="showBox">
         <div class="advertisement blankShow" :class="{'adver':navList.length != 0}">
             <div class="swiper-area" v-if=" temp == 'temp1'">
-                
+
                 <van-swipe :autoplay="4000" @change="onChange">
                     <van-swipe-item v-for="(item, index) in navList" :key="index">
                         <a href="javascript:;" @touchend="toPage(item)" @touchmove="stopTouch()">
@@ -16,7 +16,7 @@
                     <a href="javascript:;" @click="toPage(item)" class="">
                         <img :src="item.img" alt="">
                     </a>
-                </div> 
+                </div>
             </div>
             <div class="advertisement_box fn-clear" v-if=" temp == 'temp3'">
                 <div class="sort_box sorts">
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="advertisement_box" v-if=" temp == 'temp5'">
                 <div class="sort_box fn-clear" ref="sortBox">
@@ -78,12 +78,11 @@
 </template>
 
 <script>
-    import { Swipe, SwipeItem } from 'mint-ui';
-    
-    export default {
+
+export default {
         props:['pageParam'],
         data(){
-            return {    
+            return {
                 temp:'temp1',
                 navList:[],
                 navBigList:[],
@@ -123,10 +122,10 @@
                             query:{
                                 target_id:item.validate_id
                             }
-                        }); 
+                        });
                     }
                 }
-                
+
             },
             stopTouch(){
                 this.isClick = false;
@@ -141,7 +140,7 @@
                 let picWidth = 2.3;
                 let margin = 0.2;
                 let width = (picWidth + margin) * length - margin - 0.3;
-                this.$refs.sortBox.style.width = width + 'rem';  
+                this.$refs.sortBox.style.width = width + 'rem';
             }
         }
     }

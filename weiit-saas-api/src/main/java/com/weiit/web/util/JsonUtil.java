@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * Created by 罗鸿强 on 2018/6/19.
+ * Created by johnluo on 2018/6/19.
  */
 public class JsonUtil {
     public static final ObjectMapper mapper = newObjectMapper(), webMapper = mapper;

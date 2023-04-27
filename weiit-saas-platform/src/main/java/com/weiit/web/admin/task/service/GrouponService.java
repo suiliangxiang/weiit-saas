@@ -7,7 +7,7 @@ import com.weiit.core.service.BaseService;
 import java.util.List;
 
 /**
- * Created by 罗鸿强 on 2018/7/7.
+ * Created by johnluo on 2018/7/7.
  */
 public interface GrouponService  extends BaseService{
 

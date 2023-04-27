@@ -22,15 +22,15 @@
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios'
-    // 引入qs
-    import qs from 'qs'
-    // 引入底部解释
-    import explain from '@/components/explain'
-    // 引入一条积分详情
-    import singleDetail from '@/components/singleDetail'
-    export default {
+// 引入axios
+import axios from 'axios'
+// 引入qs
+// 引入底部解释
+import explain from '@/components/explain'
+// 引入一条积分详情
+import singleDetail from '@/components/singleDetail'
+
+export default {
         data(){
             return {
                 integralScore:localStorage.getItem('integral'),
@@ -40,7 +40,7 @@
         },
         components:{
             explain,
-            singleDetail   
+            singleDetail
         },
         methods:{
             getIntegral(){
@@ -49,12 +49,12 @@
                         console.log(res);
                         if(res.data.code == '0'){
                             this.integrals = res.data.data;
-                            
+
                         }
                     })
                     .catch((err) => {
                         console.log(err);
-                    }) 
+                    })
             },
             toRule(){
                 this.$router.push({
@@ -84,7 +84,7 @@
 <style scoped lang="scss">
     .integral_box{
         height: 100%;
-        
+
         header{
             background-color: #fff;
             box-sizing: border-box;

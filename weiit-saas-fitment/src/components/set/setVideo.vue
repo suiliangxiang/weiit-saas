@@ -11,9 +11,10 @@
 </template>
 
 <script>
-	// 引入语音上传组件
-    import {mapState,mapMutations} from 'vuex';
-    export default {
+// 引入语音上传组件
+import {mapMutations, mapState} from 'vuex';
+
+export default {
     	props:['pageParam'],
         data(){
             return {
@@ -29,7 +30,7 @@
 	        	let vid = urlArray[urlArray.length-1].split('=')[1];
 	            this.videoUrl = 'http://v.qq.com/iframe/player.html?vid=' + vid + '&tiny=0&auto=0';
         	}
-        	
+
             var video = {
             	videos:this.videos,
                	videoUrl:this.videoUrl
@@ -48,7 +49,7 @@
         },
         mounted(){
             this.initData();
-            
+
         },
         watch:{
             videos:function(curVal,oldVal){
@@ -90,7 +91,7 @@
         padding-left: 74px;
     }
     .hasNo{
-        color:#f44; 
+        color:#f44;
     }
     /* 提示语 */
     .reminder{

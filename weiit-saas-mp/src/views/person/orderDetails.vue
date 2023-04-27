@@ -7,7 +7,7 @@
                 <i v-if="orders.state == '1' || orders.state == '2' || orders.state == '3' || orders.state == '4'" class="icon iconfont icon-yishiyong1"></i>
             </header>
             <div class="signed">
-                <div v-if="orders.state == '4'">   
+                <div v-if="orders.state == '4'">
                     <h6>已签收,感谢使用XX快递，期待下次为您服务</h6>
                     <p class="time">2010-01-01 13:25:00</p>
                 </div>
@@ -71,23 +71,24 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios'
-    // 引入qs
-    import qs from 'qs'
-    // 引入单个商品详情介绍组件
-    import goodInfor from '@/components/goodInfor'
-    // 引入计算时间
-    import {getTime} from '../../../static/js/getTime'
-    // 引入加载组件
-    import loading from '@/components/loading';
-    import { Toast } from 'mint-ui';
-    export default {
+// 引入axios
+import axios from 'axios'
+// 引入qs
+import qs from 'qs'
+// 引入单个商品详情介绍组件
+import goodInfor from '@/components/goodInfor'
+// 引入计算时间
+import {getTime} from '../../../static/js/getTime'
+// 引入加载组件
+import loading from '@/components/loading';
+import {Toast} from 'mint-ui';
+
+export default {
         data(){
             return {
                 orders:{},
@@ -121,7 +122,7 @@
                         this.isloading = false;
                         this.refursGood = this.orders.item;
                         this.goodPicture = this.orders.item[0].product_img;
-                        // this.refureState = 
+                        // this.refureState =
                         if(this.orders.couponInfo){
                             this.couponPrice = this.orders.couponInfo.coupon_price;
                             this.rangeType = this.orders.couponInfo.product_range_type;
@@ -129,7 +130,7 @@
                             this.couponPrice = 0;
                             this.rangeType = 0
                         }
-                        
+
                     }
                 }).catch((err) => {
                     console.log(err);
@@ -190,7 +191,7 @@
         components:{
             goodInfor,
             loading
-            
+
         },
         mounted(){
             this.getOrderDetails();
@@ -217,7 +218,7 @@
                 float: left;
                 color: #f5f5f5;
                 font-size: 0.36rem;
-                
+
             }
             i{
                 float: right;
@@ -262,7 +263,7 @@
             h6{
                 height:0.56rem;
                 background-color: #fff;
-                line-height: 0.56rem; 
+                line-height: 0.56rem;
                 padding-left: 0.2rem;
                 .icon-dianpu{
                     float: left;

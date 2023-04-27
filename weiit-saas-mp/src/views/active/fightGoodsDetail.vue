@@ -21,7 +21,7 @@
                         </div>
                         <div class="swiper-pagination"></div>
                     </div> -->
-                    
+
                 </div>
                 <!-- 商品信息介绍 -->
                 <div class="goods_txt">
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <p class="express_money">运费：{{productInfo.expressInfo}}</p>
-            
+
             <!-- 拼单 -->
             <div class="circumstance" v-if="inProcessGroupon.length > 0">
                 <h4>
@@ -68,9 +68,9 @@
                         </li>
                     </ul>
                 </div>
-                
+
             </div>
-            
+
             <!-- 选择规格 -->
             <div class="choice_rules" @click="choiceRule">
             	<h3>选择</h3>
@@ -82,7 +82,7 @@
                     <div class="goods_introduce" v-html="product_desc">
                         {{product_desc}}
                     </div>
-                    
+
                 </van-tab>
                 <van-tab :title="'商品属性'">
                     <!-- 商品注解 -->
@@ -90,13 +90,13 @@
                         <ul class="clearfix">
                             <li :key="index" class="attribute_info" v-for="(item,index) in productInfo.attribute_info">
                                 <span class="attribute_name">{{item.attribute_name}}</span>
-                                <span class="attribute_value">{{item.attribute_value}}</span>   
+                                <span class="attribute_value">{{item.attribute_value}}</span>
                             </li>
                         </ul>
                     </div>
                 </van-tab>
             </van-tabs>
-            
+
 
             <!-- 底部信息 -->
             <div class="buy">
@@ -125,11 +125,11 @@
                 <div class="buy_btn" v-else>
                     <a href="javascript:;" class="join_car" @click="chooseSize('single')" :style="{background:color2,color:'#fff'}">
                         <!-- <span>￥{{productInfo.sale_price}}</span> -->
-                        <h1>单独购买</h1> 
+                        <h1>单独购买</h1>
                     </a>
                     <a href="javascript:;" class="buy_now" @click="chooseSize('fightBuy')" :style="{background:color1,color:'#fff'}">
                         <!-- <span>￥{{productInfo.sale_price}}</span> -->
-                        <h1>发起拼团</h1> 
+                        <h1>发起拼团</h1>
                     </a>
                 </div>
             </div>
@@ -141,7 +141,7 @@
                         正在拼单
                         <i class="icon iconfont icon-cha" @click="look = false"></i>
                     </h5>
-                    <div class="look_list"> 
+                    <div class="look_list">
                         <ul>
                             <li class="clearfix" v-for="item in inProcessGroupon">
                                 <div class="user_pic">
@@ -218,7 +218,7 @@
                         <!-- 商品数量选择 -->
                         <div class="buy_num clearfix" :class="{'buy_num1':max_limit == 0}">
                             <h6>购买数量</h6>
-                            
+
                             <div class="goods_number">
                                 <div href="javascript:;" class="reduce" @click="reduce($event)">
                                     <i class="icon iconfont icon-jian1"></i>
@@ -253,22 +253,22 @@
 </template>
 
 <script>
-    // 引入 Swipe, SwipeItem, Popup, Toast
-    import { Swipe, SwipeItem, Popup, Toast } from 'mint-ui';
-    // 引入axios
-    import axios from 'axios';
-    // 引入qs
-    import qs from 'qs';
-    // 引入倒计时
-    import {downTime} from '../../../static/js/downTime'
-    // 引入加载组件
-    import loading from '@/components/loading'
-    // 引入获取参数函数
-    import {getQueryString} from '../../../static/js/getQueryString';
-    // 引入cookie
-    import cookie from '../../../static/js/cookies';
-    import textNav from '@/components/textNav'
-    export default {
+// 引入 Swipe, SwipeItem, Popup, Toast
+import {Toast} from 'mint-ui';
+// 引入axios
+import axios from 'axios';
+// 引入qs
+import qs from 'qs';
+// 引入倒计时
+import {downTime} from '../../../static/js/downTime'
+// 引入加载组件
+import loading from '@/components/loading'
+// 引入获取参数函数
+import {getQueryString} from '../../../static/js/getQueryString';
+// 引入cookie
+import textNav from '@/components/textNav'
+
+export default {
         data(){
             return {
                 isCollected:false,
@@ -303,7 +303,7 @@
                 isLoading:true,
                 product_desc:'',
                 hasGrouponCount:'',
-                isFlag:true,     
+                isFlag:true,
                 hasCollection:true,
                 max_limit:0,
                 surplusNum:localStorage.getItem('surplusNum'),
@@ -367,7 +367,7 @@
                 }
             },
             //将其他的规则设置为未选中状态
-            doChooseSize (row){ 
+            doChooseSize (row){
                 // 获取当前行对象
                 let obj = this.productInfo.spec_info[row];
                 // 遍历设置同行中所有数据字段isChecked为false
@@ -378,7 +378,7 @@
             },
             // 加入购物车
             ensure(tip){
-                
+
                 if(this.isFlag){
                 	if(tip == 'single'){
                 		this.buyType == 'single'
@@ -392,10 +392,10 @@
                     let item_id;
                     // 判断是否是多规格选择
                     if(this.productInfo.spec_config == 1){
-                        
+
                         // 是否规则都勾选
                         if(this.checkSize()){
-                            
+
                             let specArr = [];
                             this.productInfo.spec_info.forEach((item) => {
                                 item.values.forEach((ele) => {
@@ -404,7 +404,7 @@
                                     }
                                 })
                             })
-                            
+
                             spec_content = specArr.join(';');
                             item_id = this.stockProduct.item_id;
                         }else{
@@ -415,7 +415,7 @@
                         }
                     }else{
                         spec_content = '';
-                        
+
                         item_id = this.productInfo.item_id;
                         this.isOk = true;
                     }
@@ -432,9 +432,9 @@
                                     this.$router.push({
                                         path:'/shopCar',
                                         name:'shopCar'
-                                    })   
+                                    })
                                 }else{
-                                    
+
                                     Toast('你已经达到限购数量上限，请不要再添加了~')
                                 }
                                 this.isFlag = true;
@@ -457,14 +457,14 @@
                                 this.$router.push({
                                     path:'/fightShop',
                                     name:'fightShop'
-                                })     
+                                })
                             }else{
                                 Toast('库存不足以成团，请单独购买！')
                             }
-                            
+
                             this.isFlag = true;
                         }
-                        
+
                     }
                 }
             },
@@ -510,7 +510,7 @@
                         console.log(err);
                     })
                 }else{
-                    
+
                 }
             },
             // 取消加入收藏
@@ -532,7 +532,7 @@
                             }).catch((err) => {
                                 console.log(err);
                             })
-                            
+
                         }else{
                             // 取消加入收藏
                             this.hasCollection = false;
@@ -558,7 +558,7 @@
                 var list =  this.productInfo.spec_info[row].values;
                 // 改变对应列中isChecked值
                 list[col].isChecked = true;
-                // 设置数字值 
+                // 设置数字值
                 this.$set( list, col, list[col] );
                 // 首先判断规则选择是否完整
                 let flag = this.checkSize();
@@ -615,11 +615,11 @@
                             console.log(err);
                         })
                     }
-                    
+
                 }
             },
             // 检测规则是否全部检测
-            checkSize(){ 
+            checkSize(){
                 //如果返回true。那么说明都选中
                 let flag = true;
                 for(let i of this.productInfo.spec_info){
@@ -633,7 +633,7 @@
                         break;
                     }
                 }
-                    
+
                 return flag;
             },
             // 查询库存
@@ -668,7 +668,7 @@
                     this.num = totalCount;
                     Toast('你添加的数量超过商品上限,请不要再添加了');
                 }
-                
+
                 e.stopPropagation();
             },
             // 减少商品数量
@@ -714,7 +714,7 @@
                         }else{
                             this.isMore = true;
                         }
-                        
+
                         this.partaker.userImgArray = res.data.data.user_img;
                         let total = res.data.data.groupon_number;
                         if(total > 8){
@@ -726,7 +726,7 @@
                 })
                 .catch((err) => {
                     console.log(err);
-                })   
+                })
             },
             // 返回首页
             toHome(){
@@ -738,9 +738,9 @@
             // 分享给好友
             share(title, imgUrl){
                 let host = document.location.hostname;
-                let protocol = document.location.protocol;  
+                let protocol = document.location.protocol;
                 let user_id = localStorage.getItem('user_id')
-                let currentUrl = `${protocol}//${host}`; 
+                let currentUrl = `${protocol}//${host}`;
                 // let title = localStorage.getItem('shareFightGoodName');
                 // let imgUrl = this.$url + localStorage.getItem('shareFightGoodImage');
                 let url = currentUrl + "/fightDetail?groupon_id=" + localStorage.getItem('groupon_id') +  "&product_id=" + localStorage.getItem('product_id') + "&forward=fightDetail&share_user_id=" + user_id;
@@ -794,7 +794,7 @@
                 // this.getInvitation(this.g_order_id);
             }
             // this.countdDown();
-            
+
         },
         components:{
             loading,
@@ -810,7 +810,7 @@
                 location.assign(to.fullPath)
             } else {
                 next()
-            }      
+            }
              axios.post('/weixin/JSSDKWxConfig',qs.stringify({
                     currentUrl:location.href.split('#')[0],
                     appid:localStorage.getItem('appid')
@@ -823,7 +823,7 @@
                         signature: res.data.data.signature,// 必填，签名
                         jsApiList: [
                                     "onMenuShareTimeline",//分享朋友圈接口
-                                    "onMenuShareAppMessage",//分享给朋友接口  
+                                    "onMenuShareAppMessage",//分享给朋友接口
                                     "chooseWXPay"
                         ] // 必填，需要使用的JS接口列表
                     });
@@ -851,7 +851,7 @@
                        width: 100%;
                     }
                 }
-                
+
             }
             .goods_txt{
                 width: 7rem;
@@ -860,7 +860,7 @@
                     margin-top: 0.4rem;
                    font-size: 0.34rem;
                    color: #333;
-                   font-weight: bold; 
+                   font-weight: bold;
                 }
                 .cost{
                     margin-top:0.3rem;
@@ -905,7 +905,7 @@
                     }
                 }
             }
-            
+
         }
         .choice_rules{
         	line-height: 0.8rem;
@@ -964,7 +964,7 @@
                         height: 1rem;
                         .user{
                             float: left;
-                            
+
                             .user_pic{
                                 float: left;
                                 width: 0.7rem;
@@ -993,7 +993,7 @@
                             text-align: center;
                             p{
                                 &.num{
-                                    color: #333; 
+                                    color: #333;
                                     font-size: 0.24rem;
                                     font-weight: bold;
                                     span{
@@ -1039,7 +1039,7 @@
                 font-size: 0.33rem;
                 color: #b9b9b9;
                 margin-left: 0.1rem;
-            }  
+            }
             .icon-youjiantouda{
                 position: absolute;
                 font-size: 0.3rem;
@@ -1237,7 +1237,7 @@
                 .goods_color{
                     padding:0.3rem 0.2rem;
                     border-bottom: 1px solid #d9d9d9;
-                    
+
                     h6{
                         font-size: 0.28rem;
                         color: #333;
@@ -1338,7 +1338,7 @@
             }
         }
         .goLook{
-           border-radius: 0.1rem; 
+           border-radius: 0.1rem;
         }
         .looking{
             width: 5.83rem;
@@ -1395,7 +1395,7 @@
                                margin-left: 0.1rem;
                                font-size: 0.26rem;
                                color: #bcbcbc;
-                           } 
+                           }
                            &:last-child{
                                font-size: 0.28rem;
                                color: #000;
@@ -1528,7 +1528,7 @@
                 background-color: #fff;
                 border-radius: 0.2rem;
                 padding: 0.45rem 0.3rem;
-                
+
                 h5{
                     font-size: 0.32rem;
                     text-align: center;

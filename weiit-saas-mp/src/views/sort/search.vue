@@ -26,7 +26,7 @@
                     </div>
                 </mt-tab-item>
             </mt-navbar>
-                
+
             <mt-tab-container v-model="selected" class="goods">
                 <!-- 全部搜索商品 -->
                 <mt-tab-container-item id="default">
@@ -85,21 +85,21 @@
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios'
-    // 引入qs
-    import qs from 'qs'
-    // 从mint-ui中引入Navbar, TabItem
-    import { Navbar, TabItem, InfiniteScroll,Loadmore } from 'mint-ui';
-    // 引入单个商品列表
-    import goodSimple from '@/components/goodSimple'
-    // 引入加载组件
-    import loading from '@/components/loading'
-    import noMore from '@/components/noMore'
-    export default {
+// 引入axios
+import axios from 'axios'
+// 引入qs
+import qs from 'qs'
+// 从mint-ui中引入Navbar, TabItem
+// 引入单个商品列表
+import goodSimple from '@/components/goodSimple'
+// 引入加载组件
+import loading from '@/components/loading'
+import noMore from '@/components/noMore'
+
+export default {
         data(){
             return {
-                selected:'default',    
+                selected:'default',
                 priceGoods:[],         //价格排序商品
                 volumeGoods:[],        //销量排序商品
                 searchTxt:'',          //搜索关键词
@@ -117,7 +117,7 @@
                 allLoaded1:false,
                 allLoaded2:false,
                 allLoaded3:false,
-                isSort:true,           
+                isSort:true,
                 isPass:true,
                 isSale:true,
                 isPrice:false,
@@ -147,7 +147,7 @@
                 this.allLoaded3 = false;
                 this.priceGoods = []         //价格排序商品
                 this.volumeGoods = []        //销量排序商品
-                this.goodsList = []  
+                this.goodsList = []
                 if(this.selected == 'default'){
                     this.getAllGoods();
                 }else if(this.selected == 'price'){
@@ -172,7 +172,7 @@
                         list.forEach((item) => {
                             this.goodsList.push(item)
                         })
-                        
+
                         this.loading1 = false
                         if(!res.data.data.hasNextPage){
                             this.isLoading1 = true;
@@ -192,30 +192,30 @@
             getPriceGoods(){
                 let sort;
                 this.isVolume = false;
-                
+
                 if(this.priceGoods.length == 0){
                     this.addPriceGood(sort);
                 }
                 if(this.isPrice){
                     if(this.isSort){
-                        // 降序 
+                        // 降序
                         sort = 'desc';
                         this.isSort = !this.isSort;
                         this.pageNo2 = 1;
                         this.loading2 = true;
                     }else{
-                        // 升序 
+                        // 升序
                         sort = 'asc';
                         this.isSort = !this.isSort;
                         this.pageNo2 = 1;
                         this.loading2 = true;
-                    } 
+                    }
                     this.priceGoods = [];
                     this.addPriceGood(sort);
                 }else{
                     this.isPrice = true;
                 }
-               
+
             },
             // 获取价格排序商品
             addPriceGood(sort){
@@ -248,7 +248,7 @@
                     console.log(err);
                 })
             },
-            // 获取商品销量排序商品  
+            // 获取商品销量排序商品
             getVolumeGoods(){
                 // 搜索商品
                 let sort;
@@ -259,24 +259,24 @@
                 }
                 if(this.isVolume){
                     if(this.isSale){
-                        // 降序 
+                        // 降序
                         sort = 'desc';
                         this.isSale = !this.isSale;
                         this.pageNo3 = 1;
                         this.loading3 = true;
                     }else{
-                        // 升序 
+                        // 升序
                         sort = 'asc';
                         this.isSale = !this.isSale;
                         this.pageNo3 = 1;
                         this.loading3 = true;
-                    } 
+                    }
                     this.volumeGoods = [];
                     this.addVolumeGoods(sort);
                 }else{
                     this.isVolume = true;
                 }
-                
+
             },
             addVolumeGoods(sort){
                 let searchTxt = this.searchTxt ? this.searchTxt : '';
@@ -319,7 +319,7 @@
                         }
                     })
                 }
-                
+
             },
             loadMore1() {
                 this.pageNo1++;
@@ -422,7 +422,7 @@
                         &:nth-of-type(even){
                             margin-right: 0;
                         }
-                        
+
                     }
                 }
             }

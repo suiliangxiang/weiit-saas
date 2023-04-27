@@ -15,7 +15,7 @@
         </mt-navbar>
 
             <!-- tab-container -->
-            
+
         <mt-tab-container v-model="selected" class="goods">
             <!-- 全部搜索商品 -->
             <mt-tab-container-item id="default">
@@ -29,7 +29,7 @@
                     </mt-loadmore>
                     <loading v-show="isLoading1"></loading>
                 </div>
-                
+
             </mt-tab-container-item>
             <!-- 商品根据价格排序 -->
             <mt-tab-container-item id="price">
@@ -43,7 +43,7 @@
                     </mt-loadmore>
                     <loading v-show="isLoading2"></loading>
                 </div>
-                
+
             </mt-tab-container-item>
             <!-- 商品根据销量排序 -->
             <mt-tab-container-item id="volume">
@@ -57,24 +57,24 @@
                     </mt-loadmore>
                     <loading v-show="isLoading3"></loading>
                 </div>
-                    
+
             </mt-tab-container-item>
         </mt-tab-container>
     </div>
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios'
-    // 引入qs
-    import qs from 'qs'
-    // 从mint-ui中引入Navbar, TabItem
-    import { Navbar, TabItem, InfiniteScroll,Loadmore } from 'mint-ui';
-    // 引入单个商品列表
-    import goodSimple from '@/components/goodSimple'
-    // 引入加载组件
-    import loading from '@/components/loading'
-    export default {
+// 引入axios
+import axios from 'axios'
+// 引入qs
+import qs from 'qs'
+// 从mint-ui中引入Navbar, TabItem
+// 引入单个商品列表
+import goodSimple from '@/components/goodSimple'
+// 引入加载组件
+import loading from '@/components/loading'
+
+export default {
         data(){
             return {
                 selected:'default',
@@ -115,7 +115,7 @@
                     }).catch((err) => {
                         console.log(err);
                     })
-                
+
             },
             // 获取价格排序商品
             getPriceGoods(){
@@ -133,9 +133,9 @@
                 }).catch((err) => {
                     console.log(err);
                 })
-                
+
             },
-            // 获取商品销量排序商品  
+            // 获取商品销量排序商品
             getVolumeGoods(){
                 // 搜索商品
                 this.isLoading3 = true;
@@ -271,7 +271,7 @@
                     &:nth-of-type(even){
                         margin-right: 0;
                     }
-                    
+
                 }
             }
         }

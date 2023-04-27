@@ -42,7 +42,7 @@
                     <div class="help">
                         <h6>
                             <img src="static/images/bargain_line.png" alt="">
-                            <span>砍价帮</span> 
+                            <span>砍价帮</span>
                         </h6>
                         <div class="braginList">
                             <div class="bargain_help fn-clear" v-for="item in userBargainlog">
@@ -77,7 +77,7 @@
                 </div>
                 <text-nav></text-nav>
             </div>
-            
+
             <rules ref="rules"></rules>
             <!-- 选择支付方式 -->
             <mt-popup v-model="payment" position="bottom">
@@ -86,9 +86,9 @@
                         <li @click="payment_type = 'wx'" v-if="wxPayAble">
                             <label class="mint-radiolist-label">
                                 <span class="mint-radio">
-                                    <input type="radio" class="mint-radio-input" value="wx" v-model="payment_type"> 
+                                    <input type="radio" class="mint-radio-input" value="wx" v-model="payment_type">
                                     <span class="mint-radio-core"></span>
-                                </span> 
+                                </span>
                             </label>
                             <div class="cost_pic">
                                 <img src="static/images/wx.png" alt="">
@@ -101,9 +101,9 @@
                         <li @click="payment_type = 'balance'" v-if="balancePayAble">
                             <label class="mint-radiolist-label">
                                 <span class="mint-radio">
-                                    <input type="radio" class="mint-radio-input" value="balance" v-model="payment_type"> 
+                                    <input type="radio" class="mint-radio-input" value="balance" v-model="payment_type">
                                     <span class="mint-radio-core"></span>
-                                </span> 
+                                </span>
                             </label>
                             <div class="cost_pic">
                                 <img src="static/images/balance.png" alt="">
@@ -120,31 +120,31 @@
                 </div>
             </mt-popup>
             <pay-load  v-show="isPay"></pay-load>
-            
+
         </div>
         <div class="overlayer" v-if="isPay" @touchmove.prevent></div>
     </div>
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios'
-    // 引入qs
-    import qs from 'qs'
-    // 引入倒计时
-    import {downTime} from '../../../static/js/downTime'
-    // 引入活动规则弹窗
-    import rules from '../../components/rules'
-    // 从mint-ui中调用Popup,MessageBox
-    import {MessageBox,Toast} from 'mint-ui';
-    // 引入获取参数函数
-    import {getQueryString} from '../../../static/js/getQueryString';
-    // 引入加载组件
-    import loading from '@/components/loading'
-    import payLoad from '@/components/payLoad'
-    import cooike from '../../../static/js/cookies'
-    import textNav from '@/components/textNav'
-    export default {
+// 引入axios
+import axios from 'axios'
+// 引入qs
+import qs from 'qs'
+// 引入倒计时
+import {downTime} from '../../../static/js/downTime'
+// 引入活动规则弹窗
+import rules from '../../components/rules'
+// 从mint-ui中调用Popup,MessageBox
+import {MessageBox, Toast} from 'mint-ui';
+// 引入获取参数函数
+import {getQueryString} from '../../../static/js/getQueryString';
+// 引入加载组件
+import loading from '@/components/loading'
+import payLoad from '@/components/payLoad'
+import textNav from '@/components/textNav'
+
+export default {
         data(){
             return {
                 isNum:true,
@@ -187,7 +187,7 @@
                         this.alreadyBargain = res.data.data.alreadyBargain;
                         // 砍价信息
                         this.bargainProduct = res.data.data.bargainProduct;
-                        
+
                         this.hasBargain = res.data.data.hasBargain;
                         this.owe = res.data.data.owe;
                         this.userBargainlog = res.data.data.userBargainlog;
@@ -227,7 +227,7 @@
             // 砍价购买
             bargainBuy(){
                 this.payment = true;
-                
+
             },
             // 确定购买
             ensurePayment(){
@@ -235,7 +235,7 @@
                 this.payment = false;
                 if(this.owe >= 0 && this.isFlag){
                     this.isFlag = false;
-                   
+
                     let _this = this;
                     if(this.payment_type == 'wx'){
                         if(this.wxPayAble){
@@ -280,7 +280,7 @@
                         }else{
                             Toast('暂不支持微信支付，请选择其他支付方式');
                         }
-                        
+
                     }else if(this.payment_type == 'balance'){
                         if(this.balancePayAble){
                             this.isPay = true;
@@ -327,7 +327,7 @@
                         }else{
                             Toast('暂不支持余额支付，请选择其他支付方式');
                         }
-                        
+
                     }
                 }else{
                     Toast('正在付款中，请耐心等待');
@@ -336,9 +336,9 @@
             // 分享
             share(order_id, bargain_id, share_user_id, imgUrl, title){
                let host = document.location.hostname;
-                let protocol = document.location.protocol;  
+                let protocol = document.location.protocol;
                 let user_id = localStorage.getItem('user_id');
-                let currentUrl = `${protocol}//${host}`; 
+                let currentUrl = `${protocol}//${host}`;
                 // let title = localStorage.getItem('shareBargainGoodName');
                 // let imgUrl = this.$url + localStorage.getItem('shareBargainGoodImage');
                 let url = currentUrl + "/freeGet?order_id=" + order_id + "&bargain_id=" + bargain_id + "&share_user_id=" + share_user_id + "&forward=freeGet";
@@ -380,10 +380,10 @@
                         }
                     }).catch((err) => {
                         console.log(err);
-                    }) 
-                    
+                    })
+
                 }
-                
+
             },
             // 获取是否允许的支付方式
             getPayAble(){
@@ -398,9 +398,9 @@
                         console.log(err);
                     })
             }
-        }, 
+        },
         created(){
-            
+
         },
         mounted(){
             this.countdDown();
@@ -409,7 +409,7 @@
                 this.b_order_id = getQueryString('order_id');
                 this.bargain_id = getQueryString('bargain_id');
                 this.share_user_id = getQueryString('share_user_id');
-                
+
                 this.order_id = this.b_order_id;
                 this.getBargain(this.b_order_id);
             }else if(localStorage.getItem('forward') == 'freeGet'){
@@ -423,13 +423,13 @@
             }else{
                 this.getBargain(this.order_id);
             }
-            
+
         },
         components:{
             rules,
             loading,
             payLoad,
-            textNav  
+            textNav
         },
         beforeRouteEnter:(to,from,next)=>{
             var u = navigator.userAgent;
@@ -454,7 +454,7 @@
                     signature: res.data.data.signature,// 必填，签名
                     jsApiList: [
                                 "onMenuShareTimeline",//分享朋友圈接口
-                                "onMenuShareAppMessage",//分享给朋友接口    
+                                "onMenuShareAppMessage",//分享给朋友接口
                                 "chooseWXPay"
                     ] // 必填，需要使用的JS接口列表
                 });
@@ -500,7 +500,7 @@
                 height: 1.87rem;
                 background-image: url('../../../static/images/guide.png');
                 background-size: 100% 100%;
-            }  
+            }
         }
         .main{
             height: 100%;
@@ -599,7 +599,7 @@
                                     float: left;
                                     font-size: 0.28rem;
                                     color: #ec534e;
-                                    display:table-cell;   
+                                    display:table-cell;
                                     vertical-align:bottom;
                                     span{
                                         font-size: 0.34rem;
@@ -608,7 +608,7 @@
                                 .num{
                                     font-size: 0.24rem;
                                     color: #aaa;
-                                    float: left; 
+                                    float: left;
                                     vertical-align:bottom;
                                     margin-left: 0.1rem;
                                     margin-top: 0.03rem;
@@ -616,7 +616,7 @@
                                 .expressPrice{
                                     font-size: 0.24rem;
                                     color: #aaa;
-                                    float: left;  
+                                    float: left;
                                     vertical-align:bottom;
                                     margin-left: 0.7rem;
                                 }
@@ -806,7 +806,7 @@
                         padding:0;
                         .mint-radio-core{
                             display: block;
-                           
+
                         }
                     }
                     .cost_pic{
@@ -838,7 +838,7 @@
                         height: 0.74rem;
                         line-height: 0.74rem;
                         background-color: #fde84d;
-                        color: #333; 
+                        color: #333;
                         font-size: 0.32rem;
                         text-align: center;
                         border-radius: 0.1rem;

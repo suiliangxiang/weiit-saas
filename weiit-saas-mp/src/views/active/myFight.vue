@@ -29,9 +29,10 @@
 </template>
 
 <script>
-    // 引入底部按钮组件
-    import footBtn from '@/components/footBtn'
-    export default {
+// 引入底部按钮组件
+import footBtn from '@/components/footBtn'
+
+export default {
         data() {
             return {
                 myFightType:this.$route.params.rootly ? this.$route.params.rootly : localStorage.getItem('myFightType'),
@@ -44,7 +45,7 @@
         methods: {
             // 保存初始数据
             saveData() {
-                
+
                 let myFightType = this.$route.params.rootly;
                 let g_order_id = this.$route.params.g_order_id;
                 if(myFightType){
@@ -157,6 +158,6 @@
                 margin:0 0.7rem;
             }
         }
-        
+
     }
 </style>

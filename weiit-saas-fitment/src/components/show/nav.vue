@@ -100,18 +100,19 @@
         <div class="modify_box head_modify">
             <head-modify :keyText="keyText"></head-modify>
             <set-nav @event="getData" :pageParam="pageParam"></set-nav>
-        </div> 
+        </div>
     </div>
 </template>
 
 <script>
-    // 设置导航栏
-    import setNav from '@/components/set/setNav'
-    // 设置头部
-    import headModify from '@/components/common/headModify'
-    import List from '../../../static/js/List'
-    import {mapActions} from 'vuex'
-    export default {
+// 设置导航栏
+import setNav from '@/components/set/setNav'
+// 设置头部
+import headModify from '@/components/common/headModify'
+import List from '../../../static/js/List'
+import {mapActions} from 'vuex'
+
+export default {
         props:{
             keyText:String,
             pageParam:{
@@ -178,11 +179,11 @@
 .play_nav{
     display: flex;
     background-color: #fff;
-    
+
 }
 .play_nav li{
     flex: 1;
-    padding:5px 0; 
+    padding:5px 0;
 }
 .left_nav_list{
     display: table;
@@ -252,7 +253,7 @@
         box-sizing: border-box;
         z-index: 5;
     }
-    .modify_box:after, 
+    .modify_box:after,
     .modify_box:before {
         right: 100%;
         top: 20px;

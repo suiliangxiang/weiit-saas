@@ -397,7 +397,7 @@ public class ProductController extends FrontController {
         if (StringUtils.isEmpty(formMap.getStr("group_ids"))) {
             return toJsonAPI(ApiResponseCode.GROUPIDS_EMPTY);
         } else {
-            //小海 晓东  传参不一样
+            //服务号、小程序 传参不一样
             List<String> group_ids;
             if (formMap.getStr("group_ids").contains("[")) {
                 group_ids = Arrays.asList(StringUtils.strip(formMap.getStr("group_ids"), "[]").split(","));
@@ -405,8 +405,6 @@ public class ProductController extends FrontController {
                 group_ids = Arrays.asList(formMap.getStr("group_ids").split(","));
             }
             List<E> result = new ArrayList();
-
-
 
             for (String group_id : group_ids) {
                 formMap.put("group_id", group_id);
@@ -426,7 +424,12 @@ public class ProductController extends FrontController {
     }
 
 
-    //计算邮费 product_id count address_id
+    /**
+     * 计算邮费
+     * @param token
+     * product_id count address_id
+     * @return
+     */
     @ResponseBody
     @RequestMapping(value = "/calcExpressPriceForActivity")
     public String calcExpressPriceForActivity(@RequestHeader String token){

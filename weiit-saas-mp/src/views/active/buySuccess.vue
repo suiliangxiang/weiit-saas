@@ -26,8 +26,7 @@
 </template>
 
 <script>
-    import {time} from '../../../static/js/getTime'
-    export default {
+export default {
         data() {
             return {
                 goodPrice: this.$route.query.goodPrice,
@@ -53,7 +52,7 @@
             let D = (date.getDate() < 10 ? '0'+date.getDate() : date.getDate()) + ' ';
             let h = (date.getHours() < 10 ? '0'+date.getHours() : date.getHours()) + ':';
             let m = (date.getMinutes() < 10 ? '0'+date.getMinutes() : date.getMinutes()) + ':';
-            let s = (date.getSeconds() < 10 ? '0'+date.getSeconds() : date.getSeconds()); 
+            let s = (date.getSeconds() < 10 ? '0'+date.getSeconds() : date.getSeconds());
             this.timer = Y+M+D+h+m+s;
         },
         computed:{

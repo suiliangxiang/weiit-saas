@@ -3,7 +3,7 @@ package com.weiit.web.common;
 import java.util.Arrays;
 
 /**
- * Created by 罗鸿强 on 2018/8/9.
+ * Created by johnluo on 2018/8/9.
  */
 public class KeyComplex {
     private final Object datas[];

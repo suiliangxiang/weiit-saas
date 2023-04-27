@@ -42,46 +42,46 @@
 </template>
 
 <script>
-    // 设置店招
-    // import setShop from '@/components/set/setShop'
-    // 设置搜索框
-    import setSearch from '@/components/set/setSearch'
-    // 设置空白块
-    import setBlank from '@/components/set/setBlank'
-    // 设置辅助线 
-    import setLines from '@/components/set/setLines'
-    // 设置导航栏
-    import setNav from '@/components/set/setNav'
-    // 设置优惠券
-    import setCoupon from '@/components/set/setCoupon'
-    // 设置分组
-    import setSort from '@/components/set/setSort'
-    // 设置列表
-    import setList from '@/components/set/setList'
-    // 设置标题
-    import setTitle from '@/components/set/setTitle'
-    // 设置文本
-    import setVersion from '@/components/set/setVersion'
-    // 设置富文本
-    import setRich from '@/components/set/setRich'
-    // 设置广告
-    import setAdvertisement from '@/components/set/setAdvertisement' 
-    // 设置语音
-    import setVoice from '@/components/set/setVoice'
-    // 设置视频
-    import setVideo from '@/components/set/setVideo'
-    // 设置拼团
-    import setFight from '@/components/set/setFight'
-    // 设置秒杀
-    import setSeckill from '@/components/set/setSeckill'
-    // 设置公告
-    import setNotice from '@/components/set/setNotice'
-    // 设置客服
-    import setService from '@/components/set/setService'
-    // 设置图文组合
-    import setCombination from '@/components/set/setCombination'
+// 设置店招
+// import setShop from '@/components/set/setShop'
+// 设置搜索框
+import setSearch from '@/components/set/setSearch'
+// 设置空白块
+import setBlank from '@/components/set/setBlank'
+// 设置辅助线
+import setLines from '@/components/set/setLines'
+// 设置导航栏
+import setNav from '@/components/set/setNav'
+// 设置优惠券
+import setCoupon from '@/components/set/setCoupon'
+// 设置分组
+import setSort from '@/components/set/setSort'
+// 设置列表
+import setList from '@/components/set/setList'
+// 设置标题
+import setTitle from '@/components/set/setTitle'
+// 设置文本
+import setVersion from '@/components/set/setVersion'
+// 设置富文本
+import setRich from '@/components/set/setRich'
+// 设置广告
+import setAdvertisement from '@/components/set/setAdvertisement'
+// 设置语音
+import setVoice from '@/components/set/setVoice'
+// 设置视频
+import setVideo from '@/components/set/setVideo'
+// 设置拼团
+import setFight from '@/components/set/setFight'
+// 设置秒杀
+import setSeckill from '@/components/set/setSeckill'
+// 设置公告
+import setNotice from '@/components/set/setNotice'
+// 设置客服
+import setService from '@/components/set/setService'
+// 设置图文组合
+import setCombination from '@/components/set/setCombination'
 
-    export default {
+export default {
         props:['words','index'],
         components:{
             setSearch,

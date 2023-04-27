@@ -12,7 +12,7 @@
         <!-- 选择售后货品状态 -->
         <div class="choose_kind">
             <ul>
-                <li class="clearfix" @click="state = true"> 
+                <li class="clearfix" @click="state = true">
                     <span class="kinds">货品状态</span>
                     <div class="clearfix">
                         <span>{{stateValue}}</span>
@@ -60,9 +60,9 @@
                 <li @click="state = false">
                     <label class="mint-radiolist-label">
                         <span class="mint-radio">
-                            <input type="radio" class="mint-radio-input" value="未收到货" v-model="stateValue"> 
+                            <input type="radio" class="mint-radio-input" value="未收到货" v-model="stateValue">
                             <span class="mint-radio-core"></span>
-                        </span> 
+                        </span>
                         <div class="mint-radio-label">
                             <h6>未收到货</h6>
                         </div>
@@ -71,9 +71,9 @@
                 <li @click="state = false">
                     <label class="mint-radiolist-label">
                         <span class="mint-radio">
-                            <input type="radio" class="mint-radio-input" value="已收到货" v-model="stateValue"> 
+                            <input type="radio" class="mint-radio-input" value="已收到货" v-model="stateValue">
                             <span class="mint-radio-core"></span>
-                        </span> 
+                        </span>
                         <div class="mint-radio-label">
                             <h6>已收到货</h6>
                         </div>
@@ -81,16 +81,16 @@
                 </li>
             </ul>
         </mt-popup>
-        <!-- 售后类型选择弹出框 -->        
+        <!-- 售后类型选择弹出框 -->
         <mt-popup v-model="after" position="bottom" class="state_win after_win">
             <header>售后类型</header>
             <ul>
                 <li @click="choiceAfter('只退款')">
                     <label class="mint-radiolist-label">
                         <span class="mint-radio">
-                            <input type="radio" class="mint-radio-input" value="只退款" v-model="afterValue"> 
+                            <input type="radio" class="mint-radio-input" value="只退款" v-model="afterValue">
                             <span class="mint-radio-core"></span>
-                        </span> 
+                        </span>
                         <div class="mint-radio-label">
                             <h6>仅退款</h6>
                             <p>未收到货(包括未签收)，或卖家协商同意前提下</p>
@@ -100,9 +100,9 @@
                 <li @click="choiceAfter('退款并退货')">
                     <label class="mint-radiolist-label">
                         <span class="mint-radio">
-                            <input type="radio" class="mint-radio-input" value="退款并退货" v-model="afterValue"> 
+                            <input type="radio" class="mint-radio-input" value="退款并退货" v-model="afterValue">
                             <span class="mint-radio-core"></span>
-                        </span> 
+                        </span>
                         <div class="mint-radio-label">
                             <h6>退货退款</h6>
                             <p>已收到货，需要退换已收到的货物</p>
@@ -115,15 +115,16 @@
 </template>
 
 <script>
-    // 引入axios
-    import axios from 'axios'
-    // 引入qs
-    import qs from 'qs'
-    // 引入单个商品组件
-    import good from '@/components/good'
-    // 引入popup, Radio组件从mint-ui中
-    import { Popup, Radio,Toast } from 'mint-ui';
-    export default {
+// 引入axios
+import axios from 'axios'
+// 引入qs
+import qs from 'qs'
+// 引入单个商品组件
+import good from '@/components/good'
+// 引入popup, Radio组件从mint-ui中
+import {Toast} from 'mint-ui';
+
+export default {
         data(){
             return{
                 state:false,
@@ -134,8 +135,8 @@
                 refursGood:this.$route.params.refursGood ? this.$route.params.refursGood : JSON.parse(localStorage.getItem('refursGood')),
                 remarks:'',
                 imgSrc:[],
-                imgData: {  
-                    accept: 'image/gif, image/jpeg, image/png, image/jpg',  
+                imgData: {
+                    accept: 'image/gif, image/jpeg, image/png, image/jpg',
                 },
                 isFlag:true,
                 rangeType:this.$route.params.rangeType ? this.$route.params.rangeType : localStorage.getItem('rangeType'),
@@ -180,7 +181,7 @@
                     }else{
                         refund_imgs = this.imgSrc.join(',');
                     }
-                        
+
                     // 退换类型
                     let refund_type;
                     let id = this.goodinfor.id;
@@ -208,34 +209,34 @@
                         Toast('提交失败');
                     })
                 }
-                
+
             },
             // 上传图片
             uploadFile(e){
-                let reader =new FileReader();  
-                let img1=event.target.files[0];   
-                let size=img1.size;//文件的大小，判断图片的大小   
-                if(size>3145728){  
-                    alert('请选择3M以内的图片！');  
-                    return false;  
-                }  
-                var uri = ''  
-                let form = new FormData();   
-                form.append('file',img1); 
-                axios.post('/api/uploadImg',form,{  
-                    headers:{'Content-Type':'multipart/form-data'}  
-                }).then(res => {  
+                let reader =new FileReader();
+                let img1=event.target.files[0];
+                let size=img1.size;//文件的大小，判断图片的大小
+                if(size>3145728){
+                    alert('请选择3M以内的图片！');
+                    return false;
+                }
+                var uri = ''
+                let form = new FormData();
+                form.append('file',img1);
+                axios.post('/api/uploadImg',form,{
+                    headers:{'Content-Type':'multipart/form-data'}
+                }).then(res => {
                     if(res.data.code == '0'){
                         let url = res.data.data[0].img_url;
-                        this.imgSrc.push(url);  
+                        this.imgSrc.push(url);
                         let length = this.imgSrc.length;
                         if(length > 3){
                            this.imgSrc = this.imgSrc.slice(length-3);
                         }
                     }
-                }).catch(error => {  
-                    alert('上传图片出错！');  
-                })    
+                }).catch(error => {
+                    alert('上传图片出错！');
+                })
             },
             // 选择售后
             choiceAfter(type){
@@ -252,7 +253,7 @@
         .choose_kind{
             margin-top: 0.2rem;
             ul{
-                
+
                 li{
                     background-color: #fff;
                     line-height: 1rem;
@@ -335,7 +336,7 @@
                             }
                         }
                     }
-                    
+
                 }
             }
         }
@@ -345,11 +346,11 @@
             width:6.91rem;
             height:0.89rem;
             background:rgba(255,220,75,1);
-            border-radius: 0.19rem; 
+            border-radius: 0.19rem;
             font-size: 0.32rem;
             color: #333;
             text-align: center;
-            line-height:0.89rem; 
+            line-height:0.89rem;
         }
         .prove{
             background-color: #fff;
@@ -376,7 +377,7 @@
                 }
                 p{
                     font-size: 0.22rem;
-                } 
+                }
                 input {
                     position: absolute;
                     width: 100%;
@@ -396,7 +397,7 @@
                     img{
                         width: 100%;
                         height: 100%;
-                    } 
+                    }
                 }
             }
         }

@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <!-- 商品分组选项 -->        
+        <!-- 商品分组选项 -->
         <!-- <div class="add" v-if="addFun == 'automatic'">
             <div class="contol_group contol_group1 fn-clear">
                 <span>商品分组：</span>
@@ -131,8 +131,8 @@
                     <el-table-column width="30"
                         type='selection'>
                     </el-table-column>
-                    <el-table-column 
-                        prop="product_img" 
+                    <el-table-column
+                        prop="product_img"
                         width="70">
                         <template slot-scope="scope">
                             <img :src="imageDomaia + scope.row.product_img" alt="" width="50" height="50" draggable="false">
@@ -170,7 +170,7 @@
                             layout="total, prev, pager, next, jumper"
                             :total="total">
                         </el-pagination>
-                    </div> 
+                    </div>
                     <a class="ensure_btn" @click="ensure()">确定</a>
                 </div>
             </div>
@@ -179,8 +179,9 @@
 </template>
 
 <script>
-    import {mapState,mapMutations} from 'vuex';
-    export default {
+import {mapMutations, mapState} from 'vuex';
+
+export default {
         props:['pageParam'],
         data() {
             return {
@@ -196,7 +197,7 @@
                 corner:'new',
                 // 按钮样式3时候文字
                 btnTxt3:'马上抢',
-                // 按钮样式4时候文字                
+                // 按钮样式4时候文字
                 btnTxt4:'购买',
                 // 商品选择框判断值
                 isGood:false,
@@ -214,7 +215,7 @@
                 currentPage: 1,
                 // 传递展示选择内容
                 showGoods:[],
-                
+
                 // 图片前缀名
                 imageDomaia:'http://wstore-1255653546.image.myqcloud.com',
                 productIds:[],
@@ -294,7 +295,7 @@
 	                    (err);
 	                })
             	}
-            	
+
             },
             //从服务器读取数据
             loadData(){
@@ -398,7 +399,7 @@
                                 productGetType:0
                             }
                         }).then(res => {
-                            
+
                             this.showGoods = res.data.productInfo;
                         }).catch(err => {
                             (err);
@@ -418,7 +419,7 @@
         watch:{
             isGood:function(curVal,oldVal){
                 if(!curVal){
-                	
+
                     this.startSort()
                 }else{
                     this.stopSort()
@@ -486,13 +487,13 @@
     .add .setChoice .last{
         margin-left: 0;
         margin-top: 5px;
-    } 
+    }
     .add .contol_group1{
         margin-top: 0;
     }
     .add .contol_group span{
         float: left;
-        width:69px; 
+        width:69px;
     }
     .demonstration1{
         margin-top: 10px;
@@ -671,7 +672,7 @@
     }
     /* 右侧展示选中图片 */
     .seckill_list{
-        
+
         float: left;
     }
     .seckill_list li{
@@ -703,7 +704,7 @@
         line-height: 78px;
         float: left;
         cursor: pointer;
-        
+
     }
     .icon-guanbi{
         position: absolute;

@@ -9,11 +9,11 @@ import com.weiit.core.entity.E;
 import com.weiit.core.entity.FormMap;
 import com.weiit.core.mapper.BaseMapper;
 import com.weiit.core.service.impl.AbstractService;
+import com.weiit.resource.common.utils.WeiitUtil;
 import com.weiit.web.admin.miniprogram.mapper.WxMiniProgramMapper;
 import com.weiit.web.admin.miniprogram.service.WxMiniProgramService;
 import com.weiit.web.admin.shopdesign.mapper.PageMapper;
 import com.weiit.web.admin.weixin.service.WeixinPublicService;
-import com.weiit.web.common.Constants;
 import com.weiit.web.weixinopen.service.WeixinOpenService;
 import me.chanjar.weixin.common.error.WxErrorException;
 import org.apache.commons.lang.StringUtils;
@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by 罗鸿强 on 2018/7/19.
+ * Created by johnluo on 2018/7/19.
  */
 @Service
 public class WxMiniProgramServiceImpl extends AbstractService implements WxMiniProgramService {
@@ -61,7 +61,7 @@ public class WxMiniProgramServiceImpl extends AbstractService implements WxMiniP
         WxMaService wxMaService = weixinOpenService.getInstance(formMap).getWxOpenComponentService().getWxMaServiceByAppid(formMap.getStr("authorizer_app_id"));
 
         List<String> requestDomain = new ArrayList();
-        requestDomain.add(Constants.SERVER_HOST);
+        requestDomain.add(WeiitUtil.getPropertiesKey("weiit.server.host"));
         WxMaDomainAction modifyDomain = WxMaDomainAction.builder().action("add")
                 .uploadDomain(requestDomain)
                 .requestDomain(requestDomain)
@@ -83,7 +83,7 @@ public class WxMiniProgramServiceImpl extends AbstractService implements WxMiniP
         WxMaService wxMaService = weixinOpenService.getInstance(formMap).getWxOpenComponentService().getWxMaServiceByAppid(formMap.getStr("authorizer_app_id"));
 
         List<String> requestDomain = new ArrayList();
-        requestDomain.add(Constants.SERVER_HOST);
+        requestDomain.add(WeiitUtil.getPropertiesKey("weiit.server.host"));
         WxMaDomainAction modifyDomain = WxMaDomainAction.builder().action("add")
                 .webViewDomain(requestDomain)
                 .build();
@@ -111,7 +111,7 @@ public class WxMiniProgramServiceImpl extends AbstractService implements WxMiniP
             if (isFirst) {
                 try {
                     List<String> requestDomain = new ArrayList();
-                    requestDomain.add(Constants.SERVER_HOST);
+                    requestDomain.add(WeiitUtil.getPropertiesKey("weiit.server.host"));
 
                     WxMaDomainAction getModifyDomain = WxMaDomainAction.builder().action("get")
                             .build();
@@ -189,7 +189,7 @@ public class WxMiniProgramServiceImpl extends AbstractService implements WxMiniP
             ext.put("appid", formMap.getStr("authorizer_app_id"));
 
 
-            ext.put("url", Constants.SERVER_HOST);
+            ext.put("url", WeiitUtil.getPropertiesKey("weiit.server.host"));
             ext.put("nick_name", formMap.getStr("nick_name"));
             ext.put("head_img", formMap.getStr("head_img"));
             ext.put("dev_name", "蜗店");

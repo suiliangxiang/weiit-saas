@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 import java.util.Date;
 
 /**
- * Created by 罗鸿强
+ * Created by johnluo
  * 小程序注册引流接口
  * @version 1.0
  * @date：2018年5月7日 上午2:01:43
@@ -43,8 +43,6 @@ public class RegisterController extends FrontController{
         if (StringUtils.isEmpty(formMap.getStr("mobilePhone"))){
             return toJsonAPI(ApiResponseCode.MOBILE_PHONE_NULL);
         }
-        //防止ip  盗刷
-
         //判断手机是否已注册商户
         formMap.set("account",formMap.getStr("mobilePhone"));
         E merchInfo = registerService.selectMerchantByAccount(formMap);

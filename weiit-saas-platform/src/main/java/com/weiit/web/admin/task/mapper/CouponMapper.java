@@ -7,7 +7,7 @@ import com.weiit.core.mapper.BaseMapper;
 import java.util.List;
 
 /**
- * Created by 罗鸿强 on 2018/7/9.
+ * Created by johnluo on 2018/7/9.
  */
 public interface CouponMapper extends BaseMapper {
     List<E> selectCouponList(FormMap formMap);

@@ -7,10 +7,10 @@
                         <img src="static/images/bg.png" alt="">
                     </div>
                     <div class="bg">
-                        
+
                     </div>
                 </div>
-                
+
                 <div class="shop_info fn-clear">
                     <div class="pic">
                         <img src="static/images/user.jpg" alt="">
@@ -31,7 +31,7 @@
                             <img src="static/images/bg.png" alt="">
                         </div>
                         <div class="bg">
-                            
+
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                             <img src="static/images/bg.png" alt="">
                         </div>
                         <div class="bg">
-                            
+
                         </div>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                             <img src="static/images/bg.png" alt="">
                         </div>
                         <div class="bg">
-                            
+
                         </div>
                     </div>
                 </div>
@@ -108,7 +108,7 @@
                             <img src="static/images/bg.png" alt="">
                         </div>
                         <div class="bg">
-                            
+
                         </div>
                     </div>
                 </div>
@@ -127,7 +127,7 @@
                     <span class="line"></span>
                 </div>
             </div>
-            
+
         </div> -->
         <div class="shop_signs blankShow">
             <div class="type type1" v-if="showStyle == 'type1'">
@@ -137,10 +137,10 @@
                         <img :src="bgPic" alt="" v-else draggable="false">
                     </div>
                     <div class="bg">
-                        
+
                     </div>
                 </div>
-                
+
                 <div class="shop_info fn-clear">
                     <div class="pic">
                         <img :src="shop_logo" alt="" draggable="false">
@@ -159,7 +159,7 @@
                             <img :src="bgPic" alt="" v-else draggable="false">
                         </div>
                         <div class="bg">
-                            
+
                         </div>
                     </div>
                 </div>
@@ -182,7 +182,7 @@
                             <img :src="bgPic" alt="" v-else draggable="false">
                         </div>
                         <div class="bg">
-                            
+
                         </div>
                     </div>
                 </div>
@@ -204,7 +204,7 @@
                             <img :src="bgPic" alt="" v-else draggable="false">
                         </div>
                         <div class="bg">
-                            
+
                         </div>
                     </div>
                 </div>
@@ -227,7 +227,7 @@
                             <img :src="bgPic" alt="" v-else draggable="false">
                         </div>
                         <div class="bg">
-                            
+
                         </div>
                     </div>
                 </div>
@@ -248,17 +248,18 @@
             <head-modify :keyText="keyText"></head-modify>
             <set-shop @event="getData" :pageParam="pageParam"></set-shop>
         </div>
-    </div> 
+    </div>
 </template>
 
 <script>
-    // 设置店招  
-    import setShop from '@/components/set/setShop'
-    // 设置头部
-    import headModify from '@/components/common/headModify'
-    import List from '../../../static/js/List'
-    import {mapActions} from 'vuex'
-    export default {
+// 设置店招
+import setShop from '@/components/set/setShop'
+// 设置头部
+import headModify from '@/components/common/headModify'
+import List from '../../../static/js/List'
+import {mapActions} from 'vuex'
+
+export default {
         props:{
             keyText:String,
             tempId:Number,
@@ -348,7 +349,7 @@
     .type{
         position: relative;
     }
-    
+
     .htBg{
         position: absolute;
         left: 0;
@@ -490,7 +491,7 @@
     }
     .type3 .shop_info .pic{
         border-radius: 0;
-        
+
     }
     .type3 .shop_info .txt p{
         color: #fff;
@@ -560,7 +561,7 @@
     }
     /* 样式5 */
     .type5{
-      height: 250px;  
+      height: 250px;
     }
     .type5 .type_bg{
         height: 250px;
@@ -577,7 +578,7 @@
     .type5 .shop_info .txt h5{
         color: #fff;
     }
-    
+
     .type .shop_info .txt p{
         font-size: 14px;
     }

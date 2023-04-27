@@ -25,7 +25,7 @@
                                 <h1>
                                     <span v-if="pageName == ''">自定义模板</span>
                                     <span v-else>{{pageName}}</span>
-                                    
+
                                 </h1>
                                 <img src="static/images/titlebar.png" alt="" draggable="false"/>
                             </div>
@@ -33,7 +33,7 @@
                         <div class="sortTable container" id="right-defaults">
                         	<draggable v-model="tabs" @end="datadragEnd" :options="{disabled:isSortable,draggable: '.sortChunk'}" class="list-group">
 	                            <div class="sortChunk" :key="item.id" v-for="(item,index) in tabs" @click="choice(item,index)" :class="{'focus':index == iNum}">
-	                            	
+
 	                                <div class="close" :class="{'active':index == iNum}">
 	                                    <i class="icon iconfont icon-guanbi" @click="checked(index)"></i>
 	                                </div>
@@ -45,14 +45,14 @@
 	                                        <el-button @click="close($event)">取消</el-button>
 	                                    </div>
 	                                </div>
-	                              
+
 	                            </div>
                          </draggable>
                         </div>
                      </div>
                 </div>
                 <div class="phone-home">
-                    
+
                 </div>
             </div>
         </div>
@@ -60,7 +60,7 @@
         <!-- 设置店招 -->
         <div class="modify_box1" v-show="tabs.length == 0 || isHeadShow">
             <set-head @event="getHead"></set-head>
-        </div> 
+        </div>
         <div class="footer" :class="{'sublayer':isZIndex}">
             <div class="foot">
                 <a href="javascript:;" class="save" @click="save()">保存</a>
@@ -79,13 +79,12 @@ import showTabel from "@/components/show/showTable";
 import setHead from "@/components/set/setHead";
 // 引入vuex
 import store from "@/vuex/store";
-import { mapState, mapActions, mapMutations } from "vuex";
-import { getQueryString } from "../static/js/getQueryString";
+import {mapActions, mapMutations, mapState} from "vuex";
+import {getQueryString} from "../static/js/getQueryString";
 import draggable from "vuedraggable";
 import Sortable from "sortablejs";
 import toast from "@/components/common/toast";
-import axios from "axios";
-import qs from "qs";
+
 export default {
   name: "App",
   data() {
@@ -252,7 +251,8 @@ export default {
       var formData = new FormData();
       let that = this;
   //  let url = "http://merchant.woyoulian.com";
-   let url = "http://merchant.wstore.me";
+  //  let url = "http://merchant.wstore.me";
+   let url = "http://saas.merchant.wei-it.com";
       if (this.pageName == "") {
         this.pageName = "自定义模板";
       }
@@ -272,7 +272,7 @@ export default {
           contentType: false,
           data: formData,
           success: function(res) {
-            
+
             that.$message({
               message: "保存成功",
               type: "success"
@@ -593,7 +593,7 @@ export default {
         }
       })
         .then(res => {
-          
+
           this.validateId = res.data.pageInfo.validate_id;
           this.validateIdToke = res.data.pageInfo.validate_id_token;
           this.tabs = JSON.parse(res.data.pageInfo.page_layout);

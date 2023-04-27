@@ -2,26 +2,27 @@
     <div class="showBox">
         <div class="video blankShow">
             <iframe width="100%" height="100%" frameborder=0 :src=videoUrl allowfullscreen="true" v-if="videoUrl != ''"></iframe>
-            
+
             <img src="static/images/video_show.png" alt="" width="100%" height="200" v-else>
         </div>
     <!-- 设置店招 -->
         <div class="modify_box head_modify">
             <head-modify :keyText="keyText"></head-modify>
             <set-video @event="getData" :pageParam="pageParam"></set-video>
-        </div> 
+        </div>
     </div>
-    
+
 </template>
 
 <script>
-    // 设置视频
-    import setVideo from '@/components/set/setVideo'
-    // 设置头部
-    import headModify from '@/components/common/headModify'
-    import List from '../../../static/js/List'
-    import {mapActions} from 'vuex' 
-    export default {
+// 设置视频
+import setVideo from '@/components/set/setVideo'
+// 设置头部
+import headModify from '@/components/common/headModify'
+import List from '../../../static/js/List'
+import {mapActions} from 'vuex'
+
+export default {
         props:{
             keyText:String,
             tempId:Number,

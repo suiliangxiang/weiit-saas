@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by 罗鸿强 on 2018/6/14.
+ * Created by johnluo on 2018/6/14.
  *
  *
  * 任务Handler示例（Bean模式）

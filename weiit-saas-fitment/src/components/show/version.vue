@@ -4,24 +4,25 @@
             <p :style="{color:fontColor,fontSize:fontS,textAlign:sition}">
                 {{textarea}}
             </p>
-            
+
         </div>
         <!-- 设置文本 -->
         <div class="modify_box head_modify">
             <head-modify :keyText="keyText"></head-modify>
             <set-version @event="getData" :pageParam="pageParam"></set-version>
-        </div> 
+        </div>
     </div>
 </template>
 
 <script>
-    // 设置文本
-    import setVersion from '@/components/set/setVersion'
-    // 设置头部
-    import headModify from '@/components/common/headModify'
-    import List from '../../../static/js/List'
-    import {mapActions} from 'vuex'
-    export default {
+// 设置文本
+import setVersion from '@/components/set/setVersion'
+// 设置头部
+import headModify from '@/components/common/headModify'
+import List from '../../../static/js/List'
+import {mapActions} from 'vuex'
+
+export default {
         props:{
             keyText:String,
             tempId:Number,
@@ -111,7 +112,7 @@
                 this.fontPos = this.pageParam.fontPos;
                 this.fontColor = this.pageParam.fontColor;
                 this.bgColor = this.pageParam.bgColor;
-                this.textarea = this.pageParam.textarea; 
+                this.textarea = this.pageParam.textarea;
             }
         },
         mounted(){
@@ -150,7 +151,7 @@
         box-sizing: border-box;
         z-index: 5;
     }
-    .modify_box:after, 
+    .modify_box:after,
     .modify_box:before {
         right: 100%;
         top: 20px;

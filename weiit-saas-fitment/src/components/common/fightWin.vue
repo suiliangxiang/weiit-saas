@@ -15,11 +15,11 @@
                 :data="tableGoods"
                 tooltip-effect="dark"
                 @selection-change="handleSelectionChange">
-                <el-table-column 
+                <el-table-column
                     type='selection' width="50">
                 </el-table-column>
-                <el-table-column 
-                    prop="product_img" 
+                <el-table-column
+                    prop="product_img"
                     width="80">
                     <template slot-scope="scope">
                         <img :src="imageDomaia + scope.row.product_img" alt="" width="60" height="60" draggable="false">
@@ -30,7 +30,7 @@
                     label="商品">
                 </el-table-column>
             </el-table>
-            <div class="pages fn-clear">   
+            <div class="pages fn-clear">
                 <div class="block">
                     <el-pagination
                         @current-change="handleCurrentChange"
@@ -40,7 +40,7 @@
                         :pager-count="5"
                         :total="tableData.length">
                     </el-pagination>
-                </div> 
+                </div>
                 <a href="javascript:;" class="ensure" @click="ensure()">确定</a>
             </div>
         </div>
@@ -48,8 +48,9 @@
 </template>
 
 <script>
-    import {mapMutations} from 'vuex'
-    export default {
+import {mapMutations} from 'vuex'
+
+export default {
         props:['parentComponent'],
         data() {
             return {
@@ -73,7 +74,7 @@
                 searchTxt:'',
                 groupon_ids:[],
                 bargain_ids:[]
-                
+
             }
         },
         methods: {
@@ -135,7 +136,7 @@
                         (err);
                     })
                 }
-                
+
             },
             // 获取单页数据
             getGoods(){
@@ -244,7 +245,7 @@
     div.search_box button{
         float: left;
         border:1px solid #ddd;
-        
+
     }
     div.search_box input{
         width: 153px;
