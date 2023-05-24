@@ -2,6 +2,7 @@ package com.weiit.web.weixinopen.controller;
 
 
 import com.weiit.core.entity.FormMap;
+import com.weiit.resource.common.utils.WeiitUtil;
 import com.weiit.web.weixinopen.service.WeixinOpenService;
 import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.open.bean.result.WxOpenAuthorizerInfoResult;
@@ -34,8 +35,7 @@ public class WechatApiController {
     
     @RequestMapping("/goto_auth_url")
     public void gotoPreAuthUrl(HttpServletRequest request, HttpServletResponse response) throws WxErrorException{
-        String host = request.getHeader("host");
-        String url = "http://"+host+"/center/weixinopen/portal";
+        String url = WeiitUtil.getPropertiesKey("weiit.merchant.url")+"/center/weixinopen/portal";
         try {
             url = wxOpenService.getInstance(null).getWxOpenComponentService().getPreAuthUrl(url);
             response.sendRedirect(url);

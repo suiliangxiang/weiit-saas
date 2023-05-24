@@ -14,7 +14,6 @@ Vue.prototype.$APIURL = "http://saas.merchant.wei-it.com";
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

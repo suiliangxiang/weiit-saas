@@ -251,7 +251,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.30</version>
+			<version>8.0.13</version>
 		</dependency> 
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -483,37 +483,6 @@
 		</dependency>
 
 	</dependencies>
-
-
-
-
-	<repositories>
-		<repository>
-			<id>nexus</id>
-			<name>weiit nexus</name>
-			<url>http://nexus.wei-it.com/nexus/content/groups/public/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>nexus</id>
-			<name>weiit nexus</name>
-			<url>http://nexus.wei-it.com/nexus/content/groups/public/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
-
 
    <build>
 		<finalName>weiit-saas-api</finalName>

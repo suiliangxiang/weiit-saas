@@ -1,13 +1,3 @@
-// app.js
-//本地地址
-// const url = 'http://192.168.0.128:8081';
-//测试地址
-// const url = 'https://api.woyoulian.com';
-// const url = 'https://woyoulian.com';
-// var appid = '';
-//线上地址
-// var url = 'https://api.ustore.wang';
-// var appid = 'wx16abeb3ca941a985';
 App({
   // appID
   agree: false,

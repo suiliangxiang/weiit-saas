@@ -68,14 +68,14 @@ public class DesUtil {
         return hexString.toString();
     }
 
-    public static void main(String[] args) throws Exception {
-        String value = "110937";
-        System.out.println("加密数据:" + value);
-        System.out.println("密码为:" + PASSWORD_CRYPT_KEY);
-        String a = encrypt(value);
-        System.out.println("加密后的数据为:" + a);
-        String b = decrypt(a, PASSWORD_CRYPT_KEY);
-        System.out.println("解密后的数据为:" + b);
-    }
+//    public static void main(String[] args) throws Exception {
+//        String value = "110937";
+//        System.out.println("加密数据:" + value);
+//        System.out.println("密码为:" + PASSWORD_CRYPT_KEY);
+//        String a = encrypt(value);
+//        System.out.println("加密后的数据为:" + a);
+//        String b = decrypt(a, PASSWORD_CRYPT_KEY);
+//        System.out.println("解密后的数据为:" + b);
+//    }
 
 }

@@ -84,7 +84,7 @@ import {getQueryString} from "../static/js/getQueryString";
 import draggable from "vuedraggable";
 import Sortable from "sortablejs";
 import toast from "@/components/common/toast";
-
+import Vue from 'vue'
 export default {
   name: "App",
   data() {

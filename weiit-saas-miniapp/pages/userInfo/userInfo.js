@@ -86,7 +86,7 @@ Page({
               'content-type': 'application/x-www-form-urlencoded'
             },
             success: (res) => {
-              console.log(res, 'userInfor')
+              console.log(res, 'userInfo')
               getApp().globaLogin.openid = res.data.data.openid;
               getApp().globaLogin.sessionKey = res.data.data.sessionKey;
               wx.getUserInfo({
@@ -115,7 +115,6 @@ Page({
                       if (res.data.code == '0'){
                         wx.setStorageSync('user_id', res.data.data.user_id);
                         wx.setStorageSync('token', res.data.data.token);
-
                         // getApp().iv = res.iv;
                         var pages = getCurrentPages()
                         var previous = pages[pages.length - 2]; //上一页面
@@ -133,6 +132,50 @@ Page({
                   console.log('用户未授权')
                 }
               })
+              // wx.getUserInfo({
+              //   success: function(res) {
+              //     console.log(res, '信息')
+              //     // getApp().encryptedData = res.encryptedData;
+              //     // getApp().iv = res.iv;
+              //     wx.setStorageSync('encryptedData', res.encryptedData);
+              //     wx.setStorageSync('iv', res.iv)
+              //     wx.request({
+              //       url: getApp().urls + '/api/maLogin',
+              //       method: 'POST',
+              //       header: {
+              //         'content-type': 'application/x-www-form-urlencoded'
+              //       },
+              //       data: {
+              //         appid: getApp().appid,
+              //         sessionKey: getApp().globaLogin.sessionKey,
+              //         encryptedData: res.encryptedData,
+              //         ivStr: res.iv,
+              //         wx_open_id: getApp().globaLogin.openid,
+              //         share_user_id: shareId,
+              //       },
+              //       success: function(res) {
+              //         console.log(res, 'mylogin');
+              //         if (res.data.code == '0'){
+              //           wx.setStorageSync('user_id', res.data.data.user_id);
+              //           wx.setStorageSync('token', res.data.data.token);
+              //
+              //           // getApp().iv = res.iv;
+              //           var pages = getCurrentPages()
+              //           var previous = pages[pages.length - 2]; //上一页面
+              //           previous.setData({
+              //             refresh: true
+              //           });
+              //           wx.navigateBack({
+              //             delta: 1
+              //           });
+              //         }
+              //       }
+              //     })
+              //   },
+              //   fail: function() {
+              //     console.log('用户未授权')
+              //   }
+              // })
             }
           })
         },

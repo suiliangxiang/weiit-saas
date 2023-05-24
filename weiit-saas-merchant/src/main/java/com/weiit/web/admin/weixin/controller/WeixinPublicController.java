@@ -5,6 +5,7 @@ import com.weiit.core.entity.E;
 import com.weiit.core.entity.FormMap;
 import com.weiit.core.view.UIview;
 import com.weiit.resource.common.utils.RedisUtil;
+import com.weiit.resource.common.utils.WeiitUtil;
 import com.weiit.web.admin.miniprogram.service.WxMiniProgramService;
 import com.weiit.web.admin.setting.service.SettingService;
 import com.weiit.web.admin.weixin.service.WeixinPublicService;
@@ -72,8 +73,7 @@ public class WeixinPublicController extends AdminController {
  
     @RequestMapping("/go_auth")
     public void gotoPreAuthUrl(HttpServletRequest request, HttpServletResponse response) throws WxErrorException{
-        String host = request.getHeader("host");
-        String url = "http://"+host+"/center/weixin/public/auth_result";
+        String url = WeiitUtil.getPropertiesKey("weiit.merchant.url")+"/center/weixin/public/auth_result";
         try {
             url = wxOpenService.getInstance(null).getWxOpenComponentService().getPreAuthUrl(url);
             response.sendRedirect(url);

@@ -1,5 +1,7 @@
 package com.weiit.web.admin.util;
 
+import com.weiit.resource.common.utils.WeiitUtil;
+
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
@@ -28,10 +30,10 @@ public class DesUtil {
 
 	        byte[] bytesrc =convertHexString(message);
 	        Cipher cipher = Cipher.getInstance("DES/CBC/PKCS5Padding");
-	        DESKeySpec desKeySpec = new DESKeySpec(PASSWORD_CRYPT_KEY.getBytes("UTF-8"));
+	        DESKeySpec desKeySpec = new DESKeySpec(WeiitUtil.getPropertiesKey("weiit.des.crypt.key").getBytes("UTF-8"));
 	        SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("DES");
 	        SecretKey secretKey = keyFactory.generateSecret(desKeySpec);
-	        IvParameterSpec iv = new IvParameterSpec(PASSWORD_CRYPT_KEY.getBytes("UTF-8"));
+	        IvParameterSpec iv = new IvParameterSpec(WeiitUtil.getPropertiesKey("weiit.des.crypt.key").getBytes("UTF-8"));
 	        cipher.init(Cipher.DECRYPT_MODE, secretKey, iv);
 	        byte[] retByte = cipher.doFinal(bytesrc);
 	        return new String(retByte);
@@ -50,7 +52,7 @@ public class DesUtil {
 	String result="";  
 	try{  
 	value=java.net.URLEncoder.encode(value, "utf-8");   
-	result=toHexString(encrypt(value, PASSWORD_CRYPT_KEY)).toUpperCase();  
+	result=toHexString(encrypt(value, WeiitUtil.getPropertiesKey("weiit.des.crypt.key"))).toUpperCase();
 	}catch(Exception ex){  
 	   ex.printStackTrace();  
 	   return "";  
@@ -77,15 +79,6 @@ public class DesUtil {
 	        hexString.append(plainText);     
 	    }        
 	    return hexString.toString();     
-	}     
-	public static void main(String[] args) throws Exception {     
-	    String value="1";
-	    System.out.println("加密数据:"+value);   
-	    System.out.println("密码为:"+PASSWORD_CRYPT_KEY);
-	    String a=encrypt( value);     
-	    System.out.println("加密后的数据为:"+a);
-	    String b = decrypt(a,PASSWORD_CRYPT_KEY);
-	    System.out.println("解密后的数据为:"+b);
 	}
 
 }

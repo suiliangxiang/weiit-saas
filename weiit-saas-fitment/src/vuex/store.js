@@ -11,7 +11,7 @@ export default new Vuex.Store({
         isZIndex:false,
         // routerSrc:'http://merchant.woyoulian.com',   //路径
         // routerSrc:'http://merchant.wstore.me'   //路径
-        routerSrc:'/'   //路径
+        routerSrc:'http://saas.merchant.wei-it.com'   //路径
     },
     mutations:{
         // 添加数据

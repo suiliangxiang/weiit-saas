@@ -52,7 +52,6 @@ let loginState = function(callback) {
   var that = this;
   wx.getSetting({
     success: function(res) {
-      console.log(res, '7787878887')
       if (res.authSetting['scope.userInfo']) {
         callback(res.authSetting['scope.userInfo']);
       } else {

@@ -71,10 +71,10 @@ public class WeixinMiniAppCodeController extends AdminController {
 
     @RequestMapping("/go_auth")
     public void gotoPreAuthUrl(HttpServletRequest request, HttpServletResponse response) throws WxErrorException{
-        String host = request.getHeader("host");
-        String url = "http://"+host+"/center/miniprogram/auth_result";
+        String url = WeiitUtil.getPropertiesKey("weiit.merchant.url")+"/center/miniprogram/auth_result?shop_id="+request.getSession().getAttribute("shop_id");
         try {
             url = weixinOpenService.getInstance(null).getWxOpenComponentService().getPreAuthUrl(url);
+            System.out.println(request.getSession().getAttribute("shop_id").toString());
             response.sendRedirect(url);
         } catch (IOException e) {
             logger.error("gotoPreAuthUrl", e);
@@ -84,7 +84,7 @@ public class WeixinMiniAppCodeController extends AdminController {
 
 
     @RequestMapping("/auth_result")
-    public UIview authResult(@RequestParam("auth_code") String authorizationCode){
+    public UIview authResult(@RequestParam("auth_code") String authorizationCode,HttpServletRequest request){
         UIview result = UIView("/center/miniprogram/public",false);
         try {
             WxOpenService service = weixinOpenService.getInstance(null);
@@ -104,7 +104,7 @@ public class WeixinMiniAppCodeController extends AdminController {
             FormMap selectMap = new FormMap();
             FormMap formMap=getFormMap();
             selectMap.put("authorizer_app_id",authInfo.getAuthorizationInfo().getAuthorizerAppid());
-            selectMap.put("shop_id",formMap.getStr("shop_id"));
+            selectMap.put("shop_id",formMap.get("shop_id"));
             E selectPubliInfo = weixinOpenService.selectWxPublicInfoAndShopInfo(selectMap);
             if (selectPubliInfo!=null){
                 result.addObject("error", String.format("%s已经绑定过该",selectPubliInfo.getStr("shop_name")));
@@ -523,7 +523,9 @@ public class WeixinMiniAppCodeController extends AdminController {
     }
 
 
-    //查询某个指定版本的审核状态
+    /**
+     * 查询某个指定版本的审核状态
+     */
     @RequestMapping("getAuthStatus")
     @ResponseBody
     public String getAuthStatus() {
@@ -572,9 +574,6 @@ public class WeixinMiniAppCodeController extends AdminController {
         return "success";
     }
 
-    public static void main(String[] args) throws Exception {
-        System.out.println(WeiitUtil.getLogistics("YUNDA","3922010766623"));
-    }
 
 
     //发布已通过审核的小程序
