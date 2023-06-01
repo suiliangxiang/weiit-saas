@@ -18,8 +18,7 @@ import java.util.List;
  * 
  * Title: ProductBannerController.java
  * Description: 物流管理 》》运费模板
- * Shipments: 微云时代 http://weiyunshidai.com/
- * @author hzy 
+ * @author hzy
  * @date 2017年3月30日
  */
 @Controller

@@ -12,8 +12,7 @@ import java.net.URLEncoder;
  * 
  * Title: DefaultExceptionResolver.java
  * Description: spring 统一异常处理
- * Company: 微云时代 http://weiyunshidai.com/
- * @author hzy 
+ * @author hzy
  * @date 2017年3月30日
  */
 public class DefaultExceptionResolver extends SimpleMappingExceptionResolver{

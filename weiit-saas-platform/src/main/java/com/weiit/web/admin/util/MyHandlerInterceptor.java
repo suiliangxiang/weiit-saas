@@ -12,8 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /** 
  * Title: DefaultExceptionResolver.java
  * Description: spring拦截器。 记录日志
- * Company: 微云时代 http://weiyunshidai.com/
- * @author hzy 
+ * @author hzy
  * @date 2017年3月30日
  */
 public class MyHandlerInterceptor extends  HandlerInterceptorAdapter{
